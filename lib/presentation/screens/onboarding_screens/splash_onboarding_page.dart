@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/presentation/screens/setup_screen/setup_screen.dart';
 import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
 class SplashOnboardingPage extends StatelessWidget {
@@ -49,7 +50,13 @@ class SplashOnboardingPage extends StatelessWidget {
                   child: RoundedButton(
                     title: StringConstants.kgettingStartedButton,
                     colour: ColorConstants.primaryColor,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SetupPage(),
+                          ));
+                    },
                   ),
                 )
               ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/presentation/screens/home_screen/setup_screen.dart';
-import 'package:recipe_app/presentation/screens/onboarding_screens/splash_onboarding_page.dart';
+import 'package:recipe_app/presentation/screens/setup_screen/setup_screen.dart';
+// import 'package:recipe_app/presentation/screens/onboarding_screens/splash_onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());

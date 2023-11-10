@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/domain/entity/setup_data_entity.dart';
+import 'package:recipe_app/domain/entity/setup_data_entity/setup_data_entity.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/individual_option_widget.dart';
 
 class SetupPageBodyWidget extends StatelessWidget {

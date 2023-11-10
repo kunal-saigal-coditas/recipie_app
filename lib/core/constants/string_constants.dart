@@ -54,4 +54,7 @@ class StringConstants {
     "Intermediate",
     "Advanced",
   ];
+
+  static const knextButtonText = "Next Step";
+  static const kpreviousButtonText = "Previous";
 }

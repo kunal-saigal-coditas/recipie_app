@@ -1,53 +1,76 @@
-class RecipeModel {
-  int id;
-  String title;
-  String summary;
-  String image;
-  int readyInMinutes;
-  String sourceUrl;
-  List<dynamic> cuisines;
-  bool dairyFree;
-  bool glutenFree;
-  String instructions;
-  bool ketogenic;
-  bool vegan;
-  bool vegetarian;
-  bool veryHealthy;
-  bool veryPopular;
-  List<String> dishTypes;
-  List<ExtendedIngredient> extendedIngredients;
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
-  RecipeModel({
-    required this.id,
-    required this.title,
-    required this.summary,
-    required this.image,
-    required this.readyInMinutes,
-    required this.sourceUrl,
-    required this.cuisines,
-    required this.dairyFree,
-    required this.glutenFree,
-    required this.instructions,
-    required this.ketogenic,
-    required this.vegan,
-    required this.vegetarian,
-    required this.veryHealthy,
-    required this.veryPopular,
-    required this.dishTypes,
-    required this.extendedIngredients,
+class RecipeModel extends RecipeEntity {
+  const RecipeModel({
+    required super.id,
+    required super.title,
+    required super.summary,
+    required super.image,
+    required super.readyInMinutes,
+    required super.sourceUrl,
+    required super.instructions,
+    required super.extendedIngredients,
   });
+
+  factory RecipeModel.fromJson(Map<String, dynamic> json) {
+    return RecipeModel(
+      id: json["id"],
+      title: json["title"],
+      summary: json["summary"],
+      image: json["image"],
+      readyInMinutes: json["readyInMinutes"],
+      sourceUrl: json["sourceUrl"],
+      instructions: json["instructions"],
+      extendedIngredients:
+          (json["extendedIngredients"] as List<Map<String, dynamic>>)
+              .map(
+                (e) => ExtendedIngredientModel.fromJson(e),
+              )
+              .toList(),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": id,
+      "title": title,
+      "summary": summary,
+      "image": image,
+      "readyInMinutes": readyInMinutes,
+      "sourceUrl": sourceUrl,
+      "instructions": instructions,
+      "extendedIngredients": extendedIngredients
+          .map(
+            (e) => e.toModel().toJson(),
+          )
+          .toList(),
+    };
+  }
 }
 
-class ExtendedIngredient {
-  double amount;
-  int id;
-  String image;
-  String name;
-
-  ExtendedIngredient({
-    required this.amount,
-    required this.id,
-    required this.image,
-    required this.name,
+class ExtendedIngredientModel extends ExtendedIngredientEntity {
+  const ExtendedIngredientModel({
+    required super.amount,
+    required super.id,
+    required super.image,
+    required super.name,
   });
+
+  factory ExtendedIngredientModel.fromJson(Map<String, dynamic> json) {
+    return ExtendedIngredientModel(
+      amount: json['amount'],
+      id: json['id'],
+      image: json['image'],
+      name: json['name'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'amount': amount,
+      'id': id,
+      'image': image,
+      'name': name,
+    };
+  }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/presentation/screens/setup_screen/setup_screen.dart';
-// import 'package:recipe_app/presentation/screens/onboarding_screens/splash_onboarding_page.dart';
+import 'package:recipe_app/core/di/injector.dart';
+import 'package:recipe_app/core/routes/routes.dart';
 
 void main() {
+  Injector.injectorFunction();
   runApp(const MyApp());
 }
 
@@ -11,15 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppRouter appRouter = AppRouter();
     return SafeArea(
-      child: MaterialApp(
+      child: MaterialApp.router(
+        routerConfig: appRouter.config(),
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const SetupPage(),
       ),
     );
   }

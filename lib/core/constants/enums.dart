@@ -1,0 +1,1 @@
+enum AnswerBoxType { circularSelectable, normalSelectable }

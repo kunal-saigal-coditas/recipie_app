@@ -1,10 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
-import 'package:recipe_app/presentation/screens/setup_screen/setup_screen.dart';
+import 'package:recipe_app/core/routes/routes.dart';
 import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
+@RoutePage()
 class SplashOnboardingPage extends StatelessWidget {
   const SplashOnboardingPage({super.key});
 
@@ -24,7 +26,6 @@ class SplashOnboardingPage extends StatelessWidget {
             left: 10,
             right: 10,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const Text(
                   StringConstants.konboardingMaintext,
@@ -51,11 +52,7 @@ class SplashOnboardingPage extends StatelessWidget {
                     title: StringConstants.kgettingStartedButton,
                     colour: ColorConstants.primaryColor,
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SetupPage(),
-                          ));
+                      AutoRouter.of(context).replace(const SetupRoute());
                     },
                   ),
                 )

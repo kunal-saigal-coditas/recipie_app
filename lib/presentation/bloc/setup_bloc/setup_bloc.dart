@@ -2,12 +2,19 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:recipe_app/domain/entity/setup_data_entity/setup_data_entity.dart';
+import 'package:recipe_app/domain/use_case/local_data_usecase.dart';
 
-part 'setup_bloc_event.dart';
-part 'setup_bloc_state.dart';
+part 'setup_event.dart';
+part 'setup_state.dart';
 
-class SetupBloc extends Bloc<SetupBlocEvent, SetupState> {
-  SetupBloc() : super(const SetupPageLoadedState(pageIndex: 0)) {
+class SetupBloc extends Bloc<SetupEvent, SetupState> {
+  final LocalDataUseCase localDataUseCase;
+
+  SetupBloc({required this.localDataUseCase})
+      : super(SetupPageLoadedState(
+            setupPageDataList: localDataUseCase.getSetupDataList(),
+            pageIndex: 0)) {
     on<OnNextEvent>(onNextEvent);
     on<OnPreviousEvent>(onPreviousEvent);
   }

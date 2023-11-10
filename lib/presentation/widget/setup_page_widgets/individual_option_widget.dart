@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
-import 'package:recipe_app/domain/entity/setup_data_entity.dart';
+import 'package:recipe_app/domain/entity/setup_data_entity/setup_data_entity.dart';
 
 class IndividualOptionWidget extends StatefulWidget {
   const IndividualOptionWidget({

@@ -6,7 +6,7 @@ import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import '../../core/failure/failure.dart';
 
 class RemoteDataSource {
-  String apiKey = "9100c515f01e4a078bc41ce7b75e532d";
+  String apiKey = "f30258e7873345b493fa25a23ed84702";
   String baseUrl = "https://api.spoonacular.com";
   List<RecipeEntity> recipeList = [];
   Future<Either<List<RecipeEntity>, Failure>> getDatafromDio() async {
@@ -26,7 +26,8 @@ class RemoteDataSource {
 
     try {
       Response response = await dio.get(
-          "$baseUrl/recipes/informationBulk/?apiKey=$apiKey&ids=715538,716429");
+        "$baseUrl/recipes/informationBulk/?apiKey=$apiKey&ids=1,2,3,4,5,6",
+      );
 
       if (response.statusCode == 200) {
         for (Map m in response.data) {

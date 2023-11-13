@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BotttomNavPage(),
       );
     },
+    ExploreRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ExplorePage(),
+      );
+    },
     ForumRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -70,6 +76,20 @@ class BotttomNavRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BotttomNavRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ExplorePage]
+class ExploreRoute extends PageRouteInfo<void> {
+  const ExploreRoute({List<PageRouteInfo>? children})
+      : super(
+          ExploreRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ExploreRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

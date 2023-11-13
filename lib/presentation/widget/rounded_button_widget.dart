@@ -31,9 +31,10 @@ class RoundedButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
           side: BorderSide(
-              color: colour == ColorConstants.whiteBackgraound
-                  ? const Color.fromARGB(255, 160, 158, 158)
-                  : const Color.fromARGB(0, 255, 254, 254)),
+            color: colour == ColorConstants.whiteBackgraound
+                ? const Color.fromARGB(255, 160, 158, 158)
+                : const Color.fromARGB(0, 255, 254, 254),
+          ),
         ),
         child: MaterialButton(
           onPressed: onPressed,

@@ -57,4 +57,9 @@ class StringConstants {
 
   static const knextButtonText = "Next Step";
   static const kpreviousButtonText = "Previous";
+  static const kmyRecipeText = "My Recipies";
+  static const krecentRecipeText = "Recent Recipes";
+  static const krecommendedText = "Recommended";
+  static const kviewAlltext = "View All";
+  static const krecipePageAppBarText = "Explore Recipies";
 }

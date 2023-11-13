@@ -13,6 +13,7 @@ class BotttomNavPage extends StatelessWidget {
         routes: const [
           RecipeRoute(),
           GroceryRoute(),
+          ExploreRoute(),
           ForumRoute(),
           ProfileRoute(),
         ],
@@ -39,6 +40,16 @@ class BotttomNavPage extends StatelessWidget {
                 label: 'Grocery',
                 icon: Icon(
                   Icons.list,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: 'Explore',
+                icon: CircleAvatar(
+                  backgroundColor: ColorConstants.primaryColor,
+                  child: Icon(
+                    Icons.search,
+                    color: ColorConstants.whiteBackgraound,
+                  ),
                 ),
               ),
               BottomNavigationBarItem(

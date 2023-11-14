@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 import 'package:recipe_app/data/data_model/recipe_model.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
@@ -25,20 +28,29 @@ class RemoteDataSource {
     // );
 
     try {
-      Response response = await dio.get(
-        "$baseUrl/recipes/informationBulk/?apiKey=$apiKey&ids=1,2,3,4,5,6",
-      );
+      // Response response = await dio.get(
+      //   "$baseUrl/recipes/informationBulk/?apiKey=$apiKey&ids=1,2,3,4,5,6,7,8,9,10",
+      // );
 
-      if (response.statusCode == 200) {
-        for (Map m in response.data) {
+      String data = await rootBundle.loadString("assets/mock_data.json");
+      // if (response.statusCode == 200) {
+      //   for (Map m in response.data) {
+      //     recipeList.add(
+      //       RecipeModel.fromJson(m as Map<String, dynamic>),
+      //     );
+      //   }
+      //   print(response.statusCode);
+      //   return Left(recipeList);
+      // }
+      // else
+      {
+        final jsonResult = jsonDecode(data);
+        for (Map m in jsonResult) {
           recipeList.add(
             RecipeModel.fromJson(m as Map<String, dynamic>),
           );
         }
-        print(response.statusCode);
         return Left(recipeList);
-      } else {
-        return const Left([]);
       }
     } catch (e) {
       return Right(

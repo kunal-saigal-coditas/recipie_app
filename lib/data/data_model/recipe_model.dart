@@ -8,7 +8,7 @@ class RecipeModel extends RecipeEntity {
     required super.image,
     required super.readyInMinutes,
     required super.sourceUrl,
-    // required super.instructions,
+    required super.instructions,
     required super.extendedIngredients,
   });
 
@@ -20,7 +20,7 @@ class RecipeModel extends RecipeEntity {
       image: json["image"],
       readyInMinutes: json["readyInMinutes"],
       sourceUrl: json["sourceUrl"],
-      // instructions: json["instructions"] ?? [],
+      instructions: json["instructions"] ?? "",
       extendedIngredients: (json["extendedIngredients"] as List<dynamic>)
           .map(
             (e) => ExtendedIngredientModel.fromJson(e),
@@ -37,7 +37,7 @@ class RecipeModel extends RecipeEntity {
       "image": image,
       "readyInMinutes": readyInMinutes,
       "sourceUrl": sourceUrl,
-      // "instructions": instructions,
+      "instructions": instructions,
       "extendedIngredients": extendedIngredients
           .map(
             (e) => e.toModel().toJson(),

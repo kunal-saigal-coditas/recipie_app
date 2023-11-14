@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/di/injector.dart';
 import 'package:recipe_app/core/routes/routes.dart';
 
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: appRouter.config(),
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Recipe App',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          fontFamily: GoogleFonts.cabin().fontFamily,
           useMaterial3: true,
         ),
       ),

@@ -7,6 +7,7 @@ import '../../presentation/screens/home_screens/grocery_screen.dart';
 import '../../presentation/screens/home_screens/profile_screen.dart';
 import '../../presentation/screens/home_screens/recipes_screen.dart';
 import '../../presentation/screens/onboarding_screen/splash_onboarding_page.dart';
+import '../../presentation/screens/recipe_detail_screen/recipe_detail_screen.dart';
 import '../../presentation/screens/setup_screen/setup_screen.dart';
 
 part 'routes.gr.dart';
@@ -19,7 +20,10 @@ class AppRouter extends _$AppRouter {
           page: BotttomNavRoute.page,
           initial: true,
           children: [
-            AutoRoute(page: RecipeRoute.page, initial: true),
+            AutoRoute(
+              page: RecipeRoute.page,
+              initial: true,
+            ),
             AutoRoute(
               page: GroceryRoute.page,
             ),
@@ -41,6 +45,10 @@ class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: SetupRoute.page,
-        )
+        ),
+        AutoRoute(
+          page: RecipeDetailRoute.page,
+          // initial: true,
+        ),
       ];
 }

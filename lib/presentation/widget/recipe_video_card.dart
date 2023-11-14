@@ -25,33 +25,61 @@ class RecipeVideoCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
-            image:
-                // NetworkImage(recipeEntity.image)
-                AssetImage(recipeEntity.image),
+            image: NetworkImage(recipeEntity.image),
             fit: BoxFit.fill,
           ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                recipeEntity.title,
-                style: const TextStyle(
-                  color: ColorConstants.whiteBackgraound,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 23,
-                ),
-              ),
-              Text(
-                recipeEntity.summary,
-                maxLines: 2,
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: ColorConstants.whiteBackgraound,
-                ),
+              Spacer(),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          recipeEntity.title,
+                          maxLines: 1,
+                          style: const TextStyle(
+                            color: ColorConstants.whiteBackgraound,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 23,
+                          ),
+                        ),
+                        Text(
+                          recipeEntity.summary,
+                          maxLines: 2,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: ColorConstants.whiteBackgraound,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: ColorConstants.secondaryWhiteBackgraound),
+                        child: const Padding(
+                          padding: EdgeInsets.all(8),
+                          child: Icon(
+                            Icons.play_arrow,
+                            color: ColorConstants.whiteBackgraound,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

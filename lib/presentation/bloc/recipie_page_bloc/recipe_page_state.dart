@@ -11,8 +11,10 @@ final class RecipePageInitialState extends RecipePageState {}
 
 final class RecipeFetchingSuccessState extends RecipePageState {
   final List<RecipeEntity> recipeList;
+  final List<RecipeEntity> favoriteRecipies;
 
-  const RecipeFetchingSuccessState({required this.recipeList});
+  const RecipeFetchingSuccessState(
+      {required this.favoriteRecipies, required this.recipeList});
 }
 
 final class RecipeFetchingErrorState extends RecipePageState {

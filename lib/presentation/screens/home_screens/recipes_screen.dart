@@ -57,7 +57,7 @@ class RecipePage extends StatelessWidget {
                         RecipeVideoCard(
                           width: double.maxFinite,
                           height: MediaQuery.of(context).size.height * 0.28,
-                          recipeEntity: state.recipeList[0],
+                          recipeEntity: state.recipeList[3],
                           onPressed: () {
                             print("hello");
                           },
@@ -75,7 +75,6 @@ class RecipePage extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.22,
                           child: RecipieCardListWidget(
-                            onPressed: () {},
                             sectionRecipeList: state.recipeList,
                           ),
                         ),
@@ -92,7 +91,6 @@ class RecipePage extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.22,
                           child: RecipieCardListWidget(
-                            onPressed: () {},
                             sectionRecipeList: state.recipeList,
                           ),
                         ),

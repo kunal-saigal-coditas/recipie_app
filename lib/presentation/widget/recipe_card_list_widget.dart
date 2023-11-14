@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
+import 'package:recipe_app/core/routes/routes.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipieCardListWidget extends StatelessWidget {
@@ -21,22 +23,27 @@ class RecipieCardListWidget extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(right: 16),
           child: GestureDetector(
-            onTap: onPressed,
+            onTap: () {
+              AutoRouter.of(context).push(
+                const RecipeDetailRoute(),
+              );
+            },
             child: Container(
               width: MediaQuery.of(context).size.width * 0.4,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
-                  image:
-                      // NetworkImage(sectionRecipeList[index].image)
-                      AssetImage(sectionRecipeList[index].image),
-                  fit: BoxFit.fill,
+                  image: NetworkImage(sectionRecipeList[index].image),
+                  opacity: 5,
+                  onError: (exception, stackTrace) {
+                    print("object");
+                  },
+                  fit: BoxFit.cover,
                 ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -50,7 +57,7 @@ class RecipieCardListWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Padding(
-                              padding: EdgeInsets.all(2),
+                              padding: EdgeInsets.all(4),
                               child: Icon(
                                 Icons.favorite_border,
                                 color: ColorConstants.whiteBackgraound,
@@ -63,6 +70,8 @@ class RecipieCardListWidget extends StatelessWidget {
                     const Spacer(),
                     Text(
                       sectionRecipeList[index].title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         color: ColorConstants.whiteBackgraound,
                         fontWeight: FontWeight.bold,
@@ -70,10 +79,12 @@ class RecipieCardListWidget extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      sectionRecipeList[index].summary,
+                      '${sectionRecipeList[index].summary} | ${sectionRecipeList[index].readyInMinutes} min',
                       maxLines: 2,
                       style: const TextStyle(
-                          fontSize: 9, color: ColorConstants.whiteBackgraound),
+                        fontSize: 9,
+                        color: ColorConstants.whiteBackgraound,
+                      ),
                     ),
                   ],
                 ),

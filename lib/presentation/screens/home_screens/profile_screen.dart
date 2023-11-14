@@ -5,7 +5,6 @@ import 'package:get_it/get_it.dart';
 import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
-import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:recipe_app/presentation/widget/recipe_category_section_header_row.dart';
 import 'package:recipe_app/presentation/widget/recipe_card_list_widget.dart';
@@ -33,10 +32,7 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) => GetIt.I<ProfileBloc>()
-          ..add(
-            FetchProfilePageData(),
-          ),
+        create: (context) => GetIt.I<ProfileBloc>(),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(18, 6, 18, 6),
           child: SingleChildScrollView(
@@ -95,58 +91,7 @@ class ProfilePage extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.22,
                         child: RecipieCardListWidget(
-                          onPressed: () {},
-                          sectionRecipeList: const [
-                            RecipeEntity(
-                              id: 1,
-                              title: "title",
-                              summary: "summary",
-                              image: "assets/images/splash_background.png",
-                              readyInMinutes: 10,
-                              sourceUrl: "sourceUrl",
-                              // instructions: [],
-                              extendedIngredients: [
-                                ExtendedIngredientEntity(
-                                    amount: 2,
-                                    id: 2,
-                                    image: "image",
-                                    name: "name"),
-                              ],
-                            ),
-                            RecipeEntity(
-                              id: 1,
-                              title: "title",
-                              summary: "summary",
-                              image: "assets/images/splash_background.png",
-                              readyInMinutes: 10,
-                              sourceUrl: "sourceUrl",
-                              // instructions: [],
-                              extendedIngredients: [
-                                ExtendedIngredientEntity(
-                                    amount: 2,
-                                    id: 2,
-                                    image: "image",
-                                    name: "name"),
-                              ],
-                            ),
-                            RecipeEntity(
-                              id: 1,
-                              title: "title",
-                              summary: "summary",
-                              image: "assets/images/splash_background.png",
-                              readyInMinutes: 10,
-                              sourceUrl: "sourceUrl",
-                              // instructions: ["instructions"],
-                              extendedIngredients: [
-                                ExtendedIngredientEntity(
-                                    amount: 2,
-                                    id: 2,
-                                    image: "image",
-                                    name: "name"),
-                              ],
-                            ),
-                          ],
-                        ),
+                            sectionRecipeList: state.recipeList),
                       ),
 
                       //Duplicated
@@ -160,58 +105,7 @@ class ProfilePage extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.22,
                         child: RecipieCardListWidget(
-                          onPressed: () {},
-                          sectionRecipeList: const [
-                            RecipeEntity(
-                              id: 1,
-                              title: "title",
-                              summary: "summary",
-                              image: "assets/images/splash_background.png",
-                              readyInMinutes: 10,
-                              sourceUrl: "sourceUrl",
-                              // instructions: [],
-                              extendedIngredients: [
-                                ExtendedIngredientEntity(
-                                    amount: 2,
-                                    id: 2,
-                                    image: "image",
-                                    name: "name"),
-                              ],
-                            ),
-                            RecipeEntity(
-                              id: 1,
-                              title: "title",
-                              summary: "summary",
-                              image: "assets/images/splash_background.png",
-                              readyInMinutes: 10,
-                              sourceUrl: "sourceUrl",
-                              // instructions: [],
-                              extendedIngredients: [
-                                ExtendedIngredientEntity(
-                                    amount: 2,
-                                    id: 2,
-                                    image: "image",
-                                    name: "name"),
-                              ],
-                            ),
-                            RecipeEntity(
-                              id: 1,
-                              title: "title",
-                              summary: "summary",
-                              image: "assets/images/splash_background.png",
-                              readyInMinutes: 10,
-                              sourceUrl: "sourceUrl",
-                              // instructions: ["instructions"],
-                              extendedIngredients: [
-                                ExtendedIngredientEntity(
-                                    amount: 2,
-                                    id: 2,
-                                    image: "image",
-                                    name: "name"),
-                              ],
-                            ),
-                          ],
-                        ),
+                            sectionRecipeList: state.recipeList),
                       ),
                     ],
                   );

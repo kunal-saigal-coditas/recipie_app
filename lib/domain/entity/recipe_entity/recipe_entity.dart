@@ -8,7 +8,7 @@ class RecipeEntity extends Equatable {
   final String image;
   final int readyInMinutes;
   final String sourceUrl;
-  // final List<dynamic> instructions;
+  final String instructions;
   final List<ExtendedIngredientEntity> extendedIngredients;
 
   const RecipeEntity({
@@ -18,7 +18,7 @@ class RecipeEntity extends Equatable {
     required this.image,
     required this.readyInMinutes,
     required this.sourceUrl,
-    // required this.instructions,
+    required this.instructions,
     required this.extendedIngredients,
   });
 
@@ -29,7 +29,7 @@ class RecipeEntity extends Equatable {
     String? image,
     int? readyInMinutes,
     String? sourceUrl,
-    // List<dynamic>? instructions,
+    String? instructions,
     List<ExtendedIngredientEntity>? extendedIngredients,
   }) {
     return RecipeEntity(
@@ -39,7 +39,7 @@ class RecipeEntity extends Equatable {
       image: image ?? this.image,
       readyInMinutes: readyInMinutes ?? this.readyInMinutes,
       extendedIngredients: extendedIngredients ?? this.extendedIngredients,
-      // instructions: instructions ?? this.instructions,
+      instructions: instructions ?? this.instructions,
       sourceUrl: sourceUrl ?? this.sourceUrl,
     );
   }
@@ -52,7 +52,7 @@ class RecipeEntity extends Equatable {
       image: image,
       readyInMinutes: readyInMinutes,
       sourceUrl: sourceUrl,
-      // instructions: instructions,
+      instructions: instructions,
       extendedIngredients: extendedIngredients,
     );
   }
@@ -65,7 +65,7 @@ class RecipeEntity extends Equatable {
         image,
         readyInMinutes,
         sourceUrl,
-        // instructions,
+        instructions,
         extendedIngredients,
       ];
 }

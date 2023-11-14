@@ -8,7 +8,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: [],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -20,7 +20,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: [],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -32,7 +32,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: ["instructions"],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -44,7 +44,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: [],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -56,7 +56,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: [],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -68,7 +68,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: ["instructions"],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -80,7 +80,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: [],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -92,7 +92,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: [],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -104,7 +104,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: ["instructions"],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],
@@ -116,7 +116,7 @@ const List<RecipeEntity> demoRecipeList = [
     image: "assets/images/splash_background.png",
     readyInMinutes: 10,
     sourceUrl: "sourceUrl",
-    // instructions: ["instructions"],
+    instructions: "",
     extendedIngredients: [
       ExtendedIngredientEntity(amount: 2, id: 2, image: "image", name: "name"),
     ],

@@ -13,14 +13,14 @@ import '../../domain/repository/local_data_repo.dart';
 import '../../domain/use_case/local_data_usecase.dart';
 
 class Injector {
-  static void injectorFunction() {
+  static void injectorFunction() async {
     GetIt.I
       ..registerLazySingleton<RemoteDataSource>(
         () => RemoteDataSource(),
       )
-      ..registerLazySingleton<LocalDataSource>(
-        () => LocalDataSource(),
-      )
+      ..registerLazySingleton<LocalDataSource>(() {
+        return LocalDataSource();
+      })
       ..registerLazySingleton<RemoteDataRepository>(
         () => RemoteDataRepositoryImpl(
           remoteDataSource: GetIt.I<RemoteDataSource>(),
@@ -44,10 +44,14 @@ class Injector {
       ..registerFactory<RecipePageBloc>(
         () => RecipePageBloc(
           remoteDataUsecase: GetIt.I<RemoteDataUseCase>(),
+          localDataUseCase: GetIt.I<LocalDataUseCase>(),
         ),
       )
       ..registerFactory<ProfileBloc>(
-        () => ProfileBloc(),
+        () => ProfileBloc(
+          // recipePageBloc: GetIt.I<RecipePageBloc>(),
+          localDataSource: GetIt.I<LocalDataSource>(),
+        ),
       )
       ..registerFactory<SetupBloc>(
         () => SetupBloc(

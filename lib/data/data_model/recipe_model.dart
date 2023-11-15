@@ -1,16 +1,16 @@
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipeModel extends RecipeEntity {
-  const RecipeModel({
-    required super.id,
-    required super.title,
-    required super.summary,
-    required super.image,
-    required super.readyInMinutes,
-    required super.sourceUrl,
-    required super.instructions,
-    required super.extendedIngredients,
-  });
+  const RecipeModel(
+      {required super.id,
+      required super.title,
+      required super.summary,
+      required super.image,
+      required super.readyInMinutes,
+      required super.sourceUrl,
+      required super.instructions,
+      required super.extendedIngredients,
+      required super.isFavorite});
 
   factory RecipeModel.fromJson(Map<String, dynamic> json) {
     return RecipeModel(
@@ -26,6 +26,7 @@ class RecipeModel extends RecipeEntity {
             (e) => ExtendedIngredientModel.fromJson(e),
           )
           .toList(),
+      isFavorite: true,
     );
   }
 

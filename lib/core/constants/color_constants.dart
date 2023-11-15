@@ -11,4 +11,5 @@ class ColorConstants {
   static const Color lightRedBackgroundColor =
       Color.fromARGB(248, 253, 232, 232);
   static const Color redTextColor = Colors.red;
+  // static const Color transparentColor=Colors.transparent;
 }

@@ -13,8 +13,23 @@ final class RecipeFetchingSuccessState extends RecipePageState {
   final List<RecipeEntity> recipeList;
   final List<RecipeEntity> favoriteRecipies;
 
-  const RecipeFetchingSuccessState(
-      {required this.favoriteRecipies, required this.recipeList});
+  const RecipeFetchingSuccessState({
+    required this.favoriteRecipies,
+    required this.recipeList,
+  });
+
+  RecipeFetchingSuccessState copyWith({
+    List<RecipeEntity>? recipeList,
+    List<RecipeEntity>? favoriteRecipies,
+  }) {
+    return RecipeFetchingSuccessState(
+      favoriteRecipies: favoriteRecipies ?? this.favoriteRecipies,
+      recipeList: recipeList ?? this.recipeList,
+    );
+  }
+
+  @override
+  List<Object> get props => [favoriteRecipies, recipeList];
 }
 
 final class RecipeFetchingErrorState extends RecipePageState {

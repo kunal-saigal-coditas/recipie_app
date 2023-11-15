@@ -33,7 +33,7 @@ class RecipeVideoCard extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: Column(
             children: [
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   Expanded(

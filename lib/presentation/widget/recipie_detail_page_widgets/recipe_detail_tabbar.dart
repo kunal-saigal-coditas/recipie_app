@@ -19,8 +19,10 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
             // indicatorSize: TabBarIndicatorSize.label,
             labelColor: ColorConstants.whiteBackgraound,
             indicatorPadding: const EdgeInsets.all(2),
-            labelStyle:
-                const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            labelStyle: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
             indicatorSize: TabBarIndicatorSize.tab,
             indicator: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
@@ -44,33 +46,39 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
             child: TabBarView(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(2),
                   child: Text(
                     recipeEntity.summary,
                     textAlign: TextAlign.start,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(2),
                   child: Text(
                     recipeEntity.instructions,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.start,
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(2),
                   child: Text(
                     recipeEntity.summary,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.start,
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ],

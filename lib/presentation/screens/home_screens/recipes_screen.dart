@@ -7,7 +7,6 @@ import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/presentation/bloc/recipie_page_bloc/recipe_page_bloc.dart';
 import 'package:recipe_app/presentation/widget/recipe_category_section_header_row.dart';
 import 'package:recipe_app/presentation/widget/recipe_video_card.dart';
-import 'package:recipe_app/presentation/widget/recipe_card_list_widget.dart';
 
 @RoutePage()
 class RecipePage extends StatelessWidget {
@@ -43,8 +42,10 @@ class RecipePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: BlocProvider(
-          create: (context) =>
-              GetIt.I<RecipePageBloc>()..add(RecipePageInitialEvent()),
+          create: (context) => GetIt.I<RecipePageBloc>()
+            ..add(
+              RecipePageInitialEvent(),
+            ),
           child: SingleChildScrollView(
             child: BlocBuilder<RecipePageBloc, RecipePageState>(
               builder: (context, state) {
@@ -67,32 +68,16 @@ class RecipePage extends StatelessWidget {
                         ),
                         RecipeCategorySectionHeaderRowWidget(
                           categoryName: StringConstants.krecentRecipeText,
+                          recipeList: state.recipeList,
                           ontap: () {},
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.22,
-                          child: RecipieCardListWidget(
-                            sectionRecipeList: state.recipeList,
-                          ),
                         ),
                         const SizedBox(
                           height: 8,
                         ),
                         RecipeCategorySectionHeaderRowWidget(
                           categoryName: StringConstants.krecommendedText,
+                          recipeList: state.recipeList,
                           ontap: () {},
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.22,
-                          child: RecipieCardListWidget(
-                            sectionRecipeList: state.recipeList,
-                          ),
                         ),
                       ],
                     ),

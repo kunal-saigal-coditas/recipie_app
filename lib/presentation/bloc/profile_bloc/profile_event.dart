@@ -7,8 +7,10 @@ sealed class ProfileEvent extends Equatable {
   List<Object> get props => [];
 }
 
-final class FetchProfilePageData extends ProfileEvent {
-  final List<RecipeEntity> favoriteRecipies;
+final class FetchProfilePageDataEvent extends ProfileEvent {
+  // final List<RecipeEntity> favoriteRecipies;
 
-  const FetchProfilePageData({required this.favoriteRecipies});
+  const FetchProfilePageDataEvent(
+      // {required this.favoriteRecipies,}
+      );
 }

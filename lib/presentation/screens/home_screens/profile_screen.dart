@@ -7,7 +7,6 @@ import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:recipe_app/presentation/widget/recipe_category_section_header_row.dart';
-import 'package:recipe_app/presentation/widget/recipe_card_list_widget.dart';
 import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
 @RoutePage()
@@ -32,7 +31,10 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) => GetIt.I<ProfileBloc>(),
+        create: (context) => GetIt.I<ProfileBloc>()
+          ..add(
+            const FetchProfilePageDataEvent(),
+          ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(18, 6, 18, 6),
           child: SingleChildScrollView(
@@ -46,7 +48,8 @@ class ProfilePage extends StatelessWidget {
                           const CircleAvatar(
                             radius: 55,
                             backgroundImage: AssetImage(
-                                AssetConstants.konboardingBackgroundImage),
+                              AssetConstants.konboardingBackgroundImage,
+                            ),
                           ),
                           const SizedBox(
                             width: 25,
@@ -87,11 +90,7 @@ class ProfilePage extends StatelessWidget {
                       RecipeCategorySectionHeaderRowWidget(
                         categoryName: StringConstants.krecentRecipeText,
                         ontap: () {},
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.22,
-                        child: RecipieCardListWidget(
-                            sectionRecipeList: state.recipeList),
+                        recipeList: [],
                       ),
 
                       //Duplicated
@@ -101,11 +100,7 @@ class ProfilePage extends StatelessWidget {
                       RecipeCategorySectionHeaderRowWidget(
                         categoryName: StringConstants.krecentRecipeText,
                         ontap: () {},
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.22,
-                        child: RecipieCardListWidget(
-                            sectionRecipeList: state.recipeList),
+                        recipeList: [],
                       ),
                     ],
                   );

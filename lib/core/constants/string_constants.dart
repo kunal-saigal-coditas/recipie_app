@@ -62,4 +62,5 @@ class StringConstants {
   static const krecommendedText = "Recommended";
   static const kviewAlltext = "View All";
   static const krecipePageAppBarText = "Explore Recipies";
+  static const ksharedPreferencekey = "favoritesList";
 }

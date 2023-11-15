@@ -1,79 +1,44 @@
-import 'package:recipe_app/data/data_model/setup_data_model.dart';
+import 'dart:convert';
 
-import '../../core/constants/enums.dart';
-import '../../core/constants/string_constants.dart';
-import '../../domain/entity/setup_data_entity/setup_data_entity.dart';
+import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalDataSource {
-  SetupDataModel setupPage1Data = SetupDataModel(
-    answerItemList: List.generate(
-      StringConstants.koptionsForQuestion1.length,
-      (index) => AnswerItemEntity(
-        text: StringConstants.koptionsForQuestion1[index],
-        isSelected: false,
-      ),
-    ),
-    answerBoxType: AnswerBoxType.circularSelectable,
-    question: StringConstants.konboardingQuestion1,
-    description: StringConstants.konboardingQuestion1Subtext,
-  );
-  SetupDataModel setupPage2Data = SetupDataModel(
-    answerItemList: List.generate(
-      StringConstants.koptionsForQuestion2.length,
-      (index) => AnswerItemEntity(
-        text: StringConstants.koptionsForQuestion2[index],
-        isSelected: false,
-      ),
-    ),
-    answerBoxType: AnswerBoxType.normalSelectable,
-    question: StringConstants.konboardingQuestion2,
-    description: StringConstants.konboardingCommonSubtext,
-  );
-  SetupDataModel setupPage3Data = SetupDataModel(
-    answerItemList: List.generate(
-      StringConstants.koptionsForQuestion3.length,
-      (index) => AnswerItemEntity(
-        text: StringConstants.koptionsForQuestion3[index],
-        isSelected: false,
-      ),
-    ),
-    answerBoxType: AnswerBoxType.normalSelectable,
-    question: StringConstants.konboardingQuestion3,
-    description: StringConstants.konboardingCommonSubtext,
-  );
-  SetupDataModel setupPage4Data = SetupDataModel(
-    answerItemList: List.generate(
-      StringConstants.koptionsForQuestion4.length,
-      (index) => AnswerItemEntity(
-        text: StringConstants.koptionsForQuestion4[index],
-        isSelected: false,
-      ),
-    ),
-    answerBoxType: AnswerBoxType.normalSelectable,
-    question: StringConstants.konboardingQuestion4,
-    description: StringConstants.konboardingCommonSubtext,
-  );
+  late SharedPreferences sharedPreferenceInstance;
+  Future<void> init() async {
+    sharedPreferenceInstance = await SharedPreferences.getInstance();
+  }
 
-  SetupDataModel setupPage5Data = SetupDataModel(
-    answerItemList: List.generate(
-      StringConstants.koptionsForQuestion5.length,
-      (index) => AnswerItemEntity(
-        text: StringConstants.koptionsForQuestion5[index],
-        isSelected: false,
-      ),
-    ),
-    answerBoxType: AnswerBoxType.circularSelectable,
-    question: StringConstants.konboardingQuestion5,
-    description: StringConstants.konboardingCommonSubtext,
-  );
+  Future<void> saveToFavorites(List<int> favoritesList) async {
+    // List<int> favoritesList = getFavoritesDataList();
+    // if (favoritesList.isEmpty) {
+    //   favoritesList.add(id);
+    // } else {
+    //   if (favoritesList.contains(id)) {
+    //     favoritesList.remove(id);
+    //   } else {
+    //     favoritesList.add(id);
+    //   }
+    // }
+    String saveList = jsonEncode(favoritesList);
+    await sharedPreferenceInstance.setString(
+      StringConstants.ksharedPreferencekey,
+      saveList,
+    );
+  }
 
-  List<SetupDataEntity> getSetupDataList() {
-    return [
-      setupPage1Data,
-      setupPage2Data,
-      setupPage3Data,
-      setupPage4Data,
-      setupPage5Data,
-    ];
+  List<int> getFavoritesDataList() {
+    final String savedFavoritesList = sharedPreferenceInstance
+            .getString(StringConstants.ksharedPreferencekey) ??
+        "";
+    if (savedFavoritesList != "") {
+      var decodedFavoriteList = jsonDecode(savedFavoritesList);
+
+      // Use the "is List" check to ensure the decoded object is a list
+      List<int> result = decodedFavoriteList.cast<int>();
+      return result;
+    } else {
+      return [];
+    }
   }
 }

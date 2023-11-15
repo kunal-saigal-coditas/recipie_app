@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
+// import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:recipe_app/data/data_model/recipe_model.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
@@ -13,7 +13,7 @@ class RemoteDataSource {
   String baseUrl = "https://api.spoonacular.com";
   List<RecipeEntity> recipeList = [];
   Future<Either<List<RecipeEntity>, Failure>> getDatafromDio() async {
-    Dio dio = Dio();
+    // Dio dio = Dio();
     // dio.interceptors.add(
     //   InterceptorsWrapper(
     //     onResponse: (response, h) {

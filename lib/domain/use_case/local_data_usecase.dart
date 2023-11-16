@@ -1,3 +1,4 @@
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/domain/repository/local_data_repo.dart';
 
 class LocalDataUseCase {
@@ -9,7 +10,7 @@ class LocalDataUseCase {
     return localDataRepository.getFavoritesDataList();
   }
 
-  Future<void> saveToFavorites(List<int> favoritesList) {
-    return localDataRepository.saveToFavorites(favoritesList);
+  Future<void> saveToFavorites(RecipeEntity recipeEntity) {
+    return localDataRepository.saveToFavorites(recipeEntity);
   }
 }

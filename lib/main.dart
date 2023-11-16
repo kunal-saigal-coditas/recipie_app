@@ -9,7 +9,9 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Injector.injectorFunction();
   (GetIt.I<LocalDataSource>()).init();
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Recipe App',
         theme: ThemeData(
-          fontFamily: GoogleFonts.cabin().fontFamily,
+          fontFamily: GoogleFonts.montserrat().fontFamily,
           useMaterial3: true,
         ),
       ),

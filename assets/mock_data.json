@@ -1,7 +1,9 @@
 [
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"Spain",
+        "directions"
+:["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],        "vegan": false,
         "glutenFree": false,
         "dairyFree": true,
         "veryHealthy": false,
@@ -528,7 +530,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"Korea",
+        "directions"
+:["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],        "vegan": false,
         "glutenFree": false,
         "dairyFree": true,
         "veryHealthy": false,
@@ -903,7 +907,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"U.K.",
+
+"directions" :["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],       "vegan": false,
         "glutenFree": false,
         "dairyFree": true,
         "veryHealthy": false,
@@ -1275,7 +1281,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"Japan",
+        "directions"
+:["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],        "vegan": false,
         "glutenFree": true,
         "dairyFree": true,
         "veryHealthy": false,
@@ -1779,7 +1787,9 @@
                 "price": 0.0,
                 "sustainable": false,
                 "vegetarian": false,
-                "vegan": false,
+                "country":"U.S.A",
+                "directions"
+:["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],                "vegan": false,
                 "glutenFree": false,
                 "dairyFree": false,
                 "nutrients": {},
@@ -1803,7 +1813,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"India",
+        "directions"
+:["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],        "vegan": false,
         "glutenFree": false,
         "dairyFree": false,
         "veryHealthy": false,
@@ -2091,6 +2103,8 @@
     },
     {
         "vegetarian": false,
+        "country":"France",
+        "directions":["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."],
         "vegan": false,
         "glutenFree": false,
         "dairyFree": true,
@@ -2615,7 +2629,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"Australia",
+        "directions":["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."]
+        ,"vegan": false,
         "glutenFree": false,
         "dairyFree": true,
         "veryHealthy": false,
@@ -2979,7 +2995,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"Turkey",
+        "directions":["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."]
+        ,"vegan": false,
         "glutenFree": true,
         "dairyFree": true,
         "veryHealthy": false,
@@ -3496,7 +3514,9 @@
     },
     {
         "vegetarian": false,
-        "vegan": false,
+        "country":"Mexico",
+        "directions":["Heat 2 inches of oil in a large heavy frying pan over medium hight heat for about 10 to 12 minutes until the oil temperature reaches 330-350º. Combine all the ingredients and mix altogether.","Add the coated chicken to hot oil one by one. Fry them for 12 minutes until the all sides of the chicken are golden brown and crunchy, turning over with tongs."]
+        ,"vegan": false,
         "glutenFree": true,
         "dairyFree": true,
         "veryHealthy": false,

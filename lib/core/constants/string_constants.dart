@@ -1,18 +1,14 @@
 class StringConstants {
-  static const String konboardingSubtext =
+  static const konboardingSubtext =
       "Welcome to recipie passport where you virtually travel the world through Recipies";
 
-  static const String kgettingStartedButton = "Get Started";
+  static const kgettingStartedButton = "Get Started";
   static const konboardingMaintext = "Recipe Passport";
   static const konboardingQuestion1 =
       "Whats your Preffered Language for the App?";
   static const konboardingQuestion1Subtext =
       "Select the language that you'd prefer to use while exploring Recipe Passport.";
-  static const List<String> koptionsForQuestion1 = [
-    "English",
-    "Spanish",
-    "French"
-  ];
+  static const koptionsForQuestion1 = ["English", "Spanish", "French"];
   static const konboardingQuestion2 = "Do you have any allergies or dislikes?";
   static const koptionsForQuestion2 = [
     "🦐  Shrimp",
@@ -59,8 +55,24 @@ class StringConstants {
   static const kpreviousButtonText = "Previous";
   static const kmyRecipeText = "My Recipies";
   static const krecentRecipeText = "Recent Recipes";
+  static const kfavoriesText = "Favorites ";
   static const krecommendedText = "Recommended";
   static const kviewAlltext = "View All";
   static const krecipePageAppBarText = "Explore Recipies";
   static const ksharedPreferencekey = "favoritesList";
+  static const keditProfileText = "Edit Profile";
+  static const kuserName = "Andrew Jun";
+  static const kuserEmail = "@andrewjun";
+  static const kprofilePageTitle = "Profile";
+  static const krecipieText = "Recipes";
+  static const kgroceryText = "Grocery";
+  static const kforumText = "Forum";
+  static const kprofileText = "Profile";
+  static const kexploreText = "Explore";
+  static const koverviewText = "Overview";
+  static const kingredientsText = "Ingredients";
+  static const kdirectionsText = "Directions";
+  static const kcookTimeText = "Cook Time";
+  static const kcalorietext = "Calories";
+  static const koriginText = "Origin";
 }

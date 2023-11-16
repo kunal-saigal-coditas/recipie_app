@@ -29,7 +29,10 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
         await remoteDataUsecase.getDatafromDio();
     response.fold((left) {
       emit(
-        RecipeFetchingSuccessState(recipeList: left, favoriteRecipies: []),
+        RecipeFetchingSuccessState(
+          recipeList: left,
+          favoriteRecipies: const [],
+        ),
       );
     }, (right) {
       emit(
@@ -47,12 +50,12 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
     List<RecipeEntity> recipeListCopy = [...event.recipeList];
     for (RecipeEntity recipe in recipeListCopy) {
       if (favoritesIDList.contains(recipe.id)) {
-        favoritesIDList.remove(
-          favoritesIDList[recipeListCopy
-              .indexWhere((element) => element.id == currentRecipe.id)],
-        );
+        // favoritesIDList.remove(
+        //   favoritesIDList[recipeListCopy
+        //       .indexWhere((element) => element.id == currentRecipe.id)],
+        // );
 
-        // recipe = recipe.copyWith(isFavorite: false);
+        recipe = recipe.copyWith(isFavorite: false);
       } else {
         favoritesIDList.add(recipe.id);
       }
@@ -63,7 +66,7 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
       }
     }).toList();
 
-    localDataUseCase.saveToFavorites(favoritesIDList);
+    localDataUseCase.saveToFavorites(event.recipeEntity);
     emit(
       (state as RecipeFetchingSuccessState).copyWith(
         recipeList: recipeListCopy,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
+import 'package:recipe_app/core/constants/svg_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipeVideoCard extends StatelessWidget {
@@ -37,16 +40,40 @@ class RecipeVideoCard extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
+                    flex: 4,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              SvgConstantStrings.ktimerIcon,
+                              height: 8,
+                              colorFilter: const ColorFilter.mode(
+                                ColorConstants.whiteBackgraound,
+                                BlendMode.srcIn,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              '${recipeEntity.readyInMinutes.toString()} mins',
+                              style: const TextStyle(
+                                color: ColorConstants.whiteBackgraound,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 8,
+                              ),
+                            ),
+                          ],
+                        ),
                         Text(
                           recipeEntity.title,
                           maxLines: 1,
-                          style: const TextStyle(
+                          style: GoogleFonts.cabin(
                             color: ColorConstants.whiteBackgraound,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w600,
                             fontSize: 23,
                           ),
                         ),
@@ -55,20 +82,23 @@ class RecipeVideoCard extends StatelessWidget {
                           maxLines: 2,
                           style: const TextStyle(
                             fontSize: 13,
+                            fontWeight: FontWeight.w400,
                             color: ColorConstants.whiteBackgraound,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
+                  // const Spacer(),
+                  Expanded(
+                    flex: 1,
                     child: TextButton(
                       onPressed: () {},
                       child: Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: ColorConstants.secondaryWhiteBackgraound),
+                          borderRadius: BorderRadius.circular(30),
+                          color: ColorConstants.greyBackground.withOpacity(0.2),
+                        ),
                         child: const Padding(
                           padding: EdgeInsets.all(8),
                           child: Icon(

@@ -10,9 +10,7 @@ sealed class ProfileState extends Equatable {
 final class ProfileInitial extends ProfileState {}
 
 final class ProfileFetchingSuccessState extends ProfileState {
-  // final List<RecipeEntity> recipeList;
+  final List<RecipeEntity> favoriteRecipiesList;
 
-  const ProfileFetchingSuccessState(
-      // {required this.recipeList}
-      );
+  const ProfileFetchingSuccessState({required this.favoriteRecipiesList});
 }

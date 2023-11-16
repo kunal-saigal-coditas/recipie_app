@@ -49,7 +49,7 @@ class Injector {
       )
       ..registerFactory<ProfileBloc>(
         () => ProfileBloc(
-          // recipePageBloc: GetIt.I<RecipePageBloc>(),
+          recipePageBloc: GetIt.I<RecipePageBloc>(),
           localDataSource: GetIt.I<LocalDataSource>(),
         ),
       )

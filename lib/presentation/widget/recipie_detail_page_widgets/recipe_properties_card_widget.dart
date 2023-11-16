@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../core/constants/color_constants.dart';
 
@@ -11,7 +12,7 @@ class RecipePropertiesCardWidget extends StatelessWidget {
   });
   final String propertyValue;
   final String propertyName;
-  final Icon propertyIcon;
+  final String propertyIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +24,22 @@ class RecipePropertiesCardWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
+              // mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.access_time_outlined,
-                  color: ColorConstants.redTextColor,
-                ),
+                SvgPicture.asset(propertyIcon),
                 Flexible(
                   child: Text(
                     ' $propertyValue',
                     style: const TextStyle(
-                        color: ColorConstants.redTextColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                      color: ColorConstants.redTextColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 )
               ],
@@ -46,7 +47,12 @@ class RecipePropertiesCardWidget extends StatelessWidget {
             const SizedBox(
               height: 4,
             ),
-            Text(propertyName),
+            Flexible(
+              child: Text(
+                propertyName,
+                style: const TextStyle(fontSize: 12),
+              ),
+            ),
           ],
         ),
       ),

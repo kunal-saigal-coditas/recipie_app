@@ -8,9 +8,9 @@ sealed class ProfileEvent extends Equatable {
 }
 
 final class FetchProfilePageDataEvent extends ProfileEvent {
-  // final List<RecipeEntity> favoriteRecipies;
+  final List<RecipeEntity> recipieList;
 
-  const FetchProfilePageDataEvent(
-      // {required this.favoriteRecipies,}
-      );
+  const FetchProfilePageDataEvent({
+    required this.recipieList,
+  });
 }

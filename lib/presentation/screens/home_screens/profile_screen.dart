@@ -2,16 +2,18 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:recipe_app/presentation/widget/recipe_category_section_header_row.dart';
 import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({super.key, required this.recipeList});
+  final List<RecipeEntity> recipeList;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class ProfilePage extends StatelessWidget {
         title: const Row(
           children: [
             Text(
-              "Profile",
+              StringConstants.kprofilePageTitle,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             Spacer(),
@@ -33,7 +35,7 @@ class ProfilePage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => GetIt.I<ProfileBloc>()
           ..add(
-            const FetchProfilePageDataEvent(),
+            FetchProfilePageDataEvent(recipieList: recipeList),
           ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(18, 6, 18, 6),
@@ -48,7 +50,7 @@ class ProfilePage extends StatelessWidget {
                           const CircleAvatar(
                             radius: 55,
                             backgroundImage: AssetImage(
-                              AssetConstants.konboardingBackgroundImage,
+                              ImageConstants.konboardingBackgroundImage,
                             ),
                           ),
                           const SizedBox(
@@ -59,20 +61,20 @@ class ProfilePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               const Text(
-                                "Name",
+                                StringConstants.kuserName,
                                 style: TextStyle(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               const Text(
-                                "email@email.com",
+                                StringConstants.kuserEmail,
                                 style: TextStyle(
                                     fontSize: 12,
                                     color: ColorConstants.secondaryTextColor),
                               ),
                               RoundedButton(
-                                title: "Edit Profile",
+                                title: StringConstants.keditProfileText,
                                 colour: ColorConstants.whiteBackgraound,
                                 onPressed: () {},
                                 titleColour: ColorConstants.primaryTextColor,
@@ -88,9 +90,9 @@ class ProfilePage extends StatelessWidget {
                         height: 12,
                       ),
                       RecipeCategorySectionHeaderRowWidget(
-                        categoryName: StringConstants.krecentRecipeText,
+                        categoryName: StringConstants.kfavoriesText,
                         ontap: () {},
-                        recipeList: [],
+                        recipeList: state.favoriteRecipiesList,
                       ),
 
                       //Duplicated
@@ -100,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                       RecipeCategorySectionHeaderRowWidget(
                         categoryName: StringConstants.krecentRecipeText,
                         ontap: () {},
-                        recipeList: [],
+                        recipeList: state.favoriteRecipiesList,
                       ),
                     ],
                   );

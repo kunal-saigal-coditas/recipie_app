@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/presentation/widget/recipe_card_widget.dart';
 
@@ -17,13 +18,17 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    recipeList.shuffle();
     return Column(
       children: [
         Row(
           children: [
             Text(
               categoryName,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: GoogleFonts.cabin(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const Spacer(),
             TextButton(
@@ -33,6 +38,7 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
                 style: TextStyle(
                   color: ColorConstants.primaryColor,
                   fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),

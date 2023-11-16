@@ -34,15 +34,23 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     GroceryRoute.name: (routeData) {
+      final args = routeData.argsAs<GroceryRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const GroceryPage(),
+        child: GroceryPage(
+          key: args.key,
+          groceryPageList: args.groceryPageList,
+        ),
       );
     },
     ProfileRoute.name: (routeData) {
+      final args = routeData.argsAs<ProfileRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfilePage(),
+        child: ProfilePage(
+          key: args.key,
+          recipeList: args.recipeList,
+        ),
       );
     },
     RecipeDetailRoute.name: (routeData) {
@@ -120,30 +128,78 @@ class ForumRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [GroceryPage]
-class GroceryRoute extends PageRouteInfo<void> {
-  const GroceryRoute({List<PageRouteInfo>? children})
-      : super(
+class GroceryRoute extends PageRouteInfo<GroceryRouteArgs> {
+  GroceryRoute({
+    Key? key,
+    required List<RecipeEntity> groceryPageList,
+    List<PageRouteInfo>? children,
+  }) : super(
           GroceryRoute.name,
+          args: GroceryRouteArgs(
+            key: key,
+            groceryPageList: groceryPageList,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'GroceryRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<GroceryRouteArgs> page =
+      PageInfo<GroceryRouteArgs>(name);
+}
+
+class GroceryRouteArgs {
+  const GroceryRouteArgs({
+    this.key,
+    required this.groceryPageList,
+  });
+
+  final Key? key;
+
+  final List<RecipeEntity> groceryPageList;
+
+  @override
+  String toString() {
+    return 'GroceryRouteArgs{key: $key, groceryPageList: $groceryPageList}';
+  }
 }
 
 /// generated route for
 /// [ProfilePage]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute({List<PageRouteInfo>? children})
-      : super(
+class ProfileRoute extends PageRouteInfo<ProfileRouteArgs> {
+  ProfileRoute({
+    Key? key,
+    required List<RecipeEntity> recipeList,
+    List<PageRouteInfo>? children,
+  }) : super(
           ProfileRoute.name,
+          args: ProfileRouteArgs(
+            key: key,
+            recipeList: recipeList,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ProfileRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ProfileRouteArgs> page =
+      PageInfo<ProfileRouteArgs>(name);
+}
+
+class ProfileRouteArgs {
+  const ProfileRouteArgs({
+    this.key,
+    required this.recipeList,
+  });
+
+  final Key? key;
+
+  final List<RecipeEntity> recipeList;
+
+  @override
+  String toString() {
+    return 'ProfileRouteArgs{key: $key, recipeList: $recipeList}';
+  }
 }
 
 /// generated route for

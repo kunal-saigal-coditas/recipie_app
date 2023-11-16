@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalDataSource {
@@ -9,17 +10,17 @@ class LocalDataSource {
     sharedPreferenceInstance = await SharedPreferences.getInstance();
   }
 
-  Future<void> saveToFavorites(List<int> favoritesList) async {
-    // List<int> favoritesList = getFavoritesDataList();
-    // if (favoritesList.isEmpty) {
-    //   favoritesList.add(id);
-    // } else {
-    //   if (favoritesList.contains(id)) {
-    //     favoritesList.remove(id);
-    //   } else {
-    //     favoritesList.add(id);
-    //   }
-    // }
+  Future<void> saveToFavorites(RecipeEntity currentRecipe) async {
+    List<int> favoritesList = getFavoritesDataList();
+    if (favoritesList.isEmpty) {
+      favoritesList.add(currentRecipe.id);
+    } else {
+      if (favoritesList.contains(currentRecipe.id)) {
+        favoritesList.remove(currentRecipe.id);
+      } else {
+        favoritesList.add(currentRecipe.id);
+      }
+    }
     String saveList = jsonEncode(favoritesList);
     await sharedPreferenceInstance.setString(
       StringConstants.ksharedPreferencekey,

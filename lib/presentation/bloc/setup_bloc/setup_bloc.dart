@@ -12,7 +12,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
   final LocalDataUseCase localDataUseCase;
 
   SetupBloc({required this.localDataUseCase})
-      : super(SetupPageLoadedState(setupPageDataList: [], pageIndex: 0)) {
+      : super(const SetupPageLoadedState(setupPageDataList: [], pageIndex: 0)) {
     on<OnNextEvent>(onNextEvent);
     on<OnPreviousEvent>(onPreviousEvent);
   }

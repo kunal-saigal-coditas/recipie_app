@@ -11,9 +11,13 @@ class RecipeEntity extends Equatable {
   final String instructions;
   final List<ExtendedIngredientEntity> extendedIngredients;
   final bool isFavorite;
+  final String country;
+  final List<String> directions;
 
   const RecipeEntity({
     this.isFavorite = true,
+    required this.directions,
+    required this.country,
     required this.id,
     required this.title,
     required this.summary,
@@ -24,26 +28,32 @@ class RecipeEntity extends Equatable {
     required this.extendedIngredients,
   });
 
-  RecipeEntity copyWith(
-      {int? id,
-      String? title,
-      String? summary,
-      String? image,
-      int? readyInMinutes,
-      String? sourceUrl,
-      String? instructions,
-      List<ExtendedIngredientEntity>? extendedIngredients,
-      bool? isFavorite}) {
+  RecipeEntity copyWith({
+    int? id,
+    String? title,
+    String? summary,
+    String? image,
+    int? readyInMinutes,
+    String? sourceUrl,
+    String? instructions,
+    List<ExtendedIngredientEntity>? extendedIngredients,
+    bool? isFavorite,
+    String? country,
+    List<String>? directions,
+  }) {
     return RecipeEntity(
-        id: id ?? this.id,
-        title: title ?? this.title,
-        summary: summary ?? this.summary,
-        image: image ?? this.image,
-        readyInMinutes: readyInMinutes ?? this.readyInMinutes,
-        extendedIngredients: extendedIngredients ?? this.extendedIngredients,
-        instructions: instructions ?? this.instructions,
-        sourceUrl: sourceUrl ?? this.sourceUrl,
-        isFavorite: isFavorite ?? this.isFavorite);
+      id: id ?? this.id,
+      directions: directions ?? this.directions,
+      title: title ?? this.title,
+      summary: summary ?? this.summary,
+      image: image ?? this.image,
+      readyInMinutes: readyInMinutes ?? this.readyInMinutes,
+      extendedIngredients: extendedIngredients ?? this.extendedIngredients,
+      instructions: instructions ?? this.instructions,
+      sourceUrl: sourceUrl ?? this.sourceUrl,
+      isFavorite: isFavorite ?? this.isFavorite,
+      country: country ?? this.country,
+    );
   }
 
   RecipeModel toModel() {
@@ -57,6 +67,8 @@ class RecipeEntity extends Equatable {
       instructions: instructions,
       extendedIngredients: extendedIngredients,
       isFavorite: isFavorite,
+      country: country,
+      directions: directions,
     );
   }
 
@@ -71,6 +83,8 @@ class RecipeEntity extends Equatable {
         instructions,
         extendedIngredients,
         isFavorite,
+        country,
+        directions,
       ];
 }
 

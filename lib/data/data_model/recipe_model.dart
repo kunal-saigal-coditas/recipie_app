@@ -1,16 +1,20 @@
+import 'package:dartz/dartz.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipeModel extends RecipeEntity {
-  const RecipeModel(
-      {required super.id,
-      required super.title,
-      required super.summary,
-      required super.image,
-      required super.readyInMinutes,
-      required super.sourceUrl,
-      required super.instructions,
-      required super.extendedIngredients,
-      required super.isFavorite});
+  const RecipeModel({
+    required super.id,
+    required super.title,
+    required super.summary,
+    required super.image,
+    required super.readyInMinutes,
+    required super.sourceUrl,
+    required super.instructions,
+    required super.extendedIngredients,
+    required super.isFavorite,
+    required super.country,
+    required super.directions,
+  });
 
   factory RecipeModel.fromJson(Map<String, dynamic> json) {
     return RecipeModel(
@@ -21,6 +25,8 @@ class RecipeModel extends RecipeEntity {
       readyInMinutes: json["readyInMinutes"],
       sourceUrl: json["sourceUrl"],
       instructions: json["instructions"] ?? "",
+      country: json["country"] ?? "India",
+      directions: (json["directions"]).cast<String>(),
       extendedIngredients: (json["extendedIngredients"] as List<dynamic>)
           .map(
             (e) => ExtendedIngredientModel.fromJson(e),
@@ -39,6 +45,8 @@ class RecipeModel extends RecipeEntity {
       "readyInMinutes": readyInMinutes,
       "sourceUrl": sourceUrl,
       "instructions": instructions,
+      "country": country,
+      "directions": directions,
       "extendedIngredients": extendedIngredients
           .map(
             (e) => e.toModel().toJson(),

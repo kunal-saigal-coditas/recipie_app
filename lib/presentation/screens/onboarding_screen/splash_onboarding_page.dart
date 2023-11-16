@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
@@ -18,7 +18,7 @@ class SplashOnboardingPage extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Image.asset(
-            AssetConstants.konboardingBackgroundImage,
+            ImageConstants.konboardingBackgroundImage,
             fit: BoxFit.cover,
           ),
           Positioned(

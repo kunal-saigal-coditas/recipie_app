@@ -1,4 +1,5 @@
 import 'package:recipe_app/data/data_source/local_data_source.dart';
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/domain/repository/local_data_repo.dart';
 
 class LocalDataRepositoryImpl implements LocalDataRepository {
@@ -12,7 +13,7 @@ class LocalDataRepositoryImpl implements LocalDataRepository {
   }
 
   @override
-  Future<void> saveToFavorites(List<int> favoritesList) {
-    return localDataSource.saveToFavorites(favoritesList);
+  Future<void> saveToFavorites(RecipeEntity recipeEntity) {
+    return localDataSource.saveToFavorites(recipeEntity);
   }
 }

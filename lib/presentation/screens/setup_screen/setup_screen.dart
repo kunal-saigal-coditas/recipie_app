@@ -17,7 +17,10 @@ class SetupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetIt.I<SetupBloc>(),
+      create: (context) => GetIt.I<SetupBloc>()
+        ..add(
+          SetupInitialEvent(),
+        ),
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 12, 8),
@@ -40,8 +43,12 @@ class SetupPage extends StatelessWidget {
                         const Spacer(),
                         TextButton(
                           child: const Text(
-                            "Skip",
-                            style: TextStyle(fontSize: 20),
+                            StringConstants.kskipText,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: ColorConstants.redTextColor,
+                            ),
                           ),
                           onPressed: () {},
                         )
@@ -58,11 +65,12 @@ class SetupPage extends StatelessWidget {
                         ? SizedBox(
                             width: double.infinity,
                             child: RoundedButton(
-                              title: "Next Step",
+                              title: StringConstants.knextButtonText,
                               colour: ColorConstants.primaryColor,
                               onPressed: () {
-                                BlocProvider.of<SetupBloc>(context)
-                                    .add(OnNextEvent());
+                                BlocProvider.of<SetupBloc>(context).add(
+                                  OnNextEvent(),
+                                );
                               },
                             ),
                           )
@@ -83,7 +91,6 @@ class SetupPage extends StatelessWidget {
                                   },
                                   colour: ColorConstants.whiteBackgraound,
                                 ),
-                                // const Spacer(),
                                 RoundedButton(
                                   title: StringConstants.knextButtonText,
                                   onPressed: () {
@@ -93,7 +100,7 @@ class SetupPage extends StatelessWidget {
                                       );
                                     } else {
                                       AutoRouter.of(context).replace(
-                                        const BotttomNavRoute(),
+                                        const BottomNavRoute(),
                                       );
                                     }
                                   },
@@ -105,7 +112,9 @@ class SetupPage extends StatelessWidget {
                   ],
                 );
               } else {
-                return const SizedBox();
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               }
             },
           ),

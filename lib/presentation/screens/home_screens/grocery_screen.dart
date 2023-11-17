@@ -4,7 +4,10 @@ import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 @RoutePage()
 class GroceryPage extends StatelessWidget {
-  const GroceryPage({super.key, required this.groceryPageList});
+  const GroceryPage({
+    super.key,
+    required this.groceryPageList,
+  });
   final List<RecipeEntity> groceryPageList;
 
   @override

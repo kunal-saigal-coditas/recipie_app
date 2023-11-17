@@ -33,7 +33,7 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  color: ColorConstants.secondaryColor,
+                  color: ColorConstants.primaryColor,
                 ),
                 dividerColor: ColorConstants.whiteBackgraound,
                 tabs: const [
@@ -85,15 +85,24 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.all(2),
-                  child: SingleChildScrollView(
-                    child: Text(
-                      recipeEntity.summary,
-                      textAlign: TextAlign.start,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                  child: ListView.builder(
+                    itemCount: recipeEntity.directions.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          Text(
+                            '${index + 1} - ${recipeEntity.directions[index]}',
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ],

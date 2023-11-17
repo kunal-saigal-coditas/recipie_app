@@ -15,16 +15,24 @@ class CircularPageNumberIndicatorWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: Container(
+        height: 26,
+        width: 26,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.black : Colors.grey,
+          color: isSelected
+              ? ColorConstants.primaryTextColor
+              : ColorConstants.cicularPageIndicatorBackgroundColor,
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
           backgroundColor: ColorConstants.whiteBackgraound,
           child: Text(
             pageNumber.toString(),
-            style: TextStyle(color: isSelected ? Colors.black : Colors.grey),
+            style: TextStyle(
+              color: isSelected
+                  ? ColorConstants.primaryTextColor
+                  : ColorConstants.cicularPageIndicatorBackgroundColor,
+            ),
           ),
         ),
       ),

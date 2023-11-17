@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
+import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/svg_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
@@ -69,7 +70,7 @@ class RecipeVideoCard extends StatelessWidget {
                           ],
                         ),
                         Text(
-                          recipeEntity.title,
+                          StringConstants.kweeklyPickText,
                           maxLines: 1,
                           style: GoogleFonts.cabin(
                             color: ColorConstants.whiteBackgraound,

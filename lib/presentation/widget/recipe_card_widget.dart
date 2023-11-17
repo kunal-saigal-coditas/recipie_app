@@ -34,7 +34,7 @@ class RecipeCardWidget extends StatelessWidget {
               image: NetworkImage(currentRecipe.image),
               opacity: 5,
               onError: (exception, stackTrace) {
-                print("object");
+                print(currentRecipe.id);
               },
               fit: BoxFit.cover,
             ),

@@ -11,8 +11,8 @@ import 'package:recipe_app/core/routes/routes.dart';
 import '../bloc/recipie_page_bloc/recipe_page_bloc.dart';
 
 @RoutePage()
-class BotttomNavPage extends StatelessWidget {
-  const BotttomNavPage({super.key});
+class BottomNavPage extends StatelessWidget {
+  const BottomNavPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,107 +21,100 @@ class BotttomNavPage extends StatelessWidget {
         ..add(
           RecipePageInitialEvent(),
         ),
-      child: BlocBuilder<RecipePageBloc, RecipePageState>(
-        builder: (context, state) {
-          return AutoTabsScaffold(
-            routes: [
-              const RecipeRoute(),
-              GroceryRoute(
-                groceryPageList: (state is RecipeFetchingSuccessState)
-                    ? state.recipeList
-                    : [],
-              ),
-              const ExploreRoute(),
-              const ForumRoute(),
-              ProfileRoute(
-                recipeList: (state is RecipeFetchingSuccessState)
-                    ? state.recipeList
-                    : [],
-              ),
-            ],
-            floatingActionButton: FloatingActionButton(
-              elevation: 0,
-              onPressed: () {
-                AutoRouter.of(context).push(
-                  const ExploreRoute(),
-                );
-              },
-              backgroundColor: ColorConstants.secondaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: SvgPicture.asset(
-                SvgConstantStrings.ksearchIcon,
-                fit: BoxFit.contain,
-              ),
+      child: const BottomNavPageWidget(),
+    );
+  }
+}
+
+class BottomNavPageWidget extends StatelessWidget {
+  const BottomNavPageWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // List<RecipeEntity>? altRecipeList;
+    return BlocBuilder<RecipePageBloc, RecipePageState>(
+      builder: (context, state) {
+        return AutoTabsScaffold(
+          routes: [
+            const RecipeRoute(),
+            GroceryRoute(
+              groceryPageList:
+                  (state is RecipeFetchingSuccessState) ? state.recipeList : [],
             ),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.miniCenterDocked,
-            bottomNavigationBuilder: (_, tabsRouter) {
-              return BottomNavigationBar(
-                iconSize: 32,
-                type: BottomNavigationBarType.fixed,
-                unselectedItemColor: ColorConstants.secondaryTextColor,
-                selectedItemColor: ColorConstants.secondaryColor,
-                unselectedLabelStyle: const TextStyle(
-                  color: ColorConstants.secondaryTextColor,
-                ),
-                // elevation: 6,
-                currentIndex: tabsRouter.activeIndex,
-                onTap: tabsRouter.setActiveIndex,
-                items: [
-                  BottomNavigationBarItem(
-                    label: StringConstants.krecipieText,
-                    icon: SvgPicture.asset(
-                      SvgConstantStrings.krecipeIcon,
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: StringConstants.kgroceryText,
-                    icon: SvgPicture.asset(
-                      SvgConstantStrings.kgroceryIcon,
-                    ),
-                  ),
-                  const BottomNavigationBarItem(
-                    label: StringConstants.kexploreText,
-                    icon: SizedBox(
-                      height: 25,
-                    ),
-                  ),
-                  // BottomNavigationBarItem(
-                  //   label: 'Explore',
-                  //   icon: FloatingActionButton(
-                  //     backgroundColor: ColorConstants.secondaryColor,
-                  //     shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(30),
-                  //     ),
-                  //     onPressed: () {
-                  //       tabsRouter.setActiveIndex(2);
-                  //     },
-                  //     child: const Icon(
-                  //       Icons.search,
-                  //       color: ColorConstants.whiteBackgraound,
-                  //     ),
-                  //   ),
-                  // ),
-                  BottomNavigationBarItem(
-                    label: StringConstants.kforumText,
-                    icon: SvgPicture.asset(
-                      SvgConstantStrings.kforumIcon,
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: StringConstants.kprofileText,
-                    icon: SvgPicture.asset(
-                      SvgConstantStrings.kprofileIcon,
-                    ),
-                  ),
-                ],
+            const ExploreRoute(),
+            const ForumRoute(),
+            ProfileRoute(
+              recipeList:
+                  (state is RecipeFetchingSuccessState) ? state.recipeList : [],
+            ),
+          ],
+          floatingActionButton: FloatingActionButton(
+            elevation: 0,
+            onPressed: () {
+              AutoRouter.of(context).push(
+                const ExploreRoute(),
               );
             },
-          );
-        },
-      ),
+            backgroundColor: ColorConstants.primaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: SvgPicture.asset(
+              SvgConstantStrings.ksearchIcon,
+              fit: BoxFit.contain,
+            ),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.miniCenterDocked,
+          bottomNavigationBuilder: (_, tabsRouter) {
+            return BottomNavigationBar(
+              iconSize: 32,
+              type: BottomNavigationBarType.fixed,
+              unselectedItemColor: ColorConstants.secondaryTextColor,
+              selectedItemColor: ColorConstants.primaryColor,
+              unselectedLabelStyle: const TextStyle(
+                color: ColorConstants.secondaryTextColor,
+              ),
+              // elevation: 6,
+              currentIndex: tabsRouter.activeIndex,
+              onTap: tabsRouter.setActiveIndex,
+              items: [
+                BottomNavigationBarItem(
+                  backgroundColor: Colors.red,
+                  label: StringConstants.krecipieText,
+                  icon: SvgPicture.asset(
+                    SvgConstantStrings.krecipeIcon,
+                  ),
+                ),
+                BottomNavigationBarItem(
+                  label: StringConstants.kgroceryText,
+                  icon: SvgPicture.asset(
+                    SvgConstantStrings.kgroceryIcon,
+                  ),
+                ),
+                const BottomNavigationBarItem(
+                  label: StringConstants.kexploreText,
+                  icon: SizedBox(
+                    height: 25,
+                  ),
+                ),
+                BottomNavigationBarItem(
+                  label: StringConstants.kforumText,
+                  icon: SvgPicture.asset(
+                    SvgConstantStrings.kforumIcon,
+                  ),
+                ),
+                BottomNavigationBarItem(
+                  label: StringConstants.kprofileText,
+                  icon: SvgPicture.asset(
+                    SvgConstantStrings.kprofileIcon,
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }

@@ -13,18 +13,26 @@ class StringConstants {
   static const koptionsForQuestion2 = [
     "🦐  Shrimp",
     "🥕  Carrot",
-    "🦐  Shrimp",
-    "🥕  Carrot",
-    "🦐  Shrimp",
-    "🥕  Carrot",
-    "🦐  Shrimp",
-    "🥕  Carrot",
-    "🦐  Shrimp",
-    "🥕  Carrot",
-    "🦐  Shrimp",
-    "🥕  Carrot",
-    "🦐  Shrimp",
-    "🥕  Carrot",
+    "🍄  Mushroom",
+    "🧅  Onion",
+    "🫑  Bell Pepper",
+    "🍌  Banana",
+    "🍋  Lemon",
+    "🍍  Pineapple",
+    "🥑  Avocado",
+    "🍗  Chicken",
+    "🥩  Beef",
+    "🥛  Almond Milk",
+    "🥛  Greek Yoghurt",
+    "🥔  Potatoes",
+    "🥚  Egg",
+    "🍅  Tomatoes",
+    "🍶  Mayonnaise",
+    "🫒  Olives",
+    "🦐  Rice",
+    "🌿  Basil",
+    "🫙 Soy Sauce",
+    "🧂  Salt",
   ];
   static const konboardingCommonSubtext =
       "This will help us curate more recipe experiences for you.";
@@ -33,14 +41,24 @@ class StringConstants {
     "None",
     "Vegan",
     "Lactose Intolerant",
+    "Soy Allergy",
+    "Pescatarian",
+    "Gluten-Free",
+    "Shellfish Allergy",
     "Vegetarian",
+    "Kosher",
+    "Halal",
+    "Nut Allergy",
+    "Diabetic Diet",
   ];
   static const konboardingQuestion4 =
       "Types of cuisines  you most interested in?";
   static const koptionsForQuestion4 = [
-    "Europe",
+    "European",
     "African",
-    "Middel Eastearn",
+    "Asian",
+    "Middle-Eastern",
+    "Latin-American",
     "Indian",
   ];
   static const konboardingQuestion5 =
@@ -75,4 +93,6 @@ class StringConstants {
   static const kcookTimeText = "Cook Time";
   static const kcalorietext = "Calories";
   static const koriginText = "Origin";
+  static const kskipText = "Skip";
+  static const kweeklyPickText = "Weekly Pick";
 }

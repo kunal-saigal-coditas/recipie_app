@@ -1,59 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/domain/entity/setup_data_entity/setup_data_entity.dart';
+import 'package:recipe_app/presentation/bloc/setup_bloc/setup_bloc.dart';
 
-class IndividualOptionWidget extends StatefulWidget {
+class IndividualOptionWidget extends StatelessWidget {
   const IndividualOptionWidget({
     super.key,
     required this.answerItemEntity,
+    required this.answerItemList,
   });
   final AnswerItemEntity answerItemEntity;
+  final List<AnswerItemEntity> answerItemList;
 
-  @override
-  State<IndividualOptionWidget> createState() => _IndividualOptionWidgetState();
-}
-
-class _IndividualOptionWidgetState extends State<IndividualOptionWidget> {
-  // bool isSelected = false;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
-        backgroundColor: MaterialStatePropertyAll(
-          widget.answerItemEntity.isSelected
-              ? ColorConstants.primaryColor
-              : ColorConstants.whiteBackgraound,
-        ),
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-            side: const BorderSide(
-              color: Color(0XFFC9CDC9),
+    return BlocBuilder<SetupBloc, SetupState>(
+      builder: (context, state) {
+        return SizedBox(
+          // width: 109,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              elevation: const MaterialStatePropertyAll(0),
+              backgroundColor: MaterialStatePropertyAll(
+                answerItemEntity.isSelected
+                    ? ColorConstants.primaryColor
+                    : ColorConstants.whiteBackgraound,
+              ),
+              shape: MaterialStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  side: const BorderSide(
+                    color: ColorConstants.cicularPageIndicatorBackgroundColor,
+                  ),
+                ),
+              ),
+            ),
+            onPressed: () {
+              BlocProvider.of<SetupBloc>(context).add(
+                OnSelectEvent(
+                  answerItemEntity: answerItemEntity,
+                  answerItemList: answerItemList,
+                ),
+              );
+            },
+            child: Text(
+              answerItemEntity.text,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: answerItemEntity.isSelected
+                    ? ColorConstants.whiteBackgraound
+                    : ColorConstants.primaryTextColor,
+              ),
             ),
           ),
-        ),
-      ),
-      onPressed: () {
-        setState(() {
-          widget.answerItemEntity.isSelected =
-              !widget.answerItemEntity.isSelected;
-        });
+        );
       },
-      // onPressed: () {
-      //   // setState(() {
-      //   //   isSelected = !isSelected;
-      //   // });
-      // },
-      child: Text(
-        widget.answerItemEntity.text,
-        style: TextStyle(
-          fontSize: 14,
-          color: widget.answerItemEntity.isSelected
-              ? ColorConstants.whiteBackgraound
-              : Colors.black,
-        ),
-      ),
     );
   }
 }

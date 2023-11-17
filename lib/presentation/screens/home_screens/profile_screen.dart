@@ -35,7 +35,9 @@ class ProfilePage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => GetIt.I<ProfileBloc>()
           ..add(
-            FetchProfilePageDataEvent(recipieList: recipeList),
+            FetchProfilePageDataEvent(
+              recipieList: recipeList,
+            ),
           ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(18, 6, 18, 6),
@@ -96,14 +98,14 @@ class ProfilePage extends StatelessWidget {
                       ),
 
                       //Duplicated
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      RecipeCategorySectionHeaderRowWidget(
-                        categoryName: StringConstants.krecentRecipeText,
-                        ontap: () {},
-                        recipeList: state.favoriteRecipiesList,
-                      ),
+                      // const SizedBox(
+                      //   height: 12,
+                      // ),
+                      // RecipeCategorySectionHeaderRowWidget(
+                      //   categoryName: StringConstants.krecentRecipeText,
+                      //   ontap: () {},
+                      //   recipeList: state.favoriteRecipiesList,
+                      // ),
                     ],
                   );
                 } else {

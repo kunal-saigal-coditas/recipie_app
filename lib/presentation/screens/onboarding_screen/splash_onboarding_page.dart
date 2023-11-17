@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
@@ -25,38 +26,44 @@ class SplashOnboardingPage extends StatelessWidget {
             bottom: 10,
             left: 10,
             right: 10,
-            child: Column(
-              children: [
-                const Text(
-                  StringConstants.konboardingMaintext,
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(
-                  width: double.maxFinite,
-                  child: Text(
-                    StringConstants.konboardingSubtext,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(2),
+              child: Column(
+                children: [
+                  Text(
+                    StringConstants.konboardingMaintext,
+                    style: GoogleFonts.cabin(
+                      fontSize: 40,
+                      color: ColorConstants.whiteBackgraound,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: RoundedButton(
-                    title: StringConstants.kgettingStartedButton,
-                    colour: ColorConstants.primaryColor,
-                    onPressed: () {
-                      AutoRouter.of(context).replace(const SetupRoute());
-                    },
+                  const SizedBox(
+                    width: double.maxFinite,
+                    child: Text(
+                      StringConstants.konboardingSubtext,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: ColorConstants.whiteBackgraound,
+                      ),
+                    ),
                   ),
-                )
-              ],
+                  SizedBox(
+                    width: double.infinity,
+                    child: RoundedButton(
+                      title: StringConstants.kgettingStartedButton,
+                      colour: ColorConstants.primaryColor,
+                      onPressed: () {
+                        AutoRouter.of(context).replace(
+                          const SetupRoute(),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ],

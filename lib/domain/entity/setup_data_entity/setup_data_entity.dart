@@ -25,16 +25,23 @@ class SetupDataEntity extends Equatable {
 class AnswerItemEntity {
   final String text;
   bool isSelected;
+  final int id;
 
   AnswerItemEntity({
     required this.text,
+    required this.id,
     required this.isSelected,
   });
 
-  AnswerItemEntity copyWith({String? text, bool? isSelected}) {
+  AnswerItemEntity copyWith({
+    String? text,
+    bool? isSelected,
+    int? id,
+  }) {
     return AnswerItemEntity(
       text: text ?? this.text,
       isSelected: isSelected ?? this.isSelected,
+      id: id ?? this.id,
     );
   }
 }

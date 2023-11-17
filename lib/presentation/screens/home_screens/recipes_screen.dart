@@ -20,51 +20,49 @@ class RecipePage extends StatelessWidget {
           appBarButtonOnTap: () {},
         ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
-        child: SingleChildScrollView(
-          child: BlocBuilder<RecipePageBloc, RecipePageState>(
-            builder: (context, state) {
-              if (state is RecipeFetchingSuccessState) {
-                return SizedBox(
-                  width: double.infinity,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      RecipeVideoCard(
-                        width: double.maxFinite,
-                        height: MediaQuery.of(context).size.height * 0.28,
-                        recipeEntity: state.recipeList[3],
-                        onPressed: () {
-                          print("hello");
-                        },
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      RecipeCategorySectionHeaderRowWidget(
-                        categoryName: StringConstants.krecentRecipeText,
-                        recipeList: state.recipeList,
-                        ontap: () {},
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      RecipeCategorySectionHeaderRowWidget(
-                        categoryName: StringConstants.krecommendedText,
-                        recipeList: List.from(state.recipeList)..shuffle(),
-                        ontap: () {},
-                      ),
-                    ],
-                  ),
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            },
-          ),
+        child: BlocBuilder<RecipePageBloc, RecipePageState>(
+          builder: (context, state) {
+            if (state is RecipeFetchingSuccessState) {
+              return SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    RecipeVideoCard(
+                      width: double.maxFinite,
+                      height: MediaQuery.of(context).size.height * 0.28,
+                      recipeEntity: state.recipeList[3],
+                      onPressed: () {
+                        print("hello");
+                      },
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    RecipeCategorySectionHeaderRowWidget(
+                      categoryName: StringConstants.krecentRecipeText,
+                      recipeList: state.recipeList,
+                      ontap: () {},
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    RecipeCategorySectionHeaderRowWidget(
+                      categoryName: StringConstants.krecommendedText,
+                      recipeList: List.from(state.recipeList)..shuffle(),
+                      ontap: () {},
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          },
         ),
       ),
     );

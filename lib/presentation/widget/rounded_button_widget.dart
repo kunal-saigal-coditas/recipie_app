@@ -32,8 +32,8 @@ class RoundedButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
           side: BorderSide(
             color: colour == ColorConstants.whiteBackgraound
-                ? const Color.fromARGB(255, 160, 158, 158)
-                : const Color.fromARGB(0, 255, 254, 254),
+                ? ColorConstants.greyBackground
+                : ColorConstants.greyBackground,
           ),
         ),
         child: MaterialButton(
@@ -52,6 +52,7 @@ class RoundedButton extends StatelessWidget {
               style: TextStyle(
                 color: titleColour,
                 fontSize: 16,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),

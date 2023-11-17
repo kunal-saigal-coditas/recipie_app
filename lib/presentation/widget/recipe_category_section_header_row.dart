@@ -18,7 +18,6 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    recipeList.shuffle();
     return Column(
       children: [
         Row(

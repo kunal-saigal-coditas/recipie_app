@@ -15,10 +15,10 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    BotttomNavRoute.name: (routeData) {
+    BottomNavRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const BotttomNavPage(),
+        child: const BottomNavPage(),
       );
     },
     ExploreRoute.name: (routeData) {
@@ -85,15 +85,15 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
-/// [BotttomNavPage]
-class BotttomNavRoute extends PageRouteInfo<void> {
-  const BotttomNavRoute({List<PageRouteInfo>? children})
+/// [BottomNavPage]
+class BottomNavRoute extends PageRouteInfo<void> {
+  const BottomNavRoute({List<PageRouteInfo>? children})
       : super(
-          BotttomNavRoute.name,
+          BottomNavRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'BotttomNavRoute';
+  static const String name = 'BottomNavRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

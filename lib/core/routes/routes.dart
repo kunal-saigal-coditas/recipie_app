@@ -19,8 +19,8 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          page: BotttomNavRoute.page,
-          initial: true,
+          page: BottomNavRoute.page,
+          // initial: true,
           children: [
             AutoRoute(
               page: RecipeRoute.page,
@@ -43,10 +43,11 @@ class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: SplashOnboardingRoute.page,
-          // initial: true,
+          initial: true,
         ),
         AutoRoute(
           page: SetupRoute.page,
+          // initial: true,
         ),
         AutoRoute(
           page: RecipeDetailRoute.page,

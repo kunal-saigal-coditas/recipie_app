@@ -31,16 +31,12 @@ class BottomNavPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // List<RecipeEntity>? altRecipeList;
     return BlocBuilder<RecipePageBloc, RecipePageState>(
       builder: (context, state) {
         return AutoTabsScaffold(
           routes: [
             const RecipeRoute(),
-            GroceryRoute(
-              groceryPageList:
-                  (state is RecipeFetchingSuccessState) ? state.recipeList : [],
-            ),
+            const GroceryRoute(),
             const ExploreRoute(),
             const ForumRoute(),
             ProfileRoute(
@@ -51,7 +47,7 @@ class BottomNavPageWidget extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             elevation: 0,
             onPressed: () {
-              AutoRouter.of(context).push(
+              AutoRouter.of(context).navigate(
                 const ExploreRoute(),
               );
             },
@@ -68,19 +64,18 @@ class BottomNavPageWidget extends StatelessWidget {
               FloatingActionButtonLocation.miniCenterDocked,
           bottomNavigationBuilder: (_, tabsRouter) {
             return BottomNavigationBar(
-              iconSize: 32,
+              iconSize: 24,
               type: BottomNavigationBarType.fixed,
               unselectedItemColor: ColorConstants.secondaryTextColor,
               selectedItemColor: ColorConstants.primaryColor,
               unselectedLabelStyle: const TextStyle(
+                fontWeight: FontWeight.w500,
                 color: ColorConstants.secondaryTextColor,
               ),
-              // elevation: 6,
               currentIndex: tabsRouter.activeIndex,
               onTap: tabsRouter.setActiveIndex,
               items: [
                 BottomNavigationBarItem(
-                  backgroundColor: Colors.red,
                   label: StringConstants.krecipieText,
                   icon: SvgPicture.asset(
                     SvgConstantStrings.krecipeIcon,
@@ -95,7 +90,7 @@ class BottomNavPageWidget extends StatelessWidget {
                 const BottomNavigationBarItem(
                   label: StringConstants.kexploreText,
                   icon: SizedBox(
-                    height: 25,
+                    height: 20,
                   ),
                 ),
                 BottomNavigationBarItem(

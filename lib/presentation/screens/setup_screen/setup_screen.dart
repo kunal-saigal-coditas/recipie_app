@@ -8,6 +8,7 @@ import 'package:recipe_app/core/routes/routes.dart';
 import 'package:recipe_app/presentation/bloc/setup_bloc/setup_bloc.dart';
 import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/circular_page_number_widget.dart';
+import 'package:recipe_app/presentation/widget/setup_page_widgets/setup_page_alert_box_widget.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/setup_page_body_widget.dart';
 
 @RoutePage()
@@ -99,8 +100,24 @@ class SetupPage extends StatelessWidget {
                                         OnNextEvent(),
                                       );
                                     } else {
-                                      AutoRouter.of(context).replace(
-                                        const BottomNavRoute(),
+                                      Future.delayed(const Duration(seconds: 2),
+                                          () {
+                                        AutoRouter.of(context).replace(
+                                          const BottomNavRoute(),
+                                        );
+                                      });
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return const AlertDialog(
+                                            contentPadding: EdgeInsets.all(16),
+                                            alignment: Alignment.center,
+                                            content: SizedBox(
+                                              width: double.infinity,
+                                              child: SetupPageAlertBoxWidget(),
+                                            ),
+                                          );
+                                        },
                                       );
                                     }
                                   },

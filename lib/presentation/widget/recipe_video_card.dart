@@ -90,7 +90,6 @@ class RecipeVideoCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // const Spacer(),
                   Expanded(
                     flex: 1,
                     child: TextButton(

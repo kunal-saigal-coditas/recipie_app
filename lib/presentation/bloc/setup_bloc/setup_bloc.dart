@@ -50,7 +50,8 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
     updatedAnswerItem.isSelected = !updatedAnswerItem.isSelected;
     List<AnswerItemEntity> updatedAnswerList = [...event.answerItemList];
     updatedAnswerList[updatedAnswerList.indexWhere(
-        (element) => element.id == updatedAnswerItem.id)] = updatedAnswerItem;
+      (element) => element.id == updatedAnswerItem.id,
+    )] = updatedAnswerItem;
     emit(
       (state as SetupPageLoadedState).copyWith(
         answerItemList: updatedAnswerList,

@@ -1,5 +1,5 @@
 class SvgConstantStrings {
-  static const kcaloriesSVG = "assets/svg/calories_icon.svg";
+  static const kcaloriesIcon = "assets/svg/calories_icon.svg";
   static const kexpandIcon = "assets/svg/expand_icon.svg";
   static const kfilterIcon = "assets/svg/filter_icon.svg";
   static const kforumIcon = "assets/svg/forum_icon.svg";
@@ -14,4 +14,5 @@ class SvgConstantStrings {
   static const ksearchIcon = "assets/svg/search_icon.svg";
   static const kshareIcon = "assets/svg/share.svg";
   static const ktimerIcon = "assets/svg/timer_icon.svg";
+  static const kconfettiIcon = "assets/svg/confetti.svg";
 }

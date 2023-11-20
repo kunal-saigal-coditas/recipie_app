@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../domain/entity/recipe_entity/recipe_entity.dart';
 import '../../presentation/screens/bottom_nav_screen.dart';
 import '../../presentation/screens/home_screens/explore_screen.dart';
-import '../../presentation/screens/home_screens/forum_scree.dart';
+import '../../presentation/screens/home_screens/forum_screen.dart';
 import '../../presentation/screens/home_screens/grocery_screen.dart';
 import '../../presentation/screens/home_screens/profile_screen.dart';
 import '../../presentation/screens/home_screens/recipes_screen.dart';
@@ -20,20 +20,23 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: BottomNavRoute.page,
-          // initial: true,
+          initial: true,
           children: [
             AutoRoute(
               page: RecipeRoute.page,
-              initial: true,
+              // initial: true,
             ),
             AutoRoute(
               page: GroceryRoute.page,
+              // initial: true,
             ),
             AutoRoute(
               page: ExploreRoute.page,
+              // initial: true,
             ),
             AutoRoute(
               page: ForumRoute.page,
+              initial: true,
             ),
             AutoRoute(
               page: ProfileRoute.page,
@@ -43,7 +46,7 @@ class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: SplashOnboardingRoute.page,
-          initial: true,
+          // initial: true,
         ),
         AutoRoute(
           page: SetupRoute.page,

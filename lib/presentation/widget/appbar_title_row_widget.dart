@@ -4,8 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../core/constants/color_constants.dart';
 
 class AppBarTitleRowWidget extends StatelessWidget {
-  const AppBarTitleRowWidget(
-      {super.key, required this.pageTitle, required this.appBarButtonOnTap});
+  const AppBarTitleRowWidget({
+    super.key,
+    required this.pageTitle,
+    required this.appBarButtonOnTap,
+  });
   final String pageTitle;
   final Function() appBarButtonOnTap;
 
@@ -15,7 +18,10 @@ class AppBarTitleRowWidget extends StatelessWidget {
       children: [
         Text(
           pageTitle,
-          style: GoogleFonts.cabin(fontWeight: FontWeight.w700, fontSize: 24),
+          style: GoogleFonts.cabin(
+            fontWeight: FontWeight.w700,
+            fontSize: 24,
+          ),
         ),
         const Spacer(),
         InkWell(
@@ -23,7 +29,9 @@ class AppBarTitleRowWidget extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: ColorConstants.secondaryTextColor),
+              border: Border.all(
+                color: ColorConstants.secondaryTextColor.withOpacity(0.5),
+              ),
             ),
             child: const Padding(
               padding: EdgeInsets.all(8),
@@ -33,7 +41,7 @@ class AppBarTitleRowWidget extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

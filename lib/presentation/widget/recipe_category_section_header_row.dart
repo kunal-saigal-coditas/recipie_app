@@ -47,17 +47,18 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
           height: 8,
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.22,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: recipeList.length,
-              itemBuilder: (context, index) {
-                return RecipeCardWidget(
-                  currentRecipe: recipeList[index],
-                  recipeList: recipeList,
-                );
-              },
-            )),
+          height: MediaQuery.of(context).size.height * 0.22,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: recipeList.length,
+            itemBuilder: (context, index) {
+              return RecipeCardWidget(
+                currentRecipe: recipeList[index],
+                recipeList: recipeList,
+              );
+            },
+          ),
+        ),
       ],
     );
   }

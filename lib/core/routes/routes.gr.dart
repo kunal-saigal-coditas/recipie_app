@@ -34,13 +34,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     GroceryRoute.name: (routeData) {
-      final args = routeData.argsAs<GroceryRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: GroceryPage(
-          key: args.key,
-          groceryPageList: args.groceryPageList,
-        ),
+        child: const GroceryPage(),
       );
     },
     ProfileRoute.name: (routeData) {
@@ -128,40 +124,16 @@ class ForumRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [GroceryPage]
-class GroceryRoute extends PageRouteInfo<GroceryRouteArgs> {
-  GroceryRoute({
-    Key? key,
-    required List<RecipeEntity> groceryPageList,
-    List<PageRouteInfo>? children,
-  }) : super(
+class GroceryRoute extends PageRouteInfo<void> {
+  const GroceryRoute({List<PageRouteInfo>? children})
+      : super(
           GroceryRoute.name,
-          args: GroceryRouteArgs(
-            key: key,
-            groceryPageList: groceryPageList,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'GroceryRoute';
 
-  static const PageInfo<GroceryRouteArgs> page =
-      PageInfo<GroceryRouteArgs>(name);
-}
-
-class GroceryRouteArgs {
-  const GroceryRouteArgs({
-    this.key,
-    required this.groceryPageList,
-  });
-
-  final Key? key;
-
-  final List<RecipeEntity> groceryPageList;
-
-  @override
-  String toString() {
-    return 'GroceryRouteArgs{key: $key, groceryPageList: $groceryPageList}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

@@ -34,6 +34,7 @@ class StringConstants {
     "🫙 Soy Sauce",
     "🧂  Salt",
   ];
+
   static const konboardingCommonSubtext =
       "This will help us curate more recipe experiences for you.";
   static const konboardingQuestion3 = "Do you have any dietary restrictions?";
@@ -87,6 +88,7 @@ class StringConstants {
   static const kforumText = "Forum";
   static const kprofileText = "Profile";
   static const kexploreText = "Explore";
+  static const ksearchText = "Search";
   static const koverviewText = "Overview";
   static const kingredientsText = "Ingredients";
   static const kdirectionsText = "Directions";
@@ -95,4 +97,44 @@ class StringConstants {
   static const koriginText = "Origin";
   static const kskipText = "Skip";
   static const kweeklyPickText = "Weekly Pick";
+  static const ksignUpSuccessText = "Sign up successful!";
+  static const kalertDialogueSubText =
+      "Your account has been created. Please wait a moment, we are preparing for you...";
+  static const kredirectingText = "Redirecting...";
+  static const ksearchBarHinttext = "Search Anything...";
+  static const kcategoriestext = "Categories";
+  static const kfeaturedTopicsText = "Featured Topics";
+  static const kchallengesText = "Challenges";
+  static const kgroupsText = "Groups";
+
+  static const kcategoryNames = [
+    "Korean",
+    "Australian",
+    "American",
+    "Mexican",
+    "French",
+    "Brazillian",
+    "Nigerian",
+    "Italian",
+    "Chinese",
+    "Indian",
+    "Greek",
+    "Thai",
+  ];
+  static const kgroceryPageMainTextList = [
+    "Yangnyeom Chicken",
+    "Sandwich with boiled egg",
+    "Spicy Chicken Burger",
+    "Fruit Nut Salad",
+    "Fruit Blueberry Toast",
+    "Hot Sauce Stake",
+  ];
+  static const kgroceryPageSubtextList = [
+    "5/12 ingredients ",
+    "10/10 ingredients ",
+    "8/18 ingredients ",
+    "13/13 ingredients ",
+    "12/12 ingredients ",
+    "15/15 ingredients",
+  ];
 }

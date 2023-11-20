@@ -18,7 +18,7 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: ColorConstants.greyBackground,
+              color: ColorConstants.secondaryTextColor.withOpacity(0.05),
               borderRadius: BorderRadius.circular(25),
             ),
             child: Padding(

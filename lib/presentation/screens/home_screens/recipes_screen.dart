@@ -34,9 +34,7 @@ class RecipePage extends StatelessWidget {
                       width: double.maxFinite,
                       height: MediaQuery.of(context).size.height * 0.28,
                       recipeEntity: state.recipeList[3],
-                      onPressed: () {
-                        print("hello");
-                      },
+                      onPressed: () {},
                     ),
                     const SizedBox(
                       height: 8,

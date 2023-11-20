@@ -155,7 +155,9 @@ class RecipeDetailPage extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  RecipeDetailTabBarSectionWidget(recipeEntity: recipeEntity),
+                  RecipeDetailTabBarSectionWidget(
+                    recipeEntity: recipeEntity,
+                  ),
                   const SizedBox(
                     height: 12,
                   ),
@@ -176,7 +178,7 @@ class RecipeDetailPage extends StatelessWidget {
                         child: RecipePropertiesCardWidget(
                           propertyValue: '245',
                           propertyName: StringConstants.kcalorietext,
-                          propertyIcon: SvgConstantStrings.kcaloriesSVG,
+                          propertyIcon: SvgConstantStrings.kcaloriesIcon,
                         ),
                       ),
                       const SizedBox(

@@ -52,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                           const CircleAvatar(
                             radius: 55,
                             backgroundImage: AssetImage(
-                              ImageConstants.konboardingBackgroundImage,
+                              ImageConstants.kprofileImage,
                             ),
                           ),
                           const SizedBox(

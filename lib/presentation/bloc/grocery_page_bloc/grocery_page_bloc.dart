@@ -19,7 +19,7 @@ class GroceryPageBloc extends Bloc<GroceryPageEvent, GroceryPageState> {
       GroceryPageInitialEvent event, Emitter<GroceryPageState> emit) {
     emit(
       GroceryPageSuccessState(
-        grocerItemList: groceryDataUseCase.grocerItemList(),
+        groceryItemList: groceryDataUseCase.groceryItemList(),
       ),
     );
   }

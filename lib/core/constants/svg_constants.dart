@@ -15,4 +15,12 @@ class SvgConstantStrings {
   static const kshareIcon = "assets/svg/share.svg";
   static const ktimerIcon = "assets/svg/timer_icon.svg";
   static const kconfettiIcon = "assets/svg/confetti.svg";
+  static const kviewsIcon = "assets/svg/views_icon.svg";
+  static const krepliesIcon = "assets/svg/replies_icon.svg";
+
+  // static const kProfilePics = [
+  //   "assets/svg/profile_pic.svg",
+  //   "assets/svg/profile_pic2.svg",
+  //   "assets/svg/profile_pic3.svg",
+  // ];
 }

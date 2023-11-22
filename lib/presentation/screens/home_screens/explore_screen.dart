@@ -31,7 +31,7 @@ class ExplorePage extends StatelessWidget {
             16,
             8,
             16,
-            8,
+            0,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

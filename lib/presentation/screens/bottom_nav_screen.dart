@@ -34,15 +34,12 @@ class BottomNavPageWidget extends StatelessWidget {
     return BlocBuilder<RecipePageBloc, RecipePageState>(
       builder: (context, state) {
         return AutoTabsScaffold(
-          routes: [
-            const RecipeRoute(),
-            const GroceryRoute(),
-            const ExploreRoute(),
-            const ForumRoute(),
-            ProfileRoute(
-              recipeList:
-                  (state is RecipeFetchingSuccessState) ? state.recipeList : [],
-            ),
+          routes: const [
+            RecipeRoute(),
+            GroceryRoute(),
+            ExploreRoute(),
+            ForumRoute(),
+            ProfileRoute(),
           ],
           floatingActionButton: FloatingActionButton(
             elevation: 0,

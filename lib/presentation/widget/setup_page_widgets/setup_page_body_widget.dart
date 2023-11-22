@@ -30,14 +30,17 @@ class SetupPageBodyWidget extends StatelessWidget {
         ),
         Text(
           setupDataEntity.description,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+          ),
         ),
         const SizedBox(
           height: 20,
         ),
         Container(
           constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height * 0.45,
+            maxHeight: MediaQuery.of(context).size.height * 0.56,
           ),
           child: SingleChildScrollView(
             child: BlocBuilder<SetupBloc, SetupState>(

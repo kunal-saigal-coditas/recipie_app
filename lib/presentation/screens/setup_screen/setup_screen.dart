@@ -24,11 +24,17 @@ class SetupPage extends StatelessWidget {
         ),
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 12, 8),
+          padding: const EdgeInsets.fromLTRB(
+            16,
+            8,
+            16,
+            0,
+          ),
           child: BlocBuilder<SetupBloc, SetupState>(
             builder: (context, state) {
               if (state is SetupPageLoadedState) {
                 return Column(
+                  mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const SizedBox(height: 20),

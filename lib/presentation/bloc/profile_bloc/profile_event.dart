@@ -7,10 +7,4 @@ sealed class ProfileEvent {
   // List<Object> get props => [];
 }
 
-final class FetchProfilePageDataEvent extends ProfileEvent {
-  final List<RecipeEntity> recipieList;
-
-  const FetchProfilePageDataEvent({
-    required this.recipieList,
-  });
-}
+final class FetchProfilePageDataEvent extends ProfileEvent {}

@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:recipe_app/data/data_source/forum_data_source.dart';
 import 'package:recipe_app/data/data_source/grocery_data_source.dart';
 import 'package:recipe_app/data/data_source/setup_data_source.dart';
 import 'package:recipe_app/data/repository/grocery_data_repo_impl.dart';
@@ -8,6 +9,7 @@ import 'package:recipe_app/domain/repository/setup_data_repo.dart';
 import 'package:recipe_app/domain/use_case/grocery_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/remote_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/setup_data_use_case.dart';
+import 'package:recipe_app/presentation/bloc/forum_page_bloc/forum_page_bloc.dart';
 import 'package:recipe_app/presentation/bloc/grocery_page_bloc/grocery_page_bloc.dart';
 import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:recipe_app/presentation/bloc/recipie_page_bloc/recipe_page_bloc.dart';
@@ -35,6 +37,9 @@ class Injector {
       )
       ..registerLazySingleton<GroceryDataSource>(
         () => GroceryDataSource(),
+      )
+      ..registerLazySingleton<ForumDataSource>(
+        () => ForumDataSource(),
       )
       ..registerLazySingleton<RemoteDataRepository>(
         () => RemoteDataRepositoryImpl(
@@ -92,6 +97,11 @@ class Injector {
       ..registerFactory<GroceryPageBloc>(
         () => GroceryPageBloc(
           groceryDataUseCase: GetIt.I<GroceryDataUseCase>(),
+        ),
+      )
+      ..registerFactory<ForumPageBloc>(
+        () => ForumPageBloc(
+          forumDataSource: GetIt.I<ForumDataSource>(),
         ),
       )
       ..registerFactory<SetupBloc>(

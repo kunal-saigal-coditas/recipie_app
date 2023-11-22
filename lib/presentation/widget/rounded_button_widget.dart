@@ -11,6 +11,7 @@ class RoundedButton extends StatelessWidget {
     this.minWidth = 160,
     this.buttonHeight = 45,
     this.paddingValuesLRTB = const [14, 10, 14, 10],
+    this.textSize = 16,
   });
 
   final Color colour;
@@ -20,11 +21,14 @@ class RoundedButton extends StatelessWidget {
   final double minWidth;
   final double buttonHeight;
   final List<double> paddingValuesLRTB;
+  final double textSize;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
+      padding: const EdgeInsets.symmetric(
+        vertical: 14,
+      ),
       child: Material(
         elevation: 1,
         color: colour,
@@ -47,12 +51,15 @@ class RoundedButton extends StatelessWidget {
               paddingValuesLRTB[2],
               paddingValuesLRTB[3],
             ),
-            child: Text(
-              title,
-              style: TextStyle(
-                color: titleColour,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                style: TextStyle(
+                  color: titleColour,
+                  fontSize: textSize,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),

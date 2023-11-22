@@ -23,24 +23,31 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
   FutureOr<void> onNext(OnNextEvent event, Emitter<SetupState> emit) {
     int index = (state as SetupPageLoadedState).pageIndex + 1;
     emit(
-      (state as SetupPageLoadedState).copyWith(pageIndex: index),
+      (state as SetupPageLoadedState).copyWith(
+        pageIndex: index,
+        answerItemList: setupDataUseCase.getAnswerList()[index],
+      ),
     );
   }
 
   FutureOr<void> onPrevious(OnPreviousEvent event, Emitter<SetupState> emit) {
     int index = (state as SetupPageLoadedState).pageIndex - 1;
     emit(
-      (state as SetupPageLoadedState).copyWith(pageIndex: index),
+      (state as SetupPageLoadedState).copyWith(
+        pageIndex: index,
+        answerItemList: setupDataUseCase.getAnswerList()[index],
+      ),
     );
   }
 
   FutureOr<void> setupInitial(
       SetupInitialEvent event, Emitter<SetupState> emit) {
+    int index = 0;
     emit(
       SetupPageLoadedState(
         setupPageDataList: setupDataUseCase.getSetupDataList(),
-        pageIndex: 0,
-        answerItemList: setupDataUseCase.getAnswerList()[0],
+        pageIndex: index,
+        answerItemList: setupDataUseCase.getAnswerList()[index],
       ),
     );
   }
@@ -49,13 +56,16 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
     AnswerItemEntity updatedAnswerItem = event.answerItemEntity;
     updatedAnswerItem.isSelected = !updatedAnswerItem.isSelected;
     List<AnswerItemEntity> updatedAnswerList = [...event.answerItemList];
-    updatedAnswerList[updatedAnswerList.indexWhere(
+    int index = updatedAnswerList.indexWhere(
       (element) => element.id == updatedAnswerItem.id,
-    )] = updatedAnswerItem;
+    );
+    updatedAnswerList[index] = updatedAnswerItem;
+
     emit(
       (state as SetupPageLoadedState).copyWith(
         answerItemList: updatedAnswerList,
       ),
     );
+    // updatedAnswerList = [];
   }
 }

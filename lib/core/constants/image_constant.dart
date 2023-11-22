@@ -24,4 +24,23 @@ class ImageConstants {
     "assets/images/pancakes.png",
     "assets/images/stake.png",
   ];
+
+  static const kfeaturedTopicProfilePics = [
+    "assets/images/profile_pic2.png",
+    "assets/images/profile_pic3.png",
+    "assets/images/profile_pic4.png",
+  ];
+  static const kchallengesPics = [
+    "assets/images/challenge_pic1.png",
+    "assets/images/challenge_pic2.png",
+  ];
+
+  static const kgroupPics = [
+    "assets/images/group_pic1.png",
+    "assets/images/group_pic2.png",
+    "assets/images/group_pic3.png",
+    "assets/images/group_pic4.png",
+    "assets/images/group_pic5.png",
+    "assets/images/group_pic6.png",
+  ];
 }

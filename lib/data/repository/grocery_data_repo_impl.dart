@@ -11,7 +11,7 @@ class GroceryDataRepositoryImpl extends GroceryDataRepository {
   });
 
   @override
-  List<GroceryDataModel> grocerItemList() {
-    return groceryDataSource.grocerItemList();
+  List<GroceryDataModel> groceryItemList() {
+    return groceryDataSource.groceryItemList();
   }
 }

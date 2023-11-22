@@ -40,13 +40,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ProfileRoute.name: (routeData) {
-      final args = routeData.argsAs<ProfileRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProfilePage(
-          key: args.key,
-          recipeList: args.recipeList,
-        ),
+        child: const ProfilePage(),
       );
     },
     RecipeDetailRoute.name: (routeData) {
@@ -138,40 +134,16 @@ class GroceryRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ProfilePage]
-class ProfileRoute extends PageRouteInfo<ProfileRouteArgs> {
-  ProfileRoute({
-    Key? key,
-    required List<RecipeEntity> recipeList,
-    List<PageRouteInfo>? children,
-  }) : super(
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+      : super(
           ProfileRoute.name,
-          args: ProfileRouteArgs(
-            key: key,
-            recipeList: recipeList,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'ProfileRoute';
 
-  static const PageInfo<ProfileRouteArgs> page =
-      PageInfo<ProfileRouteArgs>(name);
-}
-
-class ProfileRouteArgs {
-  const ProfileRouteArgs({
-    this.key,
-    required this.recipeList,
-  });
-
-  final Key? key;
-
-  final List<RecipeEntity> recipeList;
-
-  @override
-  String toString() {
-    return 'ProfileRouteArgs{key: $key, recipeList: $recipeList}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

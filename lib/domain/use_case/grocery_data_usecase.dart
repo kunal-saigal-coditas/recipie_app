@@ -9,7 +9,7 @@ class GroceryDataUseCase {
     required this.groceryDataRepository,
   });
 
-  List<GroceryDataModel> grocerItemList() {
-    return groceryDataRepository.grocerItemList();
+  List<GroceryDataModel> groceryItemList() {
+    return groceryDataRepository.groceryItemList();
   }
 }

@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:recipe_app/presentation/bloc/forum_page_bloc/forum_page_bloc.dart';
 import 'package:recipe_app/presentation/widget/forum_page_widgets/forum_page_task_bar_widget.dart';
 
 import '../../../core/constants/string_constants.dart';
@@ -18,18 +21,24 @@ class ForumPage extends StatelessWidget {
           appBarButtonOnTap: () {},
         ),
       ),
-      body: const Center(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(
-            16,
-            8,
-            16,
-            8,
+      body: BlocProvider(
+        create: (context) => GetIt.I<ForumPageBloc>()
+          ..add(
+            ForumPageDataFetchingEvent(),
           ),
-          child: Column(
-            children: [
-              ForumPageTabBarWidget(),
-            ],
+        child: const Center(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(
+              16,
+              8,
+              16,
+              0,
+            ),
+            child: Column(
+              children: [
+                ForumPageTabBarWidget(),
+              ],
+            ),
           ),
         ),
       ),

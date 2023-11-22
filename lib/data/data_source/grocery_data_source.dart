@@ -34,7 +34,7 @@ class GroceryDataSource {
     groceryImageUrl: ImageConstants.kgroceryPageImages[5],
   );
 
-  List<GroceryDataModel> grocerItemList() {
+  List<GroceryDataModel> groceryItemList() {
     return [
       groceryItem1,
       groceryItem2,

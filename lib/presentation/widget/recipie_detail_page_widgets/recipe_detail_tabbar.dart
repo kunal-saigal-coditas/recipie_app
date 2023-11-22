@@ -5,8 +5,10 @@ import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import '../../../core/constants/color_constants.dart';
 
 class RecipeDetailTabBarSectionWidget extends StatelessWidget {
-  const RecipeDetailTabBarSectionWidget(
-      {super.key, required this.recipeEntity});
+  const RecipeDetailTabBarSectionWidget({
+    super.key,
+    required this.recipeEntity,
+  });
   final RecipeEntity recipeEntity;
 
   @override

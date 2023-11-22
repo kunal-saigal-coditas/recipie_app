@@ -1,8 +1,10 @@
 class StringConstants {
   static const konboardingSubtext =
       "Welcome to recipie passport where you virtually travel the world through Recipies";
-
   static const kgettingStartedButton = "Get Started";
+  static const knextButtonText = "Next Step";
+  static const kpreviousButtonText = "Previous";
+
   static const konboardingMaintext = "Recipe Passport";
   static const konboardingQuestion1 =
       "Whats your Preffered Language for the App?";
@@ -27,6 +29,12 @@ class StringConstants {
     "🥔  Potatoes",
     "🥚  Egg",
     "🍅  Tomatoes",
+    "🍶  Mayonnaise",
+    "🫒  Olives",
+    "🦐  Rice",
+    "🌿  Basil",
+    "🫙 Soy Sauce",
+    "🧂  Salt",
     "🍶  Mayonnaise",
     "🫒  Olives",
     "🦐  Rice",
@@ -70,8 +78,6 @@ class StringConstants {
     "Advanced",
   ];
 
-  static const knextButtonText = "Next Step";
-  static const kpreviousButtonText = "Previous";
   static const kmyRecipeText = "My Recipies";
   static const krecentRecipeText = "Recent Recipes";
   static const kfavoriesText = "Favorites ";
@@ -137,4 +143,47 @@ class StringConstants {
     "12/12 ingredients ",
     "15/15 ingredients",
   ];
+
+  static const kfeaturedTopicsUserName = [
+    "Bellington",
+    "Jason Lee",
+    "Amanda",
+  ];
+
+  static const kfeaturedTopicsEmail = [
+    "@bellingcook",
+    "@jasonlee",
+    "@amandacook",
+  ];
+
+  static const kfeaturedTopicsSummary = [
+    "Rise and shine, pancake lovers! 🌞🥞 Today, I'm sharing a recipe that'll turn your breakfast into a scrumptious delight! Behold, the Fluffy Pancakes that are sure to make your taste buds dance with joy! 💃🕺",
+    "Just had the most AMAZING burger at BurgerLoves. Juicy perfection in every bite. 🤤🎉 If you're a burger lover, this place is a MUST. 🏃‍♂️💨 #BurgerHeaven #FoodieFinds",
+    "Yangnyeom is crispy fried chicken coated in sweet and spicy sauce. It's accompanied by pickled radishes, sliced scallions, and a side of rice. Cold beer or soft drinks are popular pairings. Enjoy!",
+  ];
+
+  static const kchallengesName = "Ingredient Restriction Challenge";
+  static const kchallengesSummary =
+      "Choose a specific ingredient (e.g., avocado, lemon, chickpeas) and challenge yourself to create multiple dishes using only that ingredient.";
+  static const kupcomingChallengeText = "Upcoming Challenges";
+  static const kjoinNowText = "Join Now";
+  static const kallGroupsText = "All Groups";
+  static const kgroupsNames = [
+    "Asian Food Lovers ",
+    "We Love Food",
+    "Healthy Foodies",
+    "Travel For Food",
+    "Daily Food Post",
+    "Viewers Of Recipes",
+  ];
+  static const kgroupMembersCounts = [
+    "22.1k",
+    "30.5k",
+    "12.1k",
+    "45.1k",
+    "85.8k",
+    "10.2k",
+  ];
+  static const kjoinText = "Join";
+  static const kjoinedText = "Joined";
 }

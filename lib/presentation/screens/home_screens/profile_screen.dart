@@ -5,15 +5,15 @@ import 'package:get_it/get_it.dart';
 import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
-import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:recipe_app/presentation/widget/recipe_category_section_header_row.dart';
 import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key, required this.recipeList});
-  final List<RecipeEntity> recipeList;
+  const ProfilePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +35,7 @@ class ProfilePage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => GetIt.I<ProfileBloc>()
           ..add(
-            FetchProfilePageDataEvent(
-              recipieList: recipeList,
-            ),
+            FetchProfilePageDataEvent(),
           ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(18, 6, 18, 6),
@@ -80,9 +78,15 @@ class ProfilePage extends StatelessWidget {
                                 colour: ColorConstants.whiteBackgraound,
                                 onPressed: () {},
                                 titleColour: ColorConstants.primaryTextColor,
-                                buttonHeight: 38,
+                                buttonHeight: 35,
                                 minWidth: 125,
-                                paddingValuesLRTB: const [7, 10, 7, 10],
+                                textSize: 13,
+                                paddingValuesLRTB: const [
+                                  7,
+                                  10,
+                                  7,
+                                  10,
+                                ],
                               )
                             ],
                           )

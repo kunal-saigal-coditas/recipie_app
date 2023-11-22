@@ -29,7 +29,7 @@ class RecipeCardWidget extends StatelessWidget {
           );
         },
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.43,
+          width: 161,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(

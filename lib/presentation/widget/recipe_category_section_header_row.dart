@@ -47,7 +47,7 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
           height: 8,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.22,
+          height: 140,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: recipeList.length,

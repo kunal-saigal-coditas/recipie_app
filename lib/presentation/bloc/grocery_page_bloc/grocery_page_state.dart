@@ -7,9 +7,9 @@ sealed class GroceryPageState {
 final class GroceryPageInitial extends GroceryPageState {}
 
 final class GroceryPageSuccessState extends GroceryPageState {
-  final List<GroceryDataEntity> grocerItemList;
+  final List<GroceryDataEntity> groceryItemList;
 
   GroceryPageSuccessState({
-    required this.grocerItemList,
+    required this.groceryItemList,
   });
 }

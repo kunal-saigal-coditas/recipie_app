@@ -36,7 +36,7 @@ class GroceryPage extends StatelessWidget {
               16,
               8,
               16,
-              8,
+              0,
             ),
             child: BlocBuilder<GroceryPageBloc, GroceryPageState>(
               builder: (context, state) {
@@ -50,12 +50,12 @@ class GroceryPage extends StatelessWidget {
                       ),
                       Expanded(
                         child: ListView.builder(
-                          itemCount: state.grocerItemList.length,
+                          itemCount: state.groceryItemList.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: const EdgeInsets.only(bottom: 8),
                               child: GroceryCard(
-                                groceryDataEntity: state.grocerItemList[index],
+                                groceryDataEntity: state.groceryItemList[index],
                               ),
                             );
                           },

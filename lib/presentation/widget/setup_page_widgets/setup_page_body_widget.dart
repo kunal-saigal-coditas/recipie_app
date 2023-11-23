@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/domain/entity/setup_data_entity/setup_data_entity.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/individual_option_widget.dart';
@@ -25,8 +26,8 @@ class SetupPageBodyWidget extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: 8.h,
         ),
         Text(
           setupDataEntity.description,
@@ -35,12 +36,12 @@ class SetupPageBodyWidget extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 16.h,
         ),
         Container(
           constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height * 0.56,
+            maxHeight: (MediaQuery.of(context).size.height * 0.49).h,
           ),
           child: SingleChildScrollView(
             child: BlocBuilder<SetupBloc, SetupState>(
@@ -48,8 +49,8 @@ class SetupPageBodyWidget extends StatelessWidget {
                 if (state is SetupPageLoadedState) {
                   return Wrap(
                     direction: Axis.horizontal,
-                    spacing: 8,
-                    runSpacing: 8,
+                    spacing: 8.w,
+                    runSpacing: 8.h,
                     alignment: WrapAlignment.start,
                     children: [
                       ...List.generate(

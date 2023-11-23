@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -26,14 +27,16 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 14,
+      padding: EdgeInsets.symmetric(
+        vertical: 14.h,
       ),
       child: Material(
         elevation: 1,
         color: colour,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(
+            30.r,
+          ),
           side: BorderSide(
             color: colour == ColorConstants.whiteBackgraound
                 ? ColorConstants.greyBackground
@@ -42,8 +45,8 @@ class RoundedButton extends StatelessWidget {
         ),
         child: MaterialButton(
           onPressed: onPressed,
-          minWidth: minWidth,
-          height: buttonHeight,
+          minWidth: minWidth.w,
+          height: buttonHeight.h,
           child: Padding(
             padding: EdgeInsets.fromLTRB(
               paddingValuesLRTB[0],

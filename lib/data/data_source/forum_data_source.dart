@@ -103,6 +103,9 @@ class ForumDataSource {
       forumGroupsData1,
       forumGroupsData2,
       forumGroupsData3,
+      forumGroupsData4,
+      forumGroupsData5,
+      forumGroupsData6,
     ];
   }
 }

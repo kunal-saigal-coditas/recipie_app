@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/constants/color_constants.dart';
@@ -19,7 +20,7 @@ class RecipePropertiesCardWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: ColorConstants.lightRedBackgroundColor,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -44,8 +45,8 @@ class RecipePropertiesCardWidget extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 4,
+            SizedBox(
+              height: 4.h,
             ),
             Flexible(
               child: Text(

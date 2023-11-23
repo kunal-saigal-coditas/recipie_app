@@ -24,7 +24,7 @@ class AppRouter extends _$AppRouter {
           children: [
             AutoRoute(
               page: RecipeRoute.page,
-              // initial: true,
+              initial: true,
             ),
             AutoRoute(
               page: GroceryRoute.page,
@@ -36,7 +36,7 @@ class AppRouter extends _$AppRouter {
             ),
             AutoRoute(
               page: ForumRoute.page,
-              initial: true,
+              // initial: true,
             ),
             AutoRoute(
               page: ProfileRoute.page,

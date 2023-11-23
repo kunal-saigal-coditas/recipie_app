@@ -186,4 +186,7 @@ class StringConstants {
   ];
   static const kjoinText = "Join";
   static const kjoinedText = "Joined";
+  static const kdiscoverMoreText =
+      "Discover more dishes by exploring what’s new";
+  static const kfakeLikes = "235 Likes";
 }

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/svg_constants.dart';
@@ -21,7 +22,7 @@ class RecipeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16),
+      padding: EdgeInsets.only(right: 16.w),
       child: GestureDetector(
         onTap: () {
           AutoRouter.of(context).push(
@@ -30,8 +31,9 @@ class RecipeCardWidget extends StatelessWidget {
         },
         child: Container(
           width: 161,
+          height: 140,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(15.r),
             image: DecorationImage(
               image: NetworkImage(currentRecipe.image),
               opacity: 5,
@@ -44,7 +46,10 @@ class RecipeCardWidget extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.symmetric(
+              horizontal: 8.w,
+              vertical: 8.h,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,7 +68,7 @@ class RecipeCardWidget extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           color: ColorConstants.greyBackground,
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(6.r),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(5),
@@ -85,7 +90,7 @@ class RecipeCardWidget extends StatelessWidget {
                   currentRecipe.country,
                   maxLines: 2,
                   style: const TextStyle(
-                    fontSize: 11,
+                    fontSize: 9,
                     fontWeight: FontWeight.w500,
                     color: ColorConstants.whiteBackgraound,
                   ),

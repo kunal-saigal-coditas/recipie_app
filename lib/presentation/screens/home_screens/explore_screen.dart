@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
@@ -27,18 +28,17 @@ class ExplorePage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            16,
-            8,
-            16,
-            0,
+          padding: EdgeInsets.only(
+            top: 16.h,
+            left: 16.w,
+            right: 16.w,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SearchBarWidget(),
-              const SizedBox(
-                height: 16,
+              SizedBox(
+                height: 16.h,
               ),
               Align(
                 alignment: Alignment.bottomLeft,
@@ -50,15 +50,15 @@ class ExplorePage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 16,
+              SizedBox(
+                height: 16.h,
               ),
               Expanded(
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 13,
+                    mainAxisSpacing: 13,
                     childAspectRatio: 2 / 1,
                   ),
                   itemCount: StringConstants.kcategoryNames.length,

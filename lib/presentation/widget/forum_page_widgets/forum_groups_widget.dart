@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/domain/entity/forum_data_entity/forum_group_data_entity.dart';
-import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
 import '../../../core/constants/color_constants.dart';
 import '../../../core/constants/string_constants.dart';
@@ -41,13 +41,13 @@ class GroupsSectionWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height: 8.h,
         ),
         Flexible(
           child: ListView.separated(
             separatorBuilder: (context, index) {
-              return const SizedBox(height: 16);
+              return SizedBox(height: 16.h);
             },
             shrinkWrap: true,
             itemCount: groupsDataList.length,
@@ -58,8 +58,8 @@ class GroupsSectionWidget extends StatelessWidget {
                   Image.asset(
                     groupsDataList[index].groupPic,
                   ),
-                  const SizedBox(
-                    width: 8,
+                  SizedBox(
+                    width: 8.w,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,19 +82,45 @@ class GroupsSectionWidget extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  RoundedButton(
-                    minWidth: 85,
-                    titleColour: groupsDataList[index].isJoined
-                        ? ColorConstants.primaryColor
-                        : ColorConstants.whiteBackgraound,
-                    title: groupsDataList[index].isJoined
-                        ? StringConstants.kjoinedText
-                        : StringConstants.kjoinText,
-                    colour: groupsDataList[index].isJoined
-                        ? ColorConstants.whiteBackgraound
-                        : ColorConstants.primaryColor,
-                    onPressed: () {},
-                    textSize: 14,
+                  SizedBox(
+                    width: 85.w,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                          groupsDataList[index].isJoined
+                              ? ColorConstants.whiteBackgraound
+                              : ColorConstants.primaryColor,
+                        ),
+                        side: MaterialStateProperty.resolveWith<BorderSide>(
+                          (Set<MaterialState> states) {
+                            return BorderSide(
+                              color: groupsDataList[index].isJoined
+                                  ? ColorConstants.primaryColor
+                                  : ColorConstants.transparentColor,
+                              width: 1.0,
+                            );
+                          },
+                        ),
+                      ),
+                      child: Center(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            groupsDataList[index].isJoined
+                                ? StringConstants.kjoinedText
+                                : StringConstants.kjoinText,
+                            style: TextStyle(
+                              color: groupsDataList[index].isJoined
+                                  ? ColorConstants.primaryColor
+                                  : ColorConstants.whiteBackgraound,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               );

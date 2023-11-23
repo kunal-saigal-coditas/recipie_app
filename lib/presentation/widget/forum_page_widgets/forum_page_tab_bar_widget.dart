@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/presentation/widget/forum_page_widgets/forum_featured_topics_widget.dart';
 import 'package:recipe_app/presentation/widget/forum_page_widgets/forum_groups_widget.dart';
@@ -20,14 +21,14 @@ class ForumPageTabBarWidget extends StatelessWidget {
         if (state is ForumPageSuccessState) {
           return DefaultTabController(
             length: 3,
-            initialIndex: 2,
+            initialIndex: 1,
             child: Column(
               children: [
                 Container(
                   height: 48,
                   decoration: BoxDecoration(
                     color: ColorConstants.secondaryTextColor.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(4),
@@ -39,7 +40,7 @@ class ForumPageTabBarWidget extends StatelessWidget {
                       ),
                       indicatorSize: TabBarIndicatorSize.tab,
                       indicator: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(25.r),
                         color: ColorConstants.primaryColor,
                       ),
                       dividerColor: ColorConstants.whiteBackgraound,
@@ -79,7 +80,8 @@ class ForumPageTabBarWidget extends StatelessWidget {
                   height: 16,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.695,
+                  height: 550.h,
+                  // MediaQuery.of(context).size.height * 0.68,
                   child: TabBarView(
                     children: [
                       FeaturedTopicSectionWidget(

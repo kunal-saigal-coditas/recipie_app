@@ -55,10 +55,22 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
   FutureOr<void> onSelect(OnSelectEvent event, Emitter<SetupState> emit) {
     AnswerItemEntity updatedAnswerItem = event.answerItemEntity;
     updatedAnswerItem.isSelected = !updatedAnswerItem.isSelected;
+
     List<AnswerItemEntity> updatedAnswerList = [...event.answerItemList];
+    if ((state as SetupPageLoadedState).pageIndex == 0 ||
+        (state as SetupPageLoadedState).pageIndex == 4) {
+      for (AnswerItemEntity entity in updatedAnswerList) {
+        entity.isSelected = (identical(
+          entity,
+          updatedAnswerItem,
+        ));
+      }
+    }
+
     int index = updatedAnswerList.indexWhere(
       (element) => element.id == updatedAnswerItem.id,
     );
+
     updatedAnswerList[index] = updatedAnswerItem;
 
     emit(
@@ -66,6 +78,5 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         answerItemList: updatedAnswerList,
       ),
     );
-    // updatedAnswerList = [];
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/svg_constants.dart';
@@ -18,7 +19,7 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
     return SizedBox(
       child: ListView.separated(
         separatorBuilder: (context, index) {
-          return const SizedBox(height: 16);
+          return SizedBox(height: 16.h);
         },
         shrinkWrap: true,
         itemCount: forumFeaturedTopicsDataList.length,
@@ -35,8 +36,8 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 8,
+              SizedBox(
+                width: 8.w,
               ),
               Flexible(
                 child: Column(
@@ -65,7 +66,7 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             color: ColorConstants.greyBackground,
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: const Icon(
                             Icons.favorite_border_outlined,
@@ -86,8 +87,8 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                         color: ColorConstants.primaryTextColor.withOpacity(0.8),
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Text(
                       forumFeaturedTopicsDataList[index].summary,
@@ -98,14 +99,14 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                         fontSize: 12,
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Container(
                       width: double.infinity,
                       height: 110,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(20.r),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
@@ -114,8 +115,8 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,8 +169,8 @@ class FeaturedTopicActionWidget extends StatelessWidget {
             height: 14,
             width: 14,
           ),
-          const SizedBox(
-            width: 8,
+          SizedBox(
+            width: 8.w,
           ),
           Text(
             propertyText,

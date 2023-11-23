@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/domain/entity/grocery_data_entity/grocery_data_entity.dart';
@@ -17,13 +18,13 @@ class GroceryCard extends StatelessWidget {
         color: ColorConstants.whiteBackgraound,
         boxShadow: [
           BoxShadow(
-            blurRadius: 12,
+            blurRadius: 12.r,
             offset: const Offset(0, 6),
             spreadRadius: 0,
             color: ColorConstants.primaryTextColor.withOpacity(0.05),
           ),
         ],
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
           width: 2,
           color: ColorConstants.greyBackground,
@@ -34,9 +35,9 @@ class GroceryCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(15),
-              bottomLeft: Radius.circular(15),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12.r),
+              bottomLeft: Radius.circular(12.r),
             ),
             child: Image.asset(
               groceryDataEntity.groceryImageUrl,
@@ -58,8 +59,8 @@ class GroceryCard extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const SizedBox(
-                    height: 4,
+                  SizedBox(
+                    height: 4.h,
                   ),
                   Text(
                     groceryDataEntity.grocerySubtext,

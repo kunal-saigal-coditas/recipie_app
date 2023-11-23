@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/domain/entity/setup_data_entity/setup_data_entity.dart';
 import 'package:recipe_app/presentation/bloc/setup_bloc/setup_bloc.dart';
@@ -17,8 +18,10 @@ class IndividualOptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SetupBloc, SetupState>(
       builder: (context, state) {
-        return SizedBox(
-          // width: 109,
+        return Container(
+          constraints: BoxConstraints(
+            maxWidth: 109.w,
+          ),
           child: ElevatedButton(
             style: ButtonStyle(
               elevation: const MaterialStatePropertyAll(0),
@@ -29,7 +32,9 @@ class IndividualOptionWidget extends StatelessWidget {
               ),
               shape: MaterialStatePropertyAll(
                 RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(
+                    30.r,
+                  ),
                   side: const BorderSide(
                     color: ColorConstants.cicularPageIndicatorBackgroundColor,
                   ),

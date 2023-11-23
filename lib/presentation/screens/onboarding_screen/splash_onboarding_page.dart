@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
@@ -23,9 +24,9 @@ class SplashOnboardingPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Positioned(
-            bottom: 10,
-            left: 10,
-            right: 10,
+            bottom: 10.h,
+            left: 10.w,
+            right: 10.w,
             child: Padding(
               padding: const EdgeInsets.all(2),
               child: Column(
@@ -61,11 +62,11 @@ class SplashOnboardingPage extends StatelessWidget {
                         );
                       },
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

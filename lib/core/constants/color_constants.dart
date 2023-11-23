@@ -13,4 +13,5 @@ class ColorConstants {
 
   static const Color cicularPageIndicatorBackgroundColor =
       Color.fromRGBO(178, 187, 178, 1);
+  static const Color transparentColor = Colors.transparent;
 }

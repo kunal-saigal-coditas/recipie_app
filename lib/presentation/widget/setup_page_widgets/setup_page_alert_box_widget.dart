@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
@@ -17,8 +18,8 @@ class SetupPageAlertBoxWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SvgPicture.asset(SvgConstantStrings.kconfettiIcon),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height: 8.h,
         ),
         Text(
           StringConstants.ksignUpSuccessText,
@@ -27,8 +28,8 @@ class SetupPageAlertBoxWidget extends StatelessWidget {
             fontSize: 24,
           ),
         ),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height: 8.h,
         ),
         const Text(
           StringConstants.kalertDialogueSubText,
@@ -38,8 +39,8 @@ class SetupPageAlertBoxWidget extends StatelessWidget {
             fontSize: 16,
           ),
         ),
-        const SizedBox(
-          height: 16,
+        SizedBox(
+          height: 16.h,
         ),
         RoundedButton(
           title: StringConstants.kredirectingText,

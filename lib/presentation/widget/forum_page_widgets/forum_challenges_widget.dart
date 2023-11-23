@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/image_constant.dart';
@@ -42,14 +43,14 @@ class ChallengesSectionWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height: 8.h,
         ),
         Flexible(
           child: ListView.separated(
             separatorBuilder: (context, index) {
-              return const SizedBox(
-                height: 16,
+              return SizedBox(
+                height: 16.h,
               );
             },
             shrinkWrap: true,
@@ -84,9 +85,9 @@ class ChallengesSectionCardWidget extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15.r),
+                    topRight: Radius.circular(15.r),
                   ),
                   child: Image.asset(
                     forumChallengesDataEntity.imageUrl,
@@ -95,11 +96,11 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  16,
-                  24,
-                  16,
-                  16,
+                padding: EdgeInsets.fromLTRB(
+                  16.w,
+                  24.h,
+                  16.w,
+                  8.h,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,8 +112,8 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Text(
                       forumChallengesDataEntity.challengeSubtext,
@@ -121,12 +122,13 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                         fontSize: 12,
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Row(
                       children: [
-                        Expanded(
+                        SizedBox(
+                          width: 60.w,
                           child: Stack(
                             children: [
                               Image.asset(
@@ -146,6 +148,9 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                               ),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          width: 8.w,
                         ),
                         const Text(
                           "and 10 Others",
@@ -170,38 +175,42 @@ class ChallengesSectionCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(
-            left: 10,
-            top: 130,
-            child: Card(
-              elevation: 0,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  16,
-                  8,
-                  16,
-                  8,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      forumChallengesDataEntity.date.toString(),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: ColorConstants.redTextColor,
+          Positioned.fill(
+            bottom: 50.h,
+            left: 10.w,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Card(
+                elevation: 0,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                    16.w,
+                    8.h,
+                    16.w,
+                    8.h,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        forumChallengesDataEntity.date.toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: ColorConstants.redTextColor,
+                        ),
                       ),
-                    ),
-                    Text(
-                      forumChallengesDataEntity.month,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        forumChallengesDataEntity.month,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -18,9 +18,9 @@ class SvgConstantStrings {
   static const kviewsIcon = "assets/svg/views_icon.svg";
   static const krepliesIcon = "assets/svg/replies_icon.svg";
 
-  // static const kProfilePics = [
-  //   "assets/svg/profile_pic.svg",
-  //   "assets/svg/profile_pic2.svg",
-  //   "assets/svg/profile_pic3.svg",
-  // ];
+  static const kProfilePics = [
+    "assets/svg/profile_pic.svg",
+    "assets/svg/profile_pic2.svg",
+    "assets/svg/profile_pic3.svg",
+  ];
 }

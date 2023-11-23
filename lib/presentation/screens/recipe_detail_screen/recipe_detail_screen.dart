@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
@@ -27,7 +28,7 @@ class RecipeDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              width: double.maxFinite,
+              width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.38,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -99,8 +100,8 @@ class RecipeDetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 20.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -111,8 +112,8 @@ class RecipeDetailPage extends StatelessWidget {
                           ImageConstants.kprofileImage,
                         ),
                       ),
-                      const SizedBox(
-                        width: 15,
+                      SizedBox(
+                        width: 15.w,
                       ),
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,11 +139,11 @@ class RecipeDetailPage extends StatelessWidget {
                       Row(
                         children: [
                           SvgPicture.asset(SvgConstantStrings.kheartFilledIcon),
-                          const SizedBox(
-                            width: 8,
+                          SizedBox(
+                            width: 8.w,
                           ),
                           const Text(
-                            "235 Likes",
+                            StringConstants.kfakeLikes,
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
@@ -152,14 +153,14 @@ class RecipeDetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   RecipeDetailTabBarSectionWidget(
                     recipeEntity: recipeEntity,
                   ),
-                  const SizedBox(
-                    height: 12,
+                  SizedBox(
+                    height: 12.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -171,8 +172,8 @@ class RecipeDetailPage extends StatelessWidget {
                           propertyIcon: SvgConstantStrings.ktimerIcon,
                         ),
                       ),
-                      const SizedBox(
-                        width: 8,
+                      SizedBox(
+                        width: 8.w,
                       ),
                       const Flexible(
                         child: RecipePropertiesCardWidget(
@@ -181,8 +182,8 @@ class RecipeDetailPage extends StatelessWidget {
                           propertyIcon: SvgConstantStrings.kcaloriesIcon,
                         ),
                       ),
-                      const SizedBox(
-                        width: 8,
+                      SizedBox(
+                        width: 8.w,
                       ),
                       Flexible(
                         child: RecipePropertiesCardWidget(

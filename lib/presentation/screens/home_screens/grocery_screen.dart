@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:recipe_app/presentation/widget/grocery_page_widget/grocery_card_widget.dart';
 import 'package:recipe_app/presentation/widget/search_bar_widget.dart';
@@ -32,11 +33,10 @@ class GroceryPage extends StatelessWidget {
           ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              16,
-              8,
-              16,
-              0,
+            padding: EdgeInsets.only(
+              top: 16.h,
+              left: 16.w,
+              right: 16.w,
             ),
             child: BlocBuilder<GroceryPageBloc, GroceryPageState>(
               builder: (context, state) {
@@ -45,15 +45,17 @@ class GroceryPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SearchBarWidget(),
-                      const SizedBox(
-                        height: 16,
+                      SizedBox(
+                        height: 16.h,
                       ),
                       Expanded(
                         child: ListView.builder(
                           itemCount: state.groceryItemList.length,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: const EdgeInsets.only(bottom: 8),
+                              padding: EdgeInsets.only(
+                                bottom: 8.h,
+                              ),
                               child: GroceryCard(
                                 groceryDataEntity: state.groceryItemList[index],
                               ),

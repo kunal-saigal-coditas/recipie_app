@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constants/color_constants.dart';
@@ -19,7 +20,7 @@ class SearchBarWidget extends StatelessWidget {
           fillColor: ColorConstants.searchBarBackground,
           filled: true,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
             borderSide: BorderSide.none,
           ),
           hintText: StringConstants.ksearchBarHinttext,

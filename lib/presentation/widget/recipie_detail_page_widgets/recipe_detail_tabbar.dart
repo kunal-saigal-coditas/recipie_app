@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
@@ -19,9 +20,10 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
+            height: 48,
             decoration: BoxDecoration(
               color: ColorConstants.secondaryTextColor.withOpacity(0.05),
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(25.r),
             ),
             child: Padding(
               padding: const EdgeInsets.all(4),
@@ -34,7 +36,7 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                 ),
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(25.r),
                   color: ColorConstants.primaryColor,
                 ),
                 dividerColor: ColorConstants.whiteBackgraound,
@@ -52,8 +54,8 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 8,
+          SizedBox(
+            height: 8.h,
           ),
           SizedBox(
             height: 170,
@@ -99,8 +101,8 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const SizedBox(
-                            height: 8,
+                          SizedBox(
+                            height: 8.h,
                           ),
                         ],
                       );

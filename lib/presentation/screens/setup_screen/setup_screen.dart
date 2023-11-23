@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
@@ -24,11 +25,11 @@ class SetupPage extends StatelessWidget {
         ),
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            16,
-            8,
-            16,
-            0,
+          padding: EdgeInsets.fromLTRB(
+            16.w,
+            8.h,
+            16.w,
+            8.h,
           ),
           child: BlocBuilder<SetupBloc, SetupState>(
             builder: (context, state) {
@@ -36,8 +37,11 @@ class SetupPage extends StatelessWidget {
                 return Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 20),
+                    SizedBox(
+                      height: 16.h,
+                    ),
                     Row(
                       children: [
                         ...List.generate(
@@ -61,8 +65,8 @@ class SetupPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     SetupPageBodyWidget(
                       setupDataEntity: state.setupPageDataList[state.pageIndex],
@@ -106,8 +110,10 @@ class SetupPage extends StatelessWidget {
                                         OnNextEvent(),
                                       );
                                     } else {
-                                      Future.delayed(const Duration(seconds: 2),
-                                          () {
+                                      Future.delayed(
+                                          const Duration(
+                                            seconds: 2,
+                                          ), () {
                                         AutoRouter.of(context).replace(
                                           const BottomNavRoute(),
                                         );
@@ -115,10 +121,14 @@ class SetupPage extends StatelessWidget {
                                       showDialog(
                                         context: context,
                                         builder: (context) {
-                                          return const AlertDialog(
-                                            contentPadding: EdgeInsets.all(16),
+                                          return AlertDialog(
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: 16.h,
+                                            ),
                                             alignment: Alignment.center,
-                                            content: SizedBox(
+                                            content: const SizedBox(
                                               width: double.infinity,
                                               child: SetupPageAlertBoxWidget(),
                                             ),

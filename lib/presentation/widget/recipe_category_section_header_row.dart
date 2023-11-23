@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/presentation/widget/recipe_card_widget.dart';
@@ -7,11 +8,12 @@ import '../../core/constants/color_constants.dart';
 import '../../core/constants/string_constants.dart';
 
 class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
-  const RecipeCategorySectionHeaderRowWidget(
-      {super.key,
-      required this.categoryName,
-      required this.ontap,
-      required this.recipeList});
+  const RecipeCategorySectionHeaderRowWidget({
+    super.key,
+    required this.categoryName,
+    required this.ontap,
+    required this.recipeList,
+  });
   final String categoryName;
   final Function() ontap;
   final List<RecipeEntity> recipeList;
@@ -26,7 +28,7 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
               categoryName,
               style: GoogleFonts.cabin(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
               ),
             ),
             const Spacer(),
@@ -43,11 +45,11 @@ class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 8,
+        SizedBox(
+          height: 8.h,
         ),
         SizedBox(
-          height: 140,
+          height: 140.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: recipeList.length,

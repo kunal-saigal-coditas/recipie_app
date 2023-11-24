@@ -1,11 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
-import 'package:recipe_app/core/constants/svg_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
+
+import '../../../core/constants/asset_constants.dart';
 
 class RecipeVideoCard extends StatelessWidget {
   const RecipeVideoCard({
@@ -25,12 +28,12 @@ class RecipeVideoCard extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: height.h,
-        width: width.w,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
           image: DecorationImage(
-            image: NetworkImage(recipeEntity.image),
+            image: CachedNetworkImageProvider(recipeEntity.image),
             fit: BoxFit.fill,
           ),
         ),
@@ -53,7 +56,7 @@ class RecipeVideoCard extends StatelessWidget {
                         Row(
                           children: [
                             SvgPicture.asset(
-                              SvgConstantStrings.ktimerIcon,
+                              AssetConstantStrings.ktimerIcon,
                               height: 8.h,
                               width: 8.w,
                               colorFilter: const ColorFilter.mode(

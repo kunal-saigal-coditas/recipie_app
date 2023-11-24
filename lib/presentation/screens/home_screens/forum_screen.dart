@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
+
 import 'package:recipe_app/presentation/bloc/forum_page_bloc/forum_page_bloc.dart';
 import 'package:recipe_app/presentation/widget/forum_page_widgets/forum_page_tab_bar_widget.dart';
 
 import '../../../core/constants/string_constants.dart';
-import '../../widget/appbar_title_row_widget.dart';
+import '../../widget/common_widget/appbar_title_row_widget.dart';
 
 @RoutePage()
 class ForumPage extends StatelessWidget {

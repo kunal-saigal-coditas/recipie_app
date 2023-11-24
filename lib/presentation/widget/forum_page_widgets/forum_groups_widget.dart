@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:recipe_app/domain/entity/forum_data_entity/forum_group_data_entity.dart';
 
+import '../../../core/constants/asset_constants.dart';
 import '../../../core/constants/color_constants.dart';
 import '../../../core/constants/string_constants.dart';
-import '../../../core/constants/svg_constants.dart';
 
 class GroupsSectionWidget extends StatelessWidget {
   const GroupsSectionWidget({
@@ -34,7 +35,7 @@ class GroupsSectionWidget extends StatelessWidget {
             CircleAvatar(
               backgroundColor: ColorConstants.greyBackground.withOpacity(0.8),
               child: SvgPicture.asset(
-                SvgConstantStrings.kfilterIcon,
+                AssetConstantStrings.kfilterIcon,
                 height: 24,
                 width: 24,
               ),

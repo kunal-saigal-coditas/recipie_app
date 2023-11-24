@@ -1,8 +1,9 @@
 import 'dart:convert';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalDataSource {
   late SharedPreferences sharedPreferenceInstance;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
@@ -58,7 +59,7 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
             height: 8.h,
           ),
           SizedBox(
-            height: 170,
+            height: 170.h,
             child: TabBarView(
               children: [
                 Container(
@@ -89,20 +90,48 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.all(2),
-                  child: ListView.builder(
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return SizedBox(
+                        height: 8.h,
+                      );
+                    },
                     itemCount: recipeEntity.directions.length,
                     itemBuilder: (context, index) {
-                      return Column(
+                      return Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            '${index + 1} - ${recipeEntity.directions[index]}',
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
+                          Container(
+                            width: 24,
+                            height: 24,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12.r),
+                              color: ColorConstants.primaryColor,
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "${index + 1}",
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: ColorConstants.whiteBackgraound,
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(
-                            height: 8.h,
+                            width: 8.w,
+                          ),
+                          Expanded(
+                            child: Text(
+                              recipeEntity.directions[index],
+                              style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                           ),
                         ],
                       );

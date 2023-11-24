@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/domain/use_case/local_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/remote_data_usecase.dart';
@@ -25,19 +26,28 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
 
   FutureOr<void> recipeFetching(
       RecipePageInitialEvent event, Emitter<RecipePageState> emit) async {
-    Either<List<RecipeEntity>, Failure> response =
+    Either<Failure, List<RecipeEntity>> response =
         await remoteDataUsecase.getDatafromDio();
+    List<int> favoritesList = localDataUseCase.getFavoritesDataList();
     response.fold((left) {
-      emit(
-        RecipeFetchingSuccessState(
-          recipeList: left,
-          favoriteRecipies: const [],
-        ),
-      );
-    }, (right) {
       emit(
         const RecipeFetchingErrorState(
           errorMessage: "right.errorMessage",
+        ),
+      );
+    }, (right) {
+      List<RecipeEntity> recipeList = [...right];
+      for (int i = 0; i < recipeList.length; i++) {
+        if (favoritesList.contains(recipeList[i].id)) {
+          recipeList[i] = recipeList[i].copyWith(
+            isFavorite: true,
+          );
+        }
+      }
+      emit(
+        RecipeFetchingSuccessState(
+          recipeList: recipeList,
+          favoriteRecipies: const [],
         ),
       );
     });
@@ -45,42 +55,23 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
 
   FutureOr<void> addToFavorites(
       AddToFavoritesEvent event, Emitter<RecipePageState> emit) {
-    List<int> favoritesIDList = localDataUseCase.getFavoritesDataList();
-    RecipeEntity currentRecipe = event.recipeEntity;
-    List<RecipeEntity> recipeListCopy = [...event.recipeList];
-    for (RecipeEntity recipe in recipeListCopy) {
-      if (favoritesIDList.contains(recipe.id)) {
-        // favoritesIDList.remove(
-        //   favoritesIDList[recipeListCopy
-        //       .indexWhere((element) => element.id == currentRecipe.id)],
-        // );
+    int index = (event.recipeEntity.id - 1);
 
-        recipe = recipe.copyWith(isFavorite: false);
-      } else {
-        favoritesIDList.add(recipe.id);
-      }
-    }
-    recipeListCopy.map((entity) {
-      if (entity.id == currentRecipe.id) {
-        return entity.copyWith(isFavorite: !currentRecipe.isFavorite);
-      }
-    }).toList();
+    List<RecipeEntity> recipeListCopy =
+        List.from((state as RecipeFetchingSuccessState).recipeList);
+    RecipeEntity postToUpdate = recipeListCopy[index];
+    postToUpdate = postToUpdate.copyWith(
+      isFavorite: !postToUpdate.isFavorite,
+    );
+
+    recipeListCopy[index] = postToUpdate;
 
     localDataUseCase.saveToFavorites(event.recipeEntity);
+
     emit(
       (state as RecipeFetchingSuccessState).copyWith(
         recipeList: recipeListCopy,
       ),
     );
-  }
-
-  bool containsProduct(List<RecipeEntity> list1, RecipeEntity item) {
-    Iterable<RecipeEntity> var1 =
-        list1.where((element) => element.id == item.id);
-    if (var1.isEmpty) {
-      return false;
-    } else {
-      return true;
-    }
   }
 }

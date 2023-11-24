@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
+
 import 'package:recipe_app/presentation/widget/grocery_page_widget/grocery_card_widget.dart';
-import 'package:recipe_app/presentation/widget/search_bar_widget.dart';
+import 'package:recipe_app/presentation/widget/common_widget/search_bar_widget.dart';
 
 import '../../../core/constants/string_constants.dart';
 import '../../bloc/grocery_page_bloc/grocery_page_bloc.dart';
-import '../../widget/appbar_title_row_widget.dart';
-// import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
+import '../../widget/common_widget/appbar_title_row_widget.dart';
 
 @RoutePage()
 class GroceryPage extends StatelessWidget {
@@ -19,19 +19,19 @@ class GroceryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: AppBarTitleRowWidget(
-          pageTitle: StringConstants.kgroceryText,
-          appBarButtonOnTap: () {},
+    return BlocProvider(
+      create: (context) => GetIt.I<GroceryPageBloc>()
+        ..add(
+          GroceryPageInitialEvent(),
         ),
-      ),
-      body: BlocProvider(
-        create: (context) => GetIt.I<GroceryPageBloc>()
-          ..add(
-            GroceryPageInitialEvent(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: AppBarTitleRowWidget(
+            pageTitle: StringConstants.kgroceryText,
+            appBarButtonOnTap: () {},
           ),
-        child: Center(
+        ),
+        body: Center(
           child: Padding(
             padding: EdgeInsets.only(
               top: 16.h,

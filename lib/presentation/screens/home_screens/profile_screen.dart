@@ -4,12 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/core/constants/image_constant.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
-import 'package:recipe_app/presentation/widget/recipe_category_section_header_row.dart';
-import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
+import 'package:recipe_app/presentation/widget/common_widget/recipe_category_section_header_row.dart';
+import 'package:recipe_app/presentation/widget/common_widget/rounded_button_widget.dart';
+
+import '../../../core/constants/asset_constants.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
@@ -66,7 +68,7 @@ class ProfilePage extends StatelessWidget {
                           CircleAvatar(
                             radius: 50.r,
                             backgroundImage: const AssetImage(
-                              ImageConstants.kprofileImage,
+                              AssetConstantStrings.kprofileImage,
                             ),
                           ),
                           SizedBox(
@@ -103,9 +105,9 @@ class ProfilePage extends StatelessWidget {
                                   8.w,
                                   12.h,
                                 ],
-                              )
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                       SizedBox(
@@ -116,16 +118,6 @@ class ProfilePage extends StatelessWidget {
                         ontap: () {},
                         recipeList: state.favoriteRecipiesList,
                       ),
-
-                      //Duplicated
-                      // const SizedBox(
-                      //   height: 12,
-                      // ),
-                      // RecipeCategorySectionHeaderRowWidget(
-                      //   categoryName: StringConstants.krecentRecipeText,
-                      //   ontap: () {},
-                      //   recipeList: state.favoriteRecipiesList,
-                      // ),
                     ],
                   );
                 } else {

@@ -10,9 +10,12 @@ import '../../domain/repository/remote_data_repo.dart';
 class RemoteDataRepositoryImpl implements RemoteDataRepository {
   final RemoteDataSource remoteDataSource;
 
-  RemoteDataRepositoryImpl({required this.remoteDataSource});
+  RemoteDataRepositoryImpl({
+    required this.remoteDataSource,
+  });
+
   @override
-  Future<Either<List<RecipeEntity>, Failure>> getDatafromDio() {
+  Future<Either<Failure, List<RecipeEntity>>> getDatafromDio() {
     return remoteDataSource.getDatafromDio();
   }
 }

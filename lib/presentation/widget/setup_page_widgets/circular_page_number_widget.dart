@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 
 class CircularPageNumberIndicatorWidget extends StatelessWidget {
@@ -14,12 +14,10 @@ class CircularPageNumberIndicatorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 8.w),
+      padding: const EdgeInsets.only(right: 8),
       child: Container(
-        constraints: BoxConstraints(
-          maxHeight: 26.h,
-          maxWidth: 16.w,
-        ),
+        height: 26,
+        width: 26,
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
           color: isSelected

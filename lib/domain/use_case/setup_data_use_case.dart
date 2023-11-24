@@ -8,6 +8,7 @@ class SetupDataUseCase {
   SetupDataUseCase({
     required this.setupDataRepository,
   });
+
   List<SetupDataEntity> getSetupDataList() {
     return setupDataRepository.getSetupDataList();
   }

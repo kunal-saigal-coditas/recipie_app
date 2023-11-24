@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
-import 'package:recipe_app/core/constants/svg_constants.dart';
-import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
+import 'package:recipe_app/presentation/widget/common_widget/rounded_button_widget.dart';
+
+import '../../../core/constants/asset_constants.dart';
 
 class SetupPageAlertBoxWidget extends StatelessWidget {
   const SetupPageAlertBoxWidget({super.key});
@@ -17,7 +19,7 @@ class SetupPageAlertBoxWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SvgPicture.asset(SvgConstantStrings.kconfettiIcon),
+        SvgPicture.asset(AssetConstantStrings.kconfettiIcon),
         SizedBox(
           height: 8.h,
         ),

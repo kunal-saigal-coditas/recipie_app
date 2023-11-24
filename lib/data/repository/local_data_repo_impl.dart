@@ -5,7 +5,9 @@ import 'package:recipe_app/domain/repository/local_data_repo.dart';
 class LocalDataRepositoryImpl implements LocalDataRepository {
   final LocalDataSource localDataSource;
 
-  LocalDataRepositoryImpl({required this.localDataSource});
+  LocalDataRepositoryImpl({
+    required this.localDataSource,
+  });
 
   @override
   List<int> getFavoritesDataList() {

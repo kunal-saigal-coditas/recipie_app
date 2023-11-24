@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/constants/color_constants.dart';
-import '../../core/constants/string_constants.dart';
-import '../../core/constants/svg_constants.dart';
+import '../../../core/constants/asset_constants.dart';
+import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/string_constants.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key});
@@ -34,7 +34,7 @@ class SearchBarWidget extends StatelessWidget {
             width: 22,
             height: 22,
             child: SvgPicture.asset(
-              SvgConstantStrings.ksearchIcon,
+              AssetConstantStrings.ksearchIcon,
               colorFilter: const ColorFilter.mode(
                 ColorConstants.secondaryTextColor,
                 BlendMode.srcIn,
@@ -46,7 +46,7 @@ class SearchBarWidget extends StatelessWidget {
             width: 22,
             height: 22,
             child: SvgPicture.asset(
-              SvgConstantStrings.kfilterIcon,
+              AssetConstantStrings.kfilterIcon,
               colorFilter: const ColorFilter.mode(
                 ColorConstants.secondaryTextColor,
                 BlendMode.srcIn,

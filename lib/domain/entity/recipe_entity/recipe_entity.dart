@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+
 import 'package:recipe_app/data/data_model/recipe_model.dart';
 
 class RecipeEntity extends Equatable {

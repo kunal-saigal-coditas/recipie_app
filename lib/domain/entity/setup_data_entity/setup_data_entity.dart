@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+
 import '../../../core/constants/enums.dart';
 
 class SetupDataEntity extends Equatable {

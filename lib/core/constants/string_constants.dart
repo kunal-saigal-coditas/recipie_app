@@ -1,17 +1,25 @@
 class StringConstants {
   static const konboardingSubtext =
       "Welcome to recipie passport where you virtually travel the world through Recipies";
+
   static const kgettingStartedButton = "Get Started";
+
   static const knextButtonText = "Next Step";
+
   static const kpreviousButtonText = "Previous";
 
   static const konboardingMaintext = "Recipe Passport";
+
   static const konboardingQuestion1 =
       "Whats your Preffered Language for the App?";
+
   static const konboardingQuestion1Subtext =
       "Select the language that you'd prefer to use while exploring Recipe Passport.";
+
   static const koptionsForQuestion1 = ["English", "Spanish", "French"];
+
   static const konboardingQuestion2 = "Do you have any allergies or dislikes?";
+
   static const koptionsForQuestion2 = [
     "🦐  Shrimp",
     "🥕  Carrot",
@@ -45,7 +53,9 @@ class StringConstants {
 
   static const konboardingCommonSubtext =
       "This will help us curate more recipe experiences for you.";
+
   static const konboardingQuestion3 = "Do you have any dietary restrictions?";
+
   static const koptionsForQuestion3 = [
     "None",
     "Vegan",
@@ -60,8 +70,10 @@ class StringConstants {
     "Nut Allergy",
     "Diabetic Diet",
   ];
+
   static const konboardingQuestion4 =
-      "Types of cuisines  you most interested in?";
+      "Types of cuisines  you most interested in ?";
+
   static const koptionsForQuestion4 = [
     "European",
     "African",
@@ -70,8 +82,10 @@ class StringConstants {
     "Latin-American",
     "Indian",
   ];
+
   static const konboardingQuestion5 =
-      "Lastly, how skilled are you in the kitchen?";
+      "Lastly, how skilled are you in the kitchen ?";
+
   static const koptionsForQuestion5 = [
     "Beginner",
     "Intermediate",
@@ -79,38 +93,70 @@ class StringConstants {
   ];
 
   static const kmyRecipeText = "My Recipies";
+
   static const krecentRecipeText = "Recent Recipes";
+
   static const kfavoriesText = "Favorites ";
+
   static const krecommendedText = "Recommended";
+
   static const kviewAlltext = "View All";
+
   static const krecipePageAppBarText = "Explore Recipies";
+
   static const ksharedPreferencekey = "favoritesList";
+
   static const keditProfileText = "Edit Profile";
+
   static const kuserName = "Andrew Jun";
+
   static const kuserEmail = "@andrewjun";
+
   static const kprofilePageTitle = "Profile";
+
   static const krecipieText = "Recipes";
+
   static const kgroceryText = "Grocery";
+
   static const kforumText = "Forum";
+
   static const kprofileText = "Profile";
+
   static const kexploreText = "Explore";
+
   static const ksearchText = "Search";
+
   static const koverviewText = "Overview";
+
   static const kingredientsText = "Ingredients";
+
   static const kdirectionsText = "Directions";
+
   static const kcookTimeText = "Cook Time";
+
   static const kcalorietext = "Calories";
+
   static const koriginText = "Origin";
+
   static const kskipText = "Skip";
+
   static const kweeklyPickText = "Weekly Pick";
+
   static const ksignUpSuccessText = "Sign up successful!";
+
   static const kalertDialogueSubText =
       "Your account has been created. Please wait a moment, we are preparing for you...";
+
   static const kredirectingText = "Redirecting...";
+
   static const ksearchBarHinttext = "Search Anything...";
+
   static const kcategoriestext = "Categories";
+
   static const kfeaturedTopicsText = "Featured Topics";
+
   static const kchallengesText = "Challenges";
+
   static const kgroupsText = "Groups";
 
   static const kcategoryNames = [
@@ -127,6 +173,7 @@ class StringConstants {
     "Greek",
     "Thai",
   ];
+
   static const kgroceryPageMainTextList = [
     "Yangnyeom Chicken",
     "Sandwich with boiled egg",
@@ -135,6 +182,7 @@ class StringConstants {
     "Fruit Blueberry Toast",
     "Hot Sauce Stake",
   ];
+
   static const kgroceryPageSubtextList = [
     "5/12 ingredients ",
     "10/10 ingredients ",
@@ -163,11 +211,16 @@ class StringConstants {
   ];
 
   static const kchallengesName = "Ingredient Restriction Challenge";
+
   static const kchallengesSummary =
       "Choose a specific ingredient (e.g., avocado, lemon, chickpeas) and challenge yourself to create multiple dishes using only that ingredient.";
+
   static const kupcomingChallengeText = "Upcoming Challenges";
+
   static const kjoinNowText = "Join Now";
+
   static const kallGroupsText = "All Groups";
+
   static const kgroupsNames = [
     "Asian Food Lovers ",
     "We Love Food",
@@ -176,6 +229,7 @@ class StringConstants {
     "Daily Food Post",
     "Viewers Of Recipes",
   ];
+
   static const kgroupMembersCounts = [
     "22.1k",
     "30.5k",
@@ -184,9 +238,13 @@ class StringConstants {
     "85.8k",
     "10.2k",
   ];
+
   static const kjoinText = "Join";
+
   static const kjoinedText = "Joined";
+
   static const kdiscoverMoreText =
       "Discover more dishes by exploring what’s new";
+
   static const kfakeLikes = "235 Likes";
 }

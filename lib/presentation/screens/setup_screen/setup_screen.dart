@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
 import 'package:recipe_app/presentation/bloc/setup_bloc/setup_bloc.dart';
-import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
+import 'package:recipe_app/presentation/widget/common_widget/rounded_button_widget.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/circular_page_number_widget.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/setup_page_alert_box_widget.dart';
 import 'package:recipe_app/presentation/widget/setup_page_widgets/setup_page_body_widget.dart';
@@ -61,7 +62,11 @@ class SetupPage extends StatelessWidget {
                               color: ColorConstants.redTextColor,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            AutoRouter.of(context).replace(
+                              const BottomNavRoute(),
+                            );
+                          },
                         )
                       ],
                     ),

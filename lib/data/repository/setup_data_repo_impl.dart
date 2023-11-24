@@ -9,6 +9,7 @@ class SetupDataRepositoryImpl implements SetupDataRepository {
   SetupDataRepositoryImpl({
     required this.setupDataSource,
   });
+
   @override
   List<SetupDataEntity> getSetupDataList() {
     return setupDataSource.getSetupDataList();

@@ -1,10 +1,7 @@
 part of 'recipe_page_bloc.dart';
 
-sealed class RecipePageState extends Equatable {
+sealed class RecipePageState {
   const RecipePageState();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class RecipePageInitialState extends RecipePageState {}
@@ -28,8 +25,8 @@ final class RecipeFetchingSuccessState extends RecipePageState {
     );
   }
 
-  @override
-  List<Object> get props => [favoriteRecipies, recipeList];
+  // @override
+  // List<Object> get props => [favoriteRecipies, recipeList];
 }
 
 final class RecipeFetchingErrorState extends RecipePageState {

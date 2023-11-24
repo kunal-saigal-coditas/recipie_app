@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:recipe_app/core/constants/image_constant.dart';
-import 'package:recipe_app/core/constants/svg_constants.dart';
+
 import 'package:recipe_app/domain/entity/forum_data_entity/forum_featured_topic_data_entity.dart';
 
+import '../../../core/constants/asset_constants.dart';
 import '../../../core/constants/color_constants.dart';
 
 class FeaturedTopicSectionWidget extends StatelessWidget {
@@ -110,7 +110,7 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            ImageConstants.kgroceryPageImages[4],
+                            AssetConstantStrings.kgroceryPageImages[4],
                           ),
                         ),
                       ),
@@ -124,17 +124,17 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
                         FeaturedTopicActionWidget(
                           propertyText:
                               '${forumFeaturedTopicsDataList[index].likesCount} likes',
-                          svgAssetPath: SvgConstantStrings.kheartFilledIcon,
+                          svgAssetPath: AssetConstantStrings.kheartFilledIcon,
                         ),
                         FeaturedTopicActionWidget(
                           propertyText:
                               '${forumFeaturedTopicsDataList[index].repliesCount} replies',
-                          svgAssetPath: SvgConstantStrings.krepliesIcon,
+                          svgAssetPath: AssetConstantStrings.krepliesIcon,
                         ),
                         FeaturedTopicActionWidget(
                           propertyText:
                               '${forumFeaturedTopicsDataList[index].viewsCount} views',
-                          svgAssetPath: SvgConstantStrings.kviewsIcon,
+                          svgAssetPath: AssetConstantStrings.kviewsIcon,
                         ),
                       ],
                     )

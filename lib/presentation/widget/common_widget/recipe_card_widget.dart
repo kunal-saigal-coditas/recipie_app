@@ -1,17 +1,19 @@
 import 'dart:developer';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/core/constants/svg_constants.dart';
+
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
-import '../../core/constants/color_constants.dart';
-import '../../core/routes/routes.dart';
-import '../bloc/recipie_page_bloc/recipe_page_bloc.dart';
+import '../../../core/constants/asset_constants.dart';
+import '../../../core/constants/color_constants.dart';
+import '../../../core/routes/routes.dart';
+import '../../bloc/recipie_page_bloc/recipe_page_bloc.dart';
 
 class RecipeCardWidget extends StatelessWidget {
   const RecipeCardWidget(
@@ -35,7 +37,7 @@ class RecipeCardWidget extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
             image: DecorationImage(
-              image: NetworkImage(currentRecipe.image),
+              image: CachedNetworkImageProvider(currentRecipe.image),
               opacity: 5,
               onError: (exception, stackTrace) {
                 log(
@@ -72,14 +74,18 @@ class RecipeCardWidget extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(5),
-                          child: SvgPicture.asset(
-                            SvgConstantStrings.kheartIcon,
-                            theme: SvgTheme(
-                              currentColor: currentRecipe.isFavorite
-                                  ? ColorConstants.redTextColor
-                                  : ColorConstants.whiteBackgraound,
-                            ),
-                          ),
+                          child: currentRecipe.isFavorite
+                              ? const Icon(
+                                  Icons.favorite,
+                                  color: ColorConstants.redTextColor,
+                                )
+                              : SvgPicture.asset(
+                                  AssetConstantStrings.kheartIcon,
+                                  theme: const SvgTheme(
+                                    currentColor:
+                                        ColorConstants.whiteBackgraound,
+                                  ),
+                                ),
                         ),
                       ),
                     ),
@@ -118,7 +124,7 @@ class RecipeCardWidget extends StatelessWidget {
                     ),
                     const Spacer(),
                     SvgPicture.asset(
-                      SvgConstantStrings.kratingsIcon,
+                      AssetConstantStrings.kratingsIcon,
                     ),
                   ],
                 ),

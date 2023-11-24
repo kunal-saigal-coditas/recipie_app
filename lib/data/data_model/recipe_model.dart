@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipeModel extends RecipeEntity {
@@ -32,7 +33,7 @@ class RecipeModel extends RecipeEntity {
             (e) => ExtendedIngredientModel.fromJson(e),
           )
           .toList(),
-      isFavorite: true,
+      isFavorite: false,
     );
   }
 

@@ -1,11 +1,15 @@
 import 'package:get_it/get_it.dart';
+
 import 'package:recipe_app/data/data_source/forum_data_source.dart';
 import 'package:recipe_app/data/data_source/grocery_data_source.dart';
 import 'package:recipe_app/data/data_source/setup_data_source.dart';
+import 'package:recipe_app/data/repository/forum_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/grocery_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/setup_data_repo_impl.dart';
+import 'package:recipe_app/domain/repository/forum_data_repo.dart';
 import 'package:recipe_app/domain/repository/remote_data_repo.dart';
 import 'package:recipe_app/domain/repository/setup_data_repo.dart';
+import 'package:recipe_app/domain/use_case/forum_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/grocery_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/remote_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/setup_data_use_case.dart';
@@ -61,6 +65,11 @@ class Injector {
           groceryDataSource: GetIt.I<GroceryDataSource>(),
         ),
       )
+      ..registerLazySingleton<ForumDataRepository>(
+        () => ForumDataRepositoryImpl(
+          forumDataSource: GetIt.I<ForumDataSource>(),
+        ),
+      )
       ..registerLazySingleton<RemoteDataUseCase>(
         () => RemoteDataUseCase(
           remoteDataRepository: GetIt.I<RemoteDataRepository>(),
@@ -81,6 +90,11 @@ class Injector {
           groceryDataRepository: GetIt.I<GroceryDataRepository>(),
         ),
       )
+      ..registerLazySingleton<ForumDataUseCase>(
+        () => ForumDataUseCase(
+          forumDataRepository: GetIt.I<ForumDataRepository>(),
+        ),
+      )
       ..registerFactory<RecipePageBloc>(
         () => RecipePageBloc(
           remoteDataUsecase: GetIt.I<RemoteDataUseCase>(),
@@ -89,7 +103,7 @@ class Injector {
       )
       ..registerFactory<ProfileBloc>(
         () => ProfileBloc(
-          // recipePageBloc: GetIt.I<RecipePageBloc>(),
+          recipePageBloc: GetIt.I<RecipePageBloc>(),
           remoteDataUseCase: GetIt.I<RemoteDataUseCase>(),
           localDataUseCase: GetIt.I<LocalDataUseCase>(),
         ),
@@ -101,7 +115,7 @@ class Injector {
       )
       ..registerFactory<ForumPageBloc>(
         () => ForumPageBloc(
-          forumDataSource: GetIt.I<ForumDataSource>(),
+          forumDataUseCase: GetIt.I<ForumDataUseCase>(),
         ),
       )
       ..registerFactory<SetupBloc>(

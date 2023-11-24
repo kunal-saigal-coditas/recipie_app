@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
-import 'package:recipe_app/presentation/widget/recipe_card_widget.dart';
 
-import '../../core/constants/color_constants.dart';
-import '../../core/constants/string_constants.dart';
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
+import 'package:recipe_app/presentation/widget/common_widget/recipe_card_widget.dart';
+
+import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/string_constants.dart';
 
 class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
   const RecipeCategorySectionHeaderRowWidget({

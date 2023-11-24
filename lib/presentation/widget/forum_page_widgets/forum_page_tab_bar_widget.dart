@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/presentation/widget/forum_page_widgets/forum_featured_topics_widget.dart';
 import 'package:recipe_app/presentation/widget/forum_page_widgets/forum_groups_widget.dart';

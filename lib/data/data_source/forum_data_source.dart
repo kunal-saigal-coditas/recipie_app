@@ -1,8 +1,9 @@
-import 'package:recipe_app/core/constants/image_constant.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/data/data_model/forum_page_data_models/forum__featured_topic_data_model.dart';
 import 'package:recipe_app/data/data_model/forum_page_data_models/forum_challenges_data_model.dart';
 import 'package:recipe_app/data/data_model/forum_page_data_models/forum_groups_data_model.dart';
+
+import '../../core/constants/asset_constants.dart';
 
 class ForumDataSource {
   ForumFeaturedTopicsDataModel forumFeaturedTopicsData1 =
@@ -10,7 +11,7 @@ class ForumDataSource {
     userName: StringConstants.kfeaturedTopicsUserName[0],
     userEmail: StringConstants.kfeaturedTopicsEmail[0],
     summary: StringConstants.kfeaturedTopicsSummary[0],
-    profileImage: ImageConstants.kfeaturedTopicProfilePics[0],
+    profileImage: AssetConstantStrings.kfeaturedTopicProfilePics[0],
     likesCount: 180,
     repliesCount: 100,
     viewsCount: 350,
@@ -20,7 +21,7 @@ class ForumDataSource {
     userName: StringConstants.kfeaturedTopicsUserName[1],
     userEmail: StringConstants.kfeaturedTopicsEmail[1],
     summary: StringConstants.kfeaturedTopicsSummary[1],
-    profileImage: ImageConstants.kfeaturedTopicProfilePics[1],
+    profileImage: AssetConstantStrings.kfeaturedTopicProfilePics[1],
     likesCount: 250,
     repliesCount: 120,
     viewsCount: 390,
@@ -30,7 +31,7 @@ class ForumDataSource {
     userName: StringConstants.kfeaturedTopicsUserName[2],
     userEmail: StringConstants.kfeaturedTopicsEmail[2],
     summary: StringConstants.kfeaturedTopicsSummary[2],
-    profileImage: ImageConstants.kfeaturedTopicProfilePics[2],
+    profileImage: AssetConstantStrings.kfeaturedTopicProfilePics[2],
     likesCount: 140,
     repliesCount: 80,
     viewsCount: 260,
@@ -45,12 +46,12 @@ class ForumDataSource {
   }
 
   ForumChallengesDataModel forumChallengesData1 = ForumChallengesDataModel(
-    imageUrl: ImageConstants.kchallengesPics[0],
+    imageUrl: AssetConstantStrings.kchallengesPics[0],
     challengeName: StringConstants.kchallengesName,
     challengeSubtext: StringConstants.kchallengesSummary,
   );
   ForumChallengesDataModel forumChallengesData2 = ForumChallengesDataModel(
-    imageUrl: ImageConstants.kchallengesPics[1],
+    imageUrl: AssetConstantStrings.kchallengesPics[1],
     challengeName: StringConstants.kchallengesName,
     challengeSubtext: StringConstants.kchallengesSummary,
   );
@@ -64,37 +65,37 @@ class ForumDataSource {
   ForumGroupsDataModel forumGroupsData1 = ForumGroupsDataModel(
     groupName: StringConstants.kgroupsNames[0],
     groupFollowerCount: StringConstants.kgroupMembersCounts[0],
-    groupPic: ImageConstants.kgroupPics[0],
+    groupPic: AssetConstantStrings.kgroupPics[0],
     isJoined: true,
   );
   ForumGroupsDataModel forumGroupsData2 = ForumGroupsDataModel(
     groupName: StringConstants.kgroupsNames[1],
     groupFollowerCount: StringConstants.kgroupMembersCounts[1],
-    groupPic: ImageConstants.kgroupPics[1],
+    groupPic: AssetConstantStrings.kgroupPics[1],
     isJoined: false,
   );
   ForumGroupsDataModel forumGroupsData3 = ForumGroupsDataModel(
     groupName: StringConstants.kgroupsNames[2],
     groupFollowerCount: StringConstants.kgroupMembersCounts[2],
-    groupPic: ImageConstants.kgroupPics[2],
+    groupPic: AssetConstantStrings.kgroupPics[2],
     isJoined: true,
   );
   ForumGroupsDataModel forumGroupsData4 = ForumGroupsDataModel(
     groupName: StringConstants.kgroupsNames[3],
     groupFollowerCount: StringConstants.kgroupMembersCounts[3],
-    groupPic: ImageConstants.kgroupPics[3],
+    groupPic: AssetConstantStrings.kgroupPics[3],
     isJoined: false,
   );
   ForumGroupsDataModel forumGroupsData5 = ForumGroupsDataModel(
     groupName: StringConstants.kgroupsNames[4],
     groupFollowerCount: StringConstants.kgroupMembersCounts[4],
-    groupPic: ImageConstants.kgroupPics[4],
+    groupPic: AssetConstantStrings.kgroupPics[4],
     isJoined: true,
   );
   ForumGroupsDataModel forumGroupsData6 = ForumGroupsDataModel(
     groupName: StringConstants.kgroupsNames[5],
     groupFollowerCount: StringConstants.kgroupMembersCounts[5],
-    groupPic: ImageConstants.kgroupPics[5],
+    groupPic: AssetConstantStrings.kgroupPics[5],
     isJoined: false,
   );
 

@@ -1,1 +1,4 @@
-enum AnswerBoxType { circularSelectable, normalSelectable }
+enum AnswerBoxType {
+  circularSelectable,
+  normalSelectable,
+}

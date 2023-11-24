@@ -2,11 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/core/constants/image_constant.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
-import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
+import 'package:recipe_app/presentation/widget/common_widget/rounded_button_widget.dart';
+
+import '../../../core/constants/asset_constants.dart';
 
 @RoutePage()
 class SplashOnboardingPage extends StatelessWidget {
@@ -20,7 +22,7 @@ class SplashOnboardingPage extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Image.asset(
-            ImageConstants.konboardingBackgroundImage,
+            AssetConstantStrings.konboardingBackgroundImage,
             fit: BoxFit.cover,
           ),
           Positioned(

@@ -2,10 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/core/constants/image_constant.dart';
+
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/presentation/widget/explore_page_widgets/category_icon_card_widget.dart';
-import 'package:recipe_app/presentation/widget/search_bar_widget.dart';
+import 'package:recipe_app/presentation/widget/common_widget/search_bar_widget.dart';
+
+import '../../../core/constants/asset_constants.dart';
 
 @RoutePage()
 class ExplorePage extends StatelessWidget {
@@ -64,7 +66,7 @@ class ExplorePage extends StatelessWidget {
                   itemCount: StringConstants.kcategoryNames.length,
                   itemBuilder: (context, index) => CategoryItemCard(
                     categoryName: StringConstants.kcategoryNames[index],
-                    categoryImage: ImageConstants.kcategoryImages[index],
+                    categoryImage: AssetConstantStrings.kcategoryImages[index],
                   ),
                 ),
               ),

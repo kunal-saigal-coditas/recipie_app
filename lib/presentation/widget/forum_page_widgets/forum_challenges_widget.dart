@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe_app/core/constants/image_constant.dart';
+
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/domain/entity/forum_data_entity/forum_challenges_data_entity.dart';
-import 'package:recipe_app/presentation/widget/rounded_button_widget.dart';
 
+import '../../../core/constants/asset_constants.dart';
 import '../../../core/constants/color_constants.dart';
-import '../../../core/constants/svg_constants.dart';
 
 class ChallengesSectionWidget extends StatelessWidget {
   const ChallengesSectionWidget({
@@ -36,7 +35,7 @@ class ChallengesSectionWidget extends StatelessWidget {
             CircleAvatar(
               backgroundColor: ColorConstants.greyBackground.withOpacity(0.8),
               child: SvgPicture.asset(
-                SvgConstantStrings.kfilterIcon,
+                AssetConstantStrings.kfilterIcon,
                 height: 24,
                 width: 24,
               ),
@@ -79,11 +78,13 @@ class ChallengesSectionCardWidget extends StatelessWidget {
     return Card(
       elevation: 1,
       child: Stack(
+        // alignment: Alignment.centerLeft,
         children: [
           Column(
             children: [
               SizedBox(
                 width: double.infinity,
+                height: 150,
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15.r),
@@ -95,10 +96,11 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
+              Container(
+                width: double.infinity,
                 padding: EdgeInsets.fromLTRB(
-                  16.w,
-                  24.h,
+                  22.w,
+                  32.h,
                   16.w,
                   8.h,
                 ),
@@ -132,18 +134,21 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                           child: Stack(
                             children: [
                               Image.asset(
-                                ImageConstants.kfeaturedTopicProfilePics[0],
+                                AssetConstantStrings
+                                    .kfeaturedTopicProfilePics[0],
                               ),
                               Positioned(
                                 left: 15,
                                 child: Image.asset(
-                                  ImageConstants.kfeaturedTopicProfilePics[1],
+                                  AssetConstantStrings
+                                      .kfeaturedTopicProfilePics[1],
                                 ),
                               ),
                               Positioned(
                                 left: 30,
                                 child: Image.asset(
-                                  ImageConstants.kfeaturedTopicProfilePics[2],
+                                  AssetConstantStrings
+                                      .kfeaturedTopicProfilePics[2],
                                 ),
                               ),
                             ],
@@ -153,20 +158,29 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                           width: 8.w,
                         ),
                         const Text(
-                          "and 10 Others",
+                          "and 10 Others", //add it in const file
                           maxLines: 1,
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 11,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         const Spacer(),
-                        RoundedButton(
-                          minWidth: 105,
-                          buttonHeight: 34,
-                          title: StringConstants.kjoinNowText,
-                          colour: ColorConstants.primaryColor,
+                        ElevatedButton(
                           onPressed: () {},
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll(
+                              ColorConstants.primaryColor,
+                            ),
+                          ),
+                          child: const Text(
+                            StringConstants.kjoinNowText,
+                            style: TextStyle(
+                              color: ColorConstants.whiteBackgraound,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -175,9 +189,9 @@ class ChallengesSectionCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          Positioned.fill(
-            bottom: 50.h,
-            left: 10.w,
+          Positioned(
+            top: 120,
+            left: 15.w,
             child: Align(
               alignment: Alignment.centerLeft,
               child: Card(

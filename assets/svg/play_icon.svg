@@ -1,0 +1,16 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Back Button">
+<g id="Rectangle 206" filter="url(#filter0_b_91_1497)">
+<rect width="40" height="40" rx="20" fill="white"/>
+</g>
+<path id="Vector" d="M16 13.8685C16 13.0698 16.8901 12.5934 17.5547 13.0365L26.7519 19.168C27.3457 19.5638 27.3457 20.4362 26.7519 20.8321L17.5547 26.9635C16.8901 27.4066 16 26.9302 16 26.1315V13.8685Z" fill="#001E00"/>
+</g>
+<defs>
+<filter id="filter0_b_91_1497" x="-8" y="-8" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="4"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_91_1497"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_91_1497" result="shape"/>
+</filter>
+</defs>
+</svg>

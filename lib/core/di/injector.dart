@@ -1,31 +1,30 @@
 import 'package:get_it/get_it.dart';
 
-import 'package:recipe_app/data/data_source/forum_data_source.dart';
-import 'package:recipe_app/data/data_source/grocery_data_source.dart';
-import 'package:recipe_app/data/data_source/setup_data_source.dart';
+import 'package:recipe_app/data/data_source/local_data_sources/forum_data_source.dart';
+import 'package:recipe_app/data/data_source/local_data_sources/grocery_data_source.dart';
+import 'package:recipe_app/data/data_source/local_data_sources/local_data_source.dart';
+import 'package:recipe_app/data/data_source/local_data_sources/preferences_data_source.dart';
+import 'package:recipe_app/data/data_source/remote_data_source/remote_data_source.dart';
 import 'package:recipe_app/data/repository/forum_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/grocery_data_repo_impl.dart';
-import 'package:recipe_app/data/repository/setup_data_repo_impl.dart';
+import 'package:recipe_app/data/repository/local_data_repo_impl.dart';
+import 'package:recipe_app/data/repository/preferences_data_repo_impl.dart';
+import 'package:recipe_app/data/repository/remote_data_repo_impl.dart';
 import 'package:recipe_app/domain/repository/forum_data_repo.dart';
+import 'package:recipe_app/domain/repository/grocery_data_repo.dart';
+import 'package:recipe_app/domain/repository/local_data_repo.dart';
 import 'package:recipe_app/domain/repository/remote_data_repo.dart';
-import 'package:recipe_app/domain/repository/setup_data_repo.dart';
+import 'package:recipe_app/domain/repository/preferences_data_repo.dart';
 import 'package:recipe_app/domain/use_case/forum_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/grocery_data_usecase.dart';
+import 'package:recipe_app/domain/use_case/local_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/remote_data_usecase.dart';
-import 'package:recipe_app/domain/use_case/setup_data_use_case.dart';
-import 'package:recipe_app/presentation/bloc/forum_page_bloc/forum_page_bloc.dart';
-import 'package:recipe_app/presentation/bloc/grocery_page_bloc/grocery_page_bloc.dart';
-import 'package:recipe_app/presentation/bloc/profile_bloc/profile_bloc.dart';
-import 'package:recipe_app/presentation/bloc/recipie_page_bloc/recipe_page_bloc.dart';
-import 'package:recipe_app/presentation/bloc/setup_bloc/setup_bloc.dart';
-
-import '../../data/data_source/local_data_source.dart';
-import '../../data/data_source/remote_data_source.dart';
-import '../../data/repository/local_data_repo_impl.dart';
-import '../../data/repository/remote_data_repo_impl.dart';
-import '../../domain/repository/grocery_data_repo.dart';
-import '../../domain/repository/local_data_repo.dart';
-import '../../domain/use_case/local_data_usecase.dart';
+import 'package:recipe_app/domain/use_case/preferences_data_use_case.dart';
+import 'package:recipe_app/presentation/screens/forum_screen/bloc/forum_page_bloc.dart';
+import 'package:recipe_app/presentation/screens/grocery_screen/bloc/grocery_page_bloc.dart';
+import 'package:recipe_app/presentation/screens/preferences_screen/bloc/preferences_bloc.dart';
+import 'package:recipe_app/presentation/screens/profile_screen/bloc/profile_bloc.dart';
+import 'package:recipe_app/presentation/screens/recipes_screen/bloc/recipe_page_bloc.dart';
 
 class Injector {
   static void injectorFunction() async {
@@ -36,8 +35,8 @@ class Injector {
       ..registerLazySingleton<LocalDataSource>(
         () => LocalDataSource(),
       )
-      ..registerLazySingleton<SetupDataSource>(
-        () => SetupDataSource(),
+      ..registerLazySingleton<PreferencesDataSource>(
+        () => PreferencesDataSource(),
       )
       ..registerLazySingleton<GroceryDataSource>(
         () => GroceryDataSource(),
@@ -55,9 +54,9 @@ class Injector {
           localDataSource: GetIt.I<LocalDataSource>(),
         ),
       )
-      ..registerLazySingleton<SetupDataRepository>(
-        () => SetupDataRepositoryImpl(
-          setupDataSource: GetIt.I<SetupDataSource>(),
+      ..registerLazySingleton<PreferencesDataRepository>(
+        () => PreferencesDataRepositoryImpl(
+          preferencesDataSource: GetIt.I<PreferencesDataSource>(),
         ),
       )
       ..registerLazySingleton<GroceryDataRepository>(
@@ -80,9 +79,9 @@ class Injector {
           localDataRepository: GetIt.I<LocalDataRepository>(),
         ),
       )
-      ..registerLazySingleton<SetupDataUseCase>(
-        () => SetupDataUseCase(
-          setupDataRepository: GetIt.I<SetupDataRepository>(),
+      ..registerLazySingleton<PreferencesDataUseCase>(
+        () => PreferencesDataUseCase(
+          preferencesDataRepository: GetIt.I<PreferencesDataRepository>(),
         ),
       )
       ..registerLazySingleton<GroceryDataUseCase>(
@@ -118,9 +117,9 @@ class Injector {
           forumDataUseCase: GetIt.I<ForumDataUseCase>(),
         ),
       )
-      ..registerFactory<SetupBloc>(
-        () => SetupBloc(
-          setupDataUseCase: GetIt.I<SetupDataUseCase>(),
+      ..registerFactory<PreferencesBloc>(
+        () => PreferencesBloc(
+          preferencesDataUseCase: GetIt.I<PreferencesDataUseCase>(),
         ),
       );
   }

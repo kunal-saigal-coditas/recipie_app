@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/core/constants/text_style_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
 
 import '../../core/constants/asset_constants.dart';
@@ -29,7 +30,7 @@ class BottomNavPage extends StatelessWidget {
             const ExploreRoute(),
           );
         },
-        backgroundColor: ColorConstants.primaryColor,
+        backgroundColor: ColorConstants.c86BF3E,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
@@ -44,11 +45,11 @@ class BottomNavPage extends StatelessWidget {
         return BottomNavigationBar(
           iconSize: 24,
           type: BottomNavigationBarType.fixed,
-          unselectedItemColor: ColorConstants.secondaryTextColor,
-          selectedItemColor: ColorConstants.primaryColor,
-          unselectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.w500,
-            color: ColorConstants.secondaryTextColor,
+          selectedLabelStyle: TextStyleConstants.s12w500c86BF3E,
+          unselectedItemColor: ColorConstants.c637663.withOpacity(0.7),
+          selectedItemColor: ColorConstants.c86BF3E,
+          unselectedLabelStyle: TextStyleConstants.s12w500c637663.copyWith(
+            color: ColorConstants.c637663.withOpacity(0.7),
           ),
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,

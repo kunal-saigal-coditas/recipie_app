@@ -3,15 +3,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/core/constants/text_style_constants.dart';
 
 import '../../../core/constants/asset_constants.dart';
 import '../../../core/constants/color_constants.dart';
 import '../../../domain/entity/recipe_entity/recipe_entity.dart';
-import '../../widget/recipie_detail_page_widgets/recipe_detail_tabbar.dart';
-import '../../widget/recipie_detail_page_widgets/recipe_properties_card_widget.dart';
+import 'widgets/recipe_detail_tabbar.dart';
+import 'widgets/recipe_properties_card_widget.dart';
 
 @RoutePage()
 class RecipeDetailPage extends StatelessWidget {
@@ -30,7 +30,7 @@ class RecipeDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              width: double.infinity,
+              width: MediaQuery.of(context).size.width,
               height: 316.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -45,7 +45,8 @@ class RecipeDetailPage extends StatelessWidget {
                   child: Row(
                     children: [
                       CircleAvatar(
-                        backgroundColor: ColorConstants.greyBackground,
+                        backgroundColor:
+                            ColorConstants.cFFFFFF.withOpacity(0.2),
                         child: InkWell(
                           onTap: () {
                             AutoRouter.of(context).pop();
@@ -57,7 +58,8 @@ class RecipeDetailPage extends StatelessWidget {
                       ),
                       const Spacer(),
                       CircleAvatar(
-                        backgroundColor: ColorConstants.greyBackground,
+                        backgroundColor:
+                            ColorConstants.cFFFFFF.withOpacity(0.29),
                         child: SvgPicture.asset(
                           AssetConstantStrings.kexpandIcon,
                         ),
@@ -68,42 +70,39 @@ class RecipeDetailPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      Expanded(
-                        flex: 5,
-                        child: Text(
-                          recipeEntity.title,
-                          maxLines: 1, // Adjust as needed
-                          overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.cabin(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                      Text(
+                        recipeEntity.title,
+                        maxLines: 1,
+                        softWrap: true,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyleConstants.s24w700c001E00Cab,
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: CircleAvatar(
-                          backgroundColor:
-                              ColorConstants.greyBackground.withOpacity(0.8),
-                          child: SvgPicture.asset(
-                            AssetConstantStrings.kshareIcon,
-                            // colorFilter: const ColorFilter.mode(
-                            //   ColorConstants.whiteBackgraound,
-                            //   BlendMode.srcIn,
-                            // ),
-                          ),
+                      const Spacer(),
+                      CircleAvatar(
+                        backgroundColor:
+                            ColorConstants.cF5F6F5.withOpacity(0.8),
+                        child: SvgPicture.asset(
+                          AssetConstantStrings.kshareIcon,
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 20.h,
+                  const SizedBox(
+                    height: 14,
+                  ),
+                  Divider(
+                    color: ColorConstants.cC9CDC9.withOpacity(0.35),
+                    height: 0.6,
+                  ),
+                  const SizedBox(
+                    height: 19,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -114,8 +113,8 @@ class RecipeDetailPage extends StatelessWidget {
                           AssetConstantStrings.kprofileImage,
                         ),
                       ),
-                      SizedBox(
-                        width: 15.w,
+                      const SizedBox(
+                        width: 10,
                       ),
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,17 +122,11 @@ class RecipeDetailPage extends StatelessWidget {
                         children: [
                           Text(
                             StringConstants.kuserName,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: TextStyleConstants.s16w600c001E00,
                           ),
                           Text(
                             StringConstants.kuserEmail,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: ColorConstants.secondaryTextColor,
-                            ),
+                            style: TextStyleConstants.s14w500c637663,
                           ),
                         ],
                       ),
@@ -141,29 +134,34 @@ class RecipeDetailPage extends StatelessWidget {
                       Row(
                         children: [
                           SvgPicture.asset(
-                              AssetConstantStrings.kheartFilledIcon),
+                            AssetConstantStrings.kheartFilledIcon,
+                          ),
                           SizedBox(
                             width: 8.w,
                           ),
                           const Text(
                             StringConstants.kfakeLikes,
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: TextStyleConstants.s14w600c001E00,
                           )
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 16.h,
+                  const SizedBox(
+                    height: 14,
+                  ),
+                  Divider(
+                    color: ColorConstants.cC9CDC9.withOpacity(0.35),
+                    height: 0.6,
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   RecipeDetailTabBarSectionWidget(
                     recipeEntity: recipeEntity,
                   ),
-                  SizedBox(
-                    height: 12.h,
+                  const SizedBox(
+                    height: 14,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -180,7 +178,8 @@ class RecipeDetailPage extends StatelessWidget {
                       ),
                       const Flexible(
                         child: RecipePropertiesCardWidget(
-                          propertyValue: '245',
+                          propertyValue: StringConstants.k245Text,
+                          leftAlign: true,
                           propertyName: StringConstants.kcalorietext,
                           propertyIcon: AssetConstantStrings.kcaloriesIcon,
                         ),

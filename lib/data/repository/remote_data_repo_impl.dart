@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import 'package:recipe_app/core/failure/failure.dart';
-import 'package:recipe_app/data/data_source/remote_data_source.dart';
+import 'package:recipe_app/data/data_source/remote_data_source/remote_data_source.dart';
 
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 

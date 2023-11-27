@@ -39,6 +39,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const GroceryPage(),
       );
     },
+    PreferenceRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PreferencePage(),
+      );
+    },
     ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -59,12 +65,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const RecipePage(),
-      );
-    },
-    SetupRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SetupPage(),
       );
     },
     SplashOnboardingRoute.name: (routeData) {
@@ -133,6 +133,20 @@ class GroceryRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PreferencePage]
+class PreferenceRoute extends PageRouteInfo<void> {
+  const PreferenceRoute({List<PageRouteInfo>? children})
+      : super(
+          PreferenceRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PreferenceRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [ProfilePage]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
@@ -194,20 +208,6 @@ class RecipeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'RecipeRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SetupPage]
-class SetupRoute extends PageRouteInfo<void> {
-  const SetupRoute({List<PageRouteInfo>? children})
-      : super(
-          SetupRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SetupRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

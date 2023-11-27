@@ -43,12 +43,6 @@ class StringConstants {
     "🌿  Basil",
     "🫙 Soy Sauce",
     "🧂  Salt",
-    "🍶  Mayonnaise",
-    "🫒  Olives",
-    "🦐  Rice",
-    "🌿  Basil",
-    "🫙 Soy Sauce",
-    "🧂  Salt",
   ];
 
   static const konboardingCommonSubtext =
@@ -100,7 +94,7 @@ class StringConstants {
 
   static const krecommendedText = "Recommended";
 
-  static const kviewAlltext = "View All";
+  static const kviewAlltext = "View all";
 
   static const krecipePageAppBarText = "Explore Recipies";
 
@@ -149,9 +143,11 @@ class StringConstants {
 
   static const kredirectingText = "Redirecting...";
 
-  static const ksearchBarHinttext = "Search Anything...";
+  static const ksearchBarHinttext = "Search anything...";
 
   static const kcategoriestext = "Categories";
+
+  static const k1hAgoText = '1h ago';
 
   static const kfeaturedTopicsText = "Featured Topics";
 
@@ -247,4 +243,10 @@ class StringConstants {
       "Discover more dishes by exploring what’s new";
 
   static const kfakeLikes = "235 Likes";
+
+  static const k10OthersText = "and 10 Others";
+
+  static const k245Text = '245';
+
+  static const krecipeAppText = 'Recipe App';
 }

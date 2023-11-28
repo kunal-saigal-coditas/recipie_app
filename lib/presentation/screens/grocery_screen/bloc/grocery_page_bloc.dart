@@ -9,9 +9,9 @@ part 'grocery_page_event.dart';
 part 'grocery_page_state.dart';
 
 class GroceryPageBloc extends Bloc<GroceryPageEvent, GroceryPageState> {
-  final GroceryDataUseCase groceryDataUseCase;
+  final GroceryDataUsecase groceryDataUsecase;
   GroceryPageBloc({
-    required this.groceryDataUseCase,
+    required this.groceryDataUsecase,
   }) : super(GroceryPageInitial()) {
     on<GroceryPageInitialEvent>(groceryPageInitialEvent);
   }
@@ -20,7 +20,7 @@ class GroceryPageBloc extends Bloc<GroceryPageEvent, GroceryPageState> {
       GroceryPageInitialEvent event, Emitter<GroceryPageState> emit) {
     emit(
       GroceryPageSuccessState(
-        groceryItemList: groceryDataUseCase.groceryItemList(),
+        groceryItemList: groceryDataUsecase.groceryItemList(),
       ),
     );
   }

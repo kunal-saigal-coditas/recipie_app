@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
-import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
-import '../../../../core/constants/color_constants.dart';
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipeDetailTabBarSectionWidget extends StatelessWidget {
   const RecipeDetailTabBarSectionWidget({
@@ -61,8 +61,8 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 8.h,
+          const SizedBox(
+            height: 8,
           ),
           SizedBox(
             height: 170.h,
@@ -86,7 +86,7 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                       recipeEntity.instructions,
                       softWrap: true,
                       textAlign: TextAlign.start,
-                      style: TextStyleConstants.s15w600c001E00,
+                      style: TextStyleConstants.s15w500c354D35,
                     ),
                   ),
                 ),
@@ -94,8 +94,8 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(2),
                   child: ListView.separated(
                     separatorBuilder: (context, index) {
-                      return SizedBox(
-                        height: 8.h,
+                      return const SizedBox(
+                        height: 8,
                       );
                     },
                     itemCount: recipeEntity.directions.length,
@@ -119,8 +119,8 @@ class RecipeDetailTabBarSectionWidget extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: 8.w,
+                          const SizedBox(
+                            width: 8,
                           ),
                           Expanded(
                             child: Text(

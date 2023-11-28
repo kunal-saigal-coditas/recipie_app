@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/color_constants.dart';
+import 'package:recipe_app/core/constants/color_constants.dart';
 
 class ProfileEclipseWidget extends StatelessWidget {
   const ProfileEclipseWidget({

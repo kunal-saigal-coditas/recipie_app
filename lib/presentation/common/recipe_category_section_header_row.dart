@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:recipe_app/core/constants/text_style_constants.dart';
 
+import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/core/constants/text_style_constants.dart';
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 import 'package:recipe_app/presentation/common/recipe_card_widget.dart';
-
-import '../../core/constants/string_constants.dart';
 
 class RecipeCategorySectionHeaderRowWidget extends StatelessWidget {
   const RecipeCategorySectionHeaderRowWidget({

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
+
 import 'package:recipe_app/domain/entity/grocery_data_entity/grocery_data_entity.dart';
 
 class GroceryCard extends StatelessWidget {
@@ -39,9 +40,28 @@ class GroceryCard extends StatelessWidget {
               topLeft: Radius.circular(12.r),
               bottomLeft: Radius.circular(12.r),
             ),
-            child: Image.asset(
-              groceryDataEntity.groceryImageUrl,
-              fit: BoxFit.cover,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  end: Alignment.bottomCenter,
+                  begin: Alignment.topCenter,
+                  colors: [
+                    ColorConstants.c001E00.withOpacity(0),
+                    ColorConstants.c001E00.withOpacity(0.5728),
+                    ColorConstants.c001E00.withOpacity(0.3082),
+                  ],
+                  stops: const [
+                    0.0,
+                    0.5728,
+                    0.9082,
+                  ],
+                ),
+                backgroundBlendMode: BlendMode.darken,
+              ),
+              child: Image.asset(
+                groceryDataEntity.groceryImageUrl,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Expanded(

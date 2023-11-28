@@ -12,10 +12,10 @@ part 'forum_page_event.dart';
 part 'forum_page_state.dart';
 
 class ForumPageBloc extends Bloc<ForumPageEvent, ForumPageState> {
-  final ForumDataUseCase forumDataUseCase;
+  final ForumDataUsecase forumDataUsecase;
 
   ForumPageBloc({
-    required this.forumDataUseCase,
+    required this.forumDataUsecase,
   }) : super(ForumPageInitial()) {
     on<ForumPageDataFetchingEvent>(forumPageDataFetch);
   }
@@ -24,9 +24,9 @@ class ForumPageBloc extends Bloc<ForumPageEvent, ForumPageState> {
       ForumPageDataFetchingEvent event, Emitter<ForumPageState> emit) {
     emit(
       ForumPageSuccessState(
-        featuredTopicList: forumDataUseCase.getFeaturedTopicList(),
-        challengesDataList: forumDataUseCase.getChallengesList(),
-        groupsDataList: forumDataUseCase.getGroupsList(),
+        featuredTopicList: forumDataUsecase.getFeaturedTopicList(),
+        challengesDataList: forumDataUsecase.getChallengesList(),
+        groupsDataList: forumDataUsecase.getGroupsList(),
       ),
     );
   }

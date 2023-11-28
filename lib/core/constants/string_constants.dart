@@ -197,7 +197,7 @@ class StringConstants {
   static const kfeaturedTopicsEmail = [
     "@bellingcook",
     "@jasonlee",
-    "@amandacook",
+    "@amandacokjgydrkljhop;ihugyftghjkllmok",
   ];
 
   static const kfeaturedTopicsSummary = [
@@ -249,4 +249,8 @@ class StringConstants {
   static const k245Text = '245';
 
   static const krecipeAppText = 'Recipe App';
+
+  static const kerrorMessage = "An Error has Occurred Please Restart the App ";
+
+  static const kreviewsText = "Reviews (205)";
 }

@@ -1,13 +1,12 @@
+import 'package:recipe_app/data/data_model/forum_page_data_models/forum__featured_topic_data_model.dart';
+import 'package:recipe_app/data/data_model/forum_page_data_models/forum_challenges_data_model.dart';
+import 'package:recipe_app/data/data_model/forum_page_data_models/forum_groups_data_model.dart';
 import 'package:recipe_app/domain/repository/forum_data_repo.dart';
 
-import '../../data/data_model/forum_page_data_models/forum__featured_topic_data_model.dart';
-import '../../data/data_model/forum_page_data_models/forum_challenges_data_model.dart';
-import '../../data/data_model/forum_page_data_models/forum_groups_data_model.dart';
-
-class ForumDataUseCase {
+class ForumDataUsecase {
   final ForumDataRepository forumDataRepository;
 
-  const ForumDataUseCase({required this.forumDataRepository});
+  const ForumDataUsecase({required this.forumDataRepository});
 
   List<ForumChallengesDataModel> getChallengesList() {
     return forumDataRepository.getChallengesList();

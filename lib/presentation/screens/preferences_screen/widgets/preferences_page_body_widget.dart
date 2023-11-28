@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 
 import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
+
 import 'package:recipe_app/presentation/screens/preferences_screen/widgets/individual_option_widget.dart';
 
 class PreferencesBodyWidget extends StatelessWidget {

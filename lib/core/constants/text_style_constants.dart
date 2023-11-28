@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:recipe_app/core/constants/color_constants.dart';
 
 class TextStyleConstants {
@@ -19,6 +20,18 @@ class TextStyleConstants {
     color: ColorConstants.c001E00,
     fontWeight: FontWeight.w600,
     fontSize: 20,
+  );
+
+  static TextStyle s20w700c001E00Cab = GoogleFonts.cabin(
+    color: ColorConstants.c001E00,
+    fontWeight: FontWeight.w700,
+    fontSize: 20,
+  );
+
+  static const TextStyle s16w600cF85657 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    color: ColorConstants.cF85657,
   );
 
   static const TextStyle s16w600c001E00 = TextStyle(
@@ -105,6 +118,12 @@ class TextStyleConstants {
     color: ColorConstants.c001E00,
   );
 
+  static const TextStyle s14w600cFFFFFF = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: ColorConstants.cFFFFFF,
+  );
+
   static const TextStyle s14w400c637663 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
@@ -115,6 +134,18 @@ class TextStyleConstants {
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: ColorConstants.c6AA920,
+  );
+
+  static const TextStyle s14w400cC9CDC9 = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+    color: ColorConstants.cC9CDC9,
+  );
+
+  static const TextStyle s13w600c001E00 = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    color: ColorConstants.c001E00,
   );
 
   static const TextStyle s13w400cC9CDC9 = TextStyle(
@@ -147,6 +178,12 @@ class TextStyleConstants {
     color: ColorConstants.cFFFFFF,
   );
 
+  static const TextStyle s12w600c001E00 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: ColorConstants.c001E00,
+  );
+
   static const TextStyle s12w500c637663 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
@@ -170,10 +207,9 @@ class TextStyleConstants {
     color: ColorConstants.c001E00,
   );
 
-  static const TextStyle s14w400cC9CDC9 = TextStyle(
+  static const TextStyle s11w500c001E00 = TextStyle(
     fontSize: 11,
-    fontWeight: FontWeight.w400,
-    color: ColorConstants.cC9CDC9,
+    fontWeight: FontWeight.w500,
   );
 
   static const TextStyle s10w400c001E00 = TextStyle(

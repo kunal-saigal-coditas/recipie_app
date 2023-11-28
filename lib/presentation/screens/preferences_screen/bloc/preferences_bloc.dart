@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 
-import '../../../../domain/entity/preferences_data_entity/preferences_data_entity.dart';
-import '../../../../domain/use_case/preferences_data_use_case.dart';
+import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
+import 'package:recipe_app/domain/use_case/preferences_data_usecase.dart';
 
 part 'preferences_event.dart';
 part 'preferences_state.dart';
 
 class PreferencesBloc extends Bloc<PreferencesEvent, PreferencesState> {
-  final PreferencesDataUseCase preferencesDataUseCase;
+  final PreferencesDataUsecase preferencesDataUsecase;
 
   PreferencesBloc({
-    required this.preferencesDataUseCase,
+    required this.preferencesDataUsecase,
   }) : super(
           PreferencesInitialState(),
         ) {
@@ -26,7 +26,7 @@ class PreferencesBloc extends Bloc<PreferencesEvent, PreferencesState> {
     emit(
       (state as PreferencesLoadedState).copyWith(
         pageIndex: index,
-        answerItemList: preferencesDataUseCase.getAnswerList()[index],
+        answerItemList: preferencesDataUsecase.getAnswerList()[index],
       ),
     );
   }
@@ -37,7 +37,7 @@ class PreferencesBloc extends Bloc<PreferencesEvent, PreferencesState> {
     emit(
       (state as PreferencesLoadedState).copyWith(
         pageIndex: index,
-        answerItemList: preferencesDataUseCase.getAnswerList()[index],
+        answerItemList: preferencesDataUsecase.getAnswerList()[index],
       ),
     );
   }
@@ -47,9 +47,9 @@ class PreferencesBloc extends Bloc<PreferencesEvent, PreferencesState> {
     int index = 0;
     emit(
       PreferencesLoadedState(
-        preferencesDataList: preferencesDataUseCase.getPreferencesDataList(),
+        preferencesDataList: preferencesDataUsecase.getPreferencesDataList(),
         pageIndex: index,
-        answerItemList: preferencesDataUseCase.getAnswerList()[index],
+        answerItemList: preferencesDataUsecase.getAnswerList()[index],
       ),
     );
   }

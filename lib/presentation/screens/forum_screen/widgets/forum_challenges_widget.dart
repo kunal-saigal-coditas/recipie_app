@@ -3,12 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
-import 'package:recipe_app/domain/entity/forum_data_entity/forum_challenges_data_entity.dart';
-import 'package:recipe_app/presentation/screens/forum_screen/widgets/challenge_card_widget.dart';
 
-import '../../../../core/constants/asset_constants.dart';
-import '../../../../core/constants/color_constants.dart';
+import 'package:recipe_app/domain/entity/forum_data_entity/forum_challenges_data_entity.dart';
+
+import 'package:recipe_app/presentation/screens/forum_screen/widgets/challenge_card_widget.dart';
 
 class ChallengesSectionWidget extends StatelessWidget {
   const ChallengesSectionWidget({

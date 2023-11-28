@@ -1,8 +1,6 @@
+import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/data/data_model/preferences_data_model.dart';
-
-import '../../../core/constants/enums.dart';
-import '../../../core/constants/string_constants.dart';
-import '../../../domain/entity/preferences_data_entity/preferences_data_entity.dart';
+import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
 
 class PreferencesDataSource {
   PreferencesDataModel preferences1Data = PreferencesDataModel(
@@ -14,7 +12,6 @@ class PreferencesDataSource {
         isSelected: false,
       ),
     ),
-    answerBoxType: AnswerBoxType.circularSelectable,
     question: StringConstants.konboardingQuestion1,
     description: StringConstants.konboardingQuestion1Subtext,
   );
@@ -27,7 +24,6 @@ class PreferencesDataSource {
         isSelected: false,
       ),
     ),
-    answerBoxType: AnswerBoxType.normalSelectable,
     question: StringConstants.konboardingQuestion2,
     description: StringConstants.konboardingCommonSubtext,
   );
@@ -40,7 +36,6 @@ class PreferencesDataSource {
         isSelected: false,
       ),
     ),
-    answerBoxType: AnswerBoxType.normalSelectable,
     question: StringConstants.konboardingQuestion3,
     description: StringConstants.konboardingCommonSubtext,
   );
@@ -53,7 +48,6 @@ class PreferencesDataSource {
         isSelected: false,
       ),
     ),
-    answerBoxType: AnswerBoxType.normalSelectable,
     question: StringConstants.konboardingQuestion4,
     description: StringConstants.konboardingCommonSubtext,
   );
@@ -67,7 +61,6 @@ class PreferencesDataSource {
         isSelected: false,
       ),
     ),
-    answerBoxType: AnswerBoxType.circularSelectable,
     question: StringConstants.konboardingQuestion5,
     description: StringConstants.konboardingCommonSubtext,
   );

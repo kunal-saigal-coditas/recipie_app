@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 
-import '../../../../core/constants/asset_constants.dart';
-import '../../../common/profile_eclipse_widget.dart';
+import 'package:recipe_app/presentation/common/profile_eclipse_widget.dart';
 
 class DiscoverMoreCardWidget extends StatelessWidget {
   const DiscoverMoreCardWidget({super.key});

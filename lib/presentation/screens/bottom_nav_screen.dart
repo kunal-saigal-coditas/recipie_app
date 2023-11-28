@@ -2,12 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
-
-import '../../core/constants/asset_constants.dart';
 
 @RoutePage()
 class BottomNavPage extends StatelessWidget {
@@ -42,49 +41,61 @@ class BottomNavPage extends StatelessWidget {
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
       bottomNavigationBuilder: (_, tabsRouter) {
-        return BottomNavigationBar(
-          iconSize: 24,
-          type: BottomNavigationBarType.fixed,
-          selectedLabelStyle: TextStyleConstants.s12w500c86BF3E,
-          unselectedItemColor: ColorConstants.c637663.withOpacity(0.7),
-          selectedItemColor: ColorConstants.c86BF3E,
-          unselectedLabelStyle: TextStyleConstants.s12w500c637663.copyWith(
-            color: ColorConstants.c637663.withOpacity(0.7),
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: ColorConstants.c0045cf.withOpacity(0.03),
+                offset: const Offset(0, -12),
+                blurRadius: 56,
+                spreadRadius: 0,
+              ),
+            ],
           ),
-          currentIndex: tabsRouter.activeIndex,
-          onTap: tabsRouter.setActiveIndex,
-          items: [
-            BottomNavigationBarItem(
-              label: StringConstants.krecipieText,
-              icon: SvgPicture.asset(
-                AssetConstantStrings.krecipeIcon,
-              ),
+          child: BottomNavigationBar(
+            iconSize: 24,
+            type: BottomNavigationBarType.fixed,
+            selectedLabelStyle: TextStyleConstants.s12w500c86BF3E,
+            unselectedItemColor: ColorConstants.c637663.withOpacity(0.7),
+            selectedItemColor: ColorConstants.c86BF3E,
+            unselectedLabelStyle: TextStyleConstants.s12w500c637663.copyWith(
+              color: ColorConstants.c637663.withOpacity(0.7),
             ),
-            BottomNavigationBarItem(
-              label: StringConstants.kgroceryText,
-              icon: SvgPicture.asset(
-                AssetConstantStrings.kgroceryIcon,
+            currentIndex: tabsRouter.activeIndex,
+            onTap: tabsRouter.setActiveIndex,
+            items: [
+              BottomNavigationBarItem(
+                label: StringConstants.krecipieText,
+                icon: SvgPicture.asset(
+                  AssetConstantStrings.krecipeIcon,
+                ),
               ),
-            ),
-            const BottomNavigationBarItem(
-              label: StringConstants.kexploreText,
-              icon: SizedBox(
-                height: 24,
+              BottomNavigationBarItem(
+                label: StringConstants.kgroceryText,
+                icon: SvgPicture.asset(
+                  AssetConstantStrings.kgroceryIcon,
+                ),
               ),
-            ),
-            BottomNavigationBarItem(
-              label: StringConstants.kforumText,
-              icon: SvgPicture.asset(
-                AssetConstantStrings.kforumIcon,
+              const BottomNavigationBarItem(
+                label: StringConstants.kexploreText,
+                icon: SizedBox(
+                  height: 24,
+                ),
               ),
-            ),
-            BottomNavigationBarItem(
-              label: StringConstants.kprofileText,
-              icon: SvgPicture.asset(
-                AssetConstantStrings.kprofileIcon,
+              BottomNavigationBarItem(
+                label: StringConstants.kforumText,
+                icon: SvgPicture.asset(
+                  AssetConstantStrings.kforumIcon,
+                ),
               ),
-            ),
-          ],
+              BottomNavigationBarItem(
+                label: StringConstants.kprofileText,
+                icon: SvgPicture.asset(
+                  AssetConstantStrings.kprofileIcon,
+                ),
+              ),
+            ],
+          ),
         );
       },
     );

@@ -1,4 +1,4 @@
-import '../entity/preferences_data_entity/preferences_data_entity.dart';
+import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
 
 abstract class PreferencesDataRepository {
   List<PreferencesDataEntity> getPreferencesDataList();

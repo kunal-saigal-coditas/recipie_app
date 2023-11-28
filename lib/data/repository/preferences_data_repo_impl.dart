@@ -1,7 +1,6 @@
 import 'package:recipe_app/data/data_source/local_data_sources/preferences_data_source.dart';
 import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
-
-import '../../domain/repository/preferences_data_repo.dart';
+import 'package:recipe_app/domain/repository/preferences_data_repo.dart';
 
 class PreferencesDataRepositoryImpl implements PreferencesDataRepository {
   final PreferencesDataSource preferencesDataSource;

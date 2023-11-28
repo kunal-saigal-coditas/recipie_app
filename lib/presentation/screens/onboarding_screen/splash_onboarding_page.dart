@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
-import 'package:recipe_app/presentation/common/rounded_button_widget.dart';
 
-import '../../../core/constants/asset_constants.dart';
+import 'package:recipe_app/presentation/common/rounded_button_widget.dart';
 
 @RoutePage()
 class SplashOnboardingPage extends StatelessWidget {

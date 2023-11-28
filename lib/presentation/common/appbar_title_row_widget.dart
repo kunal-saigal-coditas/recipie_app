@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:recipe_app/core/constants/asset_constants.dart';
-import 'package:recipe_app/core/constants/text_style_constants.dart';
 
-import '../../core/constants/color_constants.dart';
+import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/color_constants.dart';
+import 'package:recipe_app/core/constants/text_style_constants.dart';
 
 class AppBarTitleRowWidget extends StatelessWidget {
   const AppBarTitleRowWidget({

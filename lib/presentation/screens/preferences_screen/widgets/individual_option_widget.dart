@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
+
 import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
+
 import 'package:recipe_app/presentation/screens/preferences_screen/bloc/preferences_bloc.dart';
 
 class IndividualOptionWidget extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/constants/text_style_constants.dart';
+import 'package:recipe_app/core/constants/text_style_constants.dart';
 
 class FeaturedTopicActionWidget extends StatelessWidget {
   const FeaturedTopicActionWidget({
@@ -28,6 +28,7 @@ class FeaturedTopicActionWidget extends StatelessWidget {
         Text(
           propertyText,
           style: TextStyleConstants.s10w400c001E00,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

@@ -8,6 +8,7 @@ import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 import 'package:recipe_app/core/routes/routes.dart';
+
 import 'package:recipe_app/presentation/common/rounded_button_widget.dart';
 import 'package:recipe_app/presentation/screens/preferences_screen/bloc/preferences_bloc.dart';
 import 'package:recipe_app/presentation/screens/preferences_screen/widgets/circular_page_number_widget.dart';

@@ -1,11 +1,10 @@
+import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
 import 'package:recipe_app/domain/repository/preferences_data_repo.dart';
 
-import '../entity/preferences_data_entity/preferences_data_entity.dart';
-
-class PreferencesDataUseCase {
+class PreferencesDataUsecase {
   final PreferencesDataRepository preferencesDataRepository;
 
-  PreferencesDataUseCase({
+  PreferencesDataUsecase({
     required this.preferencesDataRepository,
   });
 

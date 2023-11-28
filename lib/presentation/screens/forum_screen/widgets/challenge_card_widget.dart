@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:recipe_app/presentation/common/profile_eclipse_widget.dart';
 
-import '../../../../core/constants/asset_constants.dart';
-import '../../../../core/constants/color_constants.dart';
-import '../../../../core/constants/string_constants.dart';
-import '../../../../domain/entity/forum_data_entity/forum_challenges_data_entity.dart';
+import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/color_constants.dart';
+import 'package:recipe_app/core/constants/string_constants.dart';
+import 'package:recipe_app/core/constants/text_style_constants.dart';
+
+import 'package:recipe_app/domain/entity/forum_data_entity/forum_challenges_data_entity.dart';
+
+import 'package:recipe_app/presentation/common/profile_eclipse_widget.dart';
 
 class ChallengesSectionCardWidget extends StatelessWidget {
   const ChallengesSectionCardWidget({
@@ -50,20 +53,14 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                   children: [
                     Text(
                       forumChallengesDataEntity.challengeName,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                      ),
+                      style: TextStyleConstants.s16w600c001E00,
                     ),
                     const SizedBox(
                       height: 9,
                     ),
                     Text(
                       forumChallengesDataEntity.challengeSubtext,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                      ),
+                      style: TextStyleConstants.s12w400c001E00,
                     ),
                     const SizedBox(
                       height: 16,
@@ -118,10 +115,7 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                         const Text(
                           StringConstants.k10OthersText, //add it in const file
                           maxLines: 1,
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: TextStyleConstants.s11w500c001E00,
                         ),
                         const Spacer(),
                         InkWell(
@@ -143,11 +137,7 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                               padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                               child: Text(
                                 StringConstants.kjoinNowText,
-                                style: TextStyle(
-                                  color: ColorConstants.cFFFFFF,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                                style: TextStyleConstants.s14w600cFFFFFF,
                               ),
                             ),
                           ),
@@ -180,18 +170,11 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         forumChallengesDataEntity.date.toString(),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                          color: ColorConstants.cF85657,
-                        ),
+                        style: TextStyleConstants.s16w600cF85657,
                       ),
                       Text(
                         forumChallengesDataEntity.month,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: TextStyleConstants.s12w600c001E00,
                       ),
                     ],
                   ),

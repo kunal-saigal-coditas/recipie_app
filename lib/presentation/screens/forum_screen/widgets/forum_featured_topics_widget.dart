@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 
 import 'package:recipe_app/domain/entity/forum_data_entity/forum_featured_topic_data_entity.dart';
 
-import '../../../../core/constants/asset_constants.dart';
-import '../../../../core/constants/color_constants.dart';
-import 'featured_topic_action_widget.dart';
+import 'package:recipe_app/presentation/screens/forum_screen/widgets/featured_topic_action_widget.dart';
 
 class FeaturedTopicSectionWidget extends StatelessWidget {
   const FeaturedTopicSectionWidget({
@@ -41,33 +42,43 @@ class FeaturedTopicSectionWidget extends StatelessWidget {
               SizedBox(
                 width: 8.w,
               ),
-              Flexible(
+              Expanded(
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          forumFeaturedTopicsDataList[index].userName,
-                          style: TextStyleConstants.s15w600c001E00,
-                        ),
-                        Text(
-                          " ${forumFeaturedTopicsDataList[index].userEmail}",
-                          style: TextStyleConstants.s12w400c001E00,
-                        ),
-                        const Spacer(),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: ColorConstants.cF5F6F5.withOpacity(0.8),
-                            borderRadius: BorderRadius.circular(8.r),
+                        Flexible(
+                          child: Text(
+                            forumFeaturedTopicsDataList[index].userName,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyleConstants.s15w600c001E00,
                           ),
-                          child: const Icon(
-                            Icons.favorite_border_outlined,
-                            size: 17,
-                            color: ColorConstants.c001E00,
+                        ),
+                        Flexible(
+                          child: Text(
+                            " ${forumFeaturedTopicsDataList[index].userEmail}",
+                            style: TextStyleConstants.s12w400c001E00,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const Spacer(
+                          flex: 3,
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: ColorConstants.cF5F6F5.withOpacity(0.8),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: const Icon(
+                              Icons.favorite_border_outlined,
+                              size: 17,
+                              color: ColorConstants.c001E00,
+                            ),
                           ),
                         ),
                       ],

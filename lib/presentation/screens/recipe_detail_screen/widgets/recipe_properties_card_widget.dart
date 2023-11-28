@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 
-import '../../../../core/constants/color_constants.dart';
-
 class RecipePropertiesCardWidget extends StatelessWidget {
-  const RecipePropertiesCardWidget(
-      {super.key,
-      required this.propertyValue,
-      required this.propertyName,
-      required this.propertyIcon,
-      this.leftAlign = false});
+  const RecipePropertiesCardWidget({
+    super.key,
+    required this.propertyValue,
+    required this.propertyName,
+    required this.propertyIcon,
+    this.leftAlign = false,
+  });
   final String propertyValue;
   final String propertyName;
   final String propertyIcon;
@@ -22,7 +22,7 @@ class RecipePropertiesCardWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: ColorConstants.cF85657.withOpacity(0.07),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(

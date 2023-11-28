@@ -1,7 +1,6 @@
+import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/data/data_model/grocery_data_model.dart';
-
-import '../../../core/constants/asset_constants.dart';
 
 class GroceryDataSource {
   GroceryDataModel groceryItem1 = GroceryDataModel(

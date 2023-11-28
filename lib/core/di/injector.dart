@@ -15,11 +15,12 @@ import 'package:recipe_app/domain/repository/grocery_data_repo.dart';
 import 'package:recipe_app/domain/repository/local_data_repo.dart';
 import 'package:recipe_app/domain/repository/remote_data_repo.dart';
 import 'package:recipe_app/domain/repository/preferences_data_repo.dart';
+
 import 'package:recipe_app/domain/use_case/forum_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/grocery_data_usecase.dart';
-import 'package:recipe_app/domain/use_case/local_data_usecase.dart';
-import 'package:recipe_app/domain/use_case/remote_data_usecase.dart';
-import 'package:recipe_app/domain/use_case/preferences_data_use_case.dart';
+import 'package:recipe_app/domain/use_case/preferences_data_usecase.dart';
+import 'package:recipe_app/domain/use_case/recipe_usecase.dart';
+
 import 'package:recipe_app/presentation/screens/forum_screen/bloc/forum_page_bloc.dart';
 import 'package:recipe_app/presentation/screens/grocery_screen/bloc/grocery_page_bloc.dart';
 import 'package:recipe_app/presentation/screens/preferences_screen/bloc/preferences_bloc.dart';
@@ -69,57 +70,51 @@ class Injector {
           forumDataSource: GetIt.I<ForumDataSource>(),
         ),
       )
-      ..registerLazySingleton<RemoteDataUseCase>(
-        () => RemoteDataUseCase(
+      ..registerLazySingleton<RecipeUsecase>(
+        () => RecipeUsecase(
           remoteDataRepository: GetIt.I<RemoteDataRepository>(),
-        ),
-      )
-      ..registerLazySingleton<LocalDataUseCase>(
-        () => LocalDataUseCase(
           localDataRepository: GetIt.I<LocalDataRepository>(),
         ),
       )
-      ..registerLazySingleton<PreferencesDataUseCase>(
-        () => PreferencesDataUseCase(
+      ..registerLazySingleton<PreferencesDataUsecase>(
+        () => PreferencesDataUsecase(
           preferencesDataRepository: GetIt.I<PreferencesDataRepository>(),
         ),
       )
-      ..registerLazySingleton<GroceryDataUseCase>(
-        () => GroceryDataUseCase(
+      ..registerLazySingleton<GroceryDataUsecase>(
+        () => GroceryDataUsecase(
           groceryDataRepository: GetIt.I<GroceryDataRepository>(),
         ),
       )
-      ..registerLazySingleton<ForumDataUseCase>(
-        () => ForumDataUseCase(
+      ..registerLazySingleton<ForumDataUsecase>(
+        () => ForumDataUsecase(
           forumDataRepository: GetIt.I<ForumDataRepository>(),
         ),
       )
       ..registerFactory<RecipePageBloc>(
         () => RecipePageBloc(
-          remoteDataUsecase: GetIt.I<RemoteDataUseCase>(),
-          localDataUseCase: GetIt.I<LocalDataUseCase>(),
+          recipeDataUsecase: GetIt.I<RecipeUsecase>(),
         ),
       )
       ..registerFactory<ProfileBloc>(
         () => ProfileBloc(
           recipePageBloc: GetIt.I<RecipePageBloc>(),
-          remoteDataUseCase: GetIt.I<RemoteDataUseCase>(),
-          localDataUseCase: GetIt.I<LocalDataUseCase>(),
+          recipeDataUsecase: GetIt.I<RecipeUsecase>(),
         ),
       )
       ..registerFactory<GroceryPageBloc>(
         () => GroceryPageBloc(
-          groceryDataUseCase: GetIt.I<GroceryDataUseCase>(),
+          groceryDataUsecase: GetIt.I<GroceryDataUsecase>(),
         ),
       )
       ..registerFactory<ForumPageBloc>(
         () => ForumPageBloc(
-          forumDataUseCase: GetIt.I<ForumDataUseCase>(),
+          forumDataUsecase: GetIt.I<ForumDataUsecase>(),
         ),
       )
       ..registerFactory<PreferencesBloc>(
         () => PreferencesBloc(
-          preferencesDataUseCase: GetIt.I<PreferencesDataUseCase>(),
+          preferencesDataUsecase: GetIt.I<PreferencesDataUsecase>(),
         ),
       );
   }

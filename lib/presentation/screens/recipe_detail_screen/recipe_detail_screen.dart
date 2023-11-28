@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'package:recipe_app/core/constants/asset_constants.dart';
+import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
 
-import '../../../core/constants/asset_constants.dart';
-import '../../../core/constants/color_constants.dart';
-import '../../../domain/entity/recipe_entity/recipe_entity.dart';
-import 'widgets/recipe_detail_tabbar.dart';
-import 'widgets/recipe_properties_card_widget.dart';
+import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
+
+import 'package:recipe_app/presentation/screens/recipe_detail_screen/widgets/recipe_detail_tabbar.dart';
+import 'package:recipe_app/presentation/screens/recipe_detail_screen/widgets/recipe_properties_card_widget.dart';
 
 @RoutePage()
 class RecipeDetailPage extends StatelessWidget {
@@ -38,39 +39,80 @@ class RecipeDetailPage extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ),
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
+              child: Stack(
+                children: [
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        end: Alignment.bottomCenter,
+                        begin: Alignment.topCenter,
+                        colors: [
+                          ColorConstants.c001E00.withOpacity(0),
+                          ColorConstants.c001E00.withOpacity(0.573),
+                          ColorConstants.c001E00.withOpacity(0.308),
+                        ],
+                        stops: const [0.0, 0.5728, 0.9082],
+                      ),
+                      backgroundBlendMode: BlendMode.darken,
+                    ),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.height,
+                    ),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      CircleAvatar(
-                        backgroundColor:
-                            ColorConstants.cFFFFFF.withOpacity(0.2),
-                        child: InkWell(
-                          onTap: () {
-                            AutoRouter.of(context).pop();
-                          },
-                          child: SvgPicture.asset(
-                            AssetConstantStrings.kgoBackIcon,
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundColor:
+                                    ColorConstants.cFFFFFF.withOpacity(0.2),
+                                child: InkWell(
+                                  onTap: () {
+                                    AutoRouter.of(context).pop();
+                                  },
+                                  child: SvgPicture.asset(
+                                    AssetConstantStrings.kgoBackIcon,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              CircleAvatar(
+                                backgroundColor:
+                                    ColorConstants.cFFFFFF.withOpacity(0.29),
+                                child: SvgPicture.asset(
+                                  AssetConstantStrings.kexpandIcon,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      const Spacer(),
-                      CircleAvatar(
-                        backgroundColor:
-                            ColorConstants.cFFFFFF.withOpacity(0.29),
-                        child: SvgPicture.asset(
-                          AssetConstantStrings.kexpandIcon,
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(
+                            AssetConstantStrings.kplayIcon,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ),
+                ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+              padding: const EdgeInsets.fromLTRB(
+                20,
+                20,
+                20,
+                0,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -105,7 +147,8 @@ class RecipeDetailPage extends StatelessWidget {
                     height: 19,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const CircleAvatar(
                         radius: 30,
@@ -136,8 +179,8 @@ class RecipeDetailPage extends StatelessWidget {
                           SvgPicture.asset(
                             AssetConstantStrings.kheartFilledIcon,
                           ),
-                          SizedBox(
-                            width: 8.w,
+                          const SizedBox(
+                            width: 10,
                           ),
                           const Text(
                             StringConstants.kfakeLikes,
@@ -155,7 +198,7 @@ class RecipeDetailPage extends StatelessWidget {
                     height: 0.6,
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 19,
                   ),
                   RecipeDetailTabBarSectionWidget(
                     recipeEntity: recipeEntity,
@@ -173,8 +216,8 @@ class RecipeDetailPage extends StatelessWidget {
                           propertyIcon: AssetConstantStrings.ktimerIcon,
                         ),
                       ),
-                      SizedBox(
-                        width: 8.w,
+                      const SizedBox(
+                        width: 8,
                       ),
                       const Flexible(
                         child: RecipePropertiesCardWidget(
@@ -184,8 +227,8 @@ class RecipeDetailPage extends StatelessWidget {
                           propertyIcon: AssetConstantStrings.kcaloriesIcon,
                         ),
                       ),
-                      SizedBox(
-                        width: 8.w,
+                      const SizedBox(
+                        width: 8,
                       ),
                       Flexible(
                         child: RecipePropertiesCardWidget(
@@ -193,6 +236,26 @@ class RecipeDetailPage extends StatelessWidget {
                           propertyName: StringConstants.koriginText,
                           propertyIcon: AssetConstantStrings.klocationIcon,
                         ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 14,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        StringConstants.kreviewsText,
+                        maxLines: 1,
+                        softWrap: true,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyleConstants.s20w700c001E00Cab,
+                      ),
+                      const Spacer(),
+                      SvgPicture.asset(
+                        AssetConstantStrings.karrowRightGreenIcon,
                       ),
                     ],
                   ),

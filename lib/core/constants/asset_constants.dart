@@ -11,6 +11,8 @@ class AssetConstantStrings {
 
   static const karrowRightIcon = "assets/svg/arrow_right_icon.svg";
 
+  static const karrowRightGreenIcon = "assets/svg/arrow_right_green.svg";
+
   static const kgroceryIcon = "assets/svg/grocery_icon.svg";
 
   static const kheartFilledIcon = "assets/svg/heart_filled.svg";

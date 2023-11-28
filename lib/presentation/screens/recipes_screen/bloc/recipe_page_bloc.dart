@@ -3,21 +3,19 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+
 import 'package:recipe_app/core/failure/failure.dart';
 
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
-import 'package:recipe_app/domain/use_case/local_data_usecase.dart';
-import 'package:recipe_app/domain/use_case/remote_data_usecase.dart';
+import 'package:recipe_app/domain/use_case/recipe_usecase.dart';
 
 part 'recipie_page_event.dart';
 part 'recipe_page_state.dart';
 
 class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
-  final RemoteDataUseCase remoteDataUsecase;
-  final LocalDataUseCase localDataUseCase;
+  final RecipeUsecase recipeDataUsecase;
   RecipePageBloc({
-    required this.remoteDataUsecase,
-    required this.localDataUseCase,
+    required this.recipeDataUsecase,
   }) : super(RecipePageInitialState()) {
     on<RecipePageInitialEvent>(recipeFetching);
     on<AddToFavoritesEvent>(addToFavorites);
@@ -26,8 +24,9 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
   FutureOr<void> recipeFetching(
       RecipePageInitialEvent event, Emitter<RecipePageState> emit) async {
     Either<Failure, List<RecipeEntity>> response =
-        await remoteDataUsecase.getDatafromDio();
-    List<int> favoritesList = localDataUseCase.getFavoritesDataList();
+        await recipeDataUsecase.getDatafromDio();
+    List<int> favoritesList = recipeDataUsecase.getFavoritesDataList();
+
     response.fold((left) {
       emit(
         const RecipeFetchingErrorState(
@@ -35,7 +34,7 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
         ),
       );
     }, (right) {
-      List<RecipeEntity> recipeList = [...right];
+      List<RecipeEntity> recipeList = right;
       for (int i = 0; i < recipeList.length; i++) {
         if (favoritesList.contains(recipeList[i].id)) {
           recipeList[i] = recipeList[i].copyWith(
@@ -65,7 +64,7 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
 
     recipeListCopy[index] = postToUpdate;
 
-    localDataUseCase.saveToFavorites(event.recipeEntity);
+    recipeDataUsecase.saveToFavorites(event.recipeEntity);
 
     emit(
       (state as RecipeFetchingSuccessState).copyWith(

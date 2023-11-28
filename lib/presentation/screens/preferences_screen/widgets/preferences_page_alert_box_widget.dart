@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:recipe_app/core/constants/asset_constants.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 import 'package:recipe_app/core/constants/string_constants.dart';
 import 'package:recipe_app/core/constants/text_style_constants.dart';
-import 'package:recipe_app/presentation/common/rounded_button_widget.dart';
 
-import '../../../../core/constants/asset_constants.dart';
+import 'package:recipe_app/presentation/common/rounded_button_widget.dart';
 
 class PreferencesAlertBoxWidget extends StatelessWidget {
   const PreferencesAlertBoxWidget({super.key});

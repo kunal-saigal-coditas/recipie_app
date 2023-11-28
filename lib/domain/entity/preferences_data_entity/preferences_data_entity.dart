@@ -1,15 +1,11 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../core/constants/enums.dart';
-
 class PreferencesDataEntity extends Equatable {
   final String question;
   final String description;
   final List<AnswerItemEntity> answerItemList;
-  final AnswerBoxType answerBoxType;
   const PreferencesDataEntity({
     required this.answerItemList,
-    required this.answerBoxType,
     required this.question,
     required this.description,
   });
@@ -18,7 +14,6 @@ class PreferencesDataEntity extends Equatable {
   List<Object?> get props => [
         question,
         description,
-        answerBoxType,
         answerItemList,
       ];
 }

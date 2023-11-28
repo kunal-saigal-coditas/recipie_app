@@ -1,11 +1,10 @@
+import 'package:recipe_app/data/data_model/grocery_data_model.dart';
 import 'package:recipe_app/domain/repository/grocery_data_repo.dart';
 
-import '../../data/data_model/grocery_data_model.dart';
-
-class GroceryDataUseCase {
+class GroceryDataUsecase {
   final GroceryDataRepository groceryDataRepository;
 
-  GroceryDataUseCase({
+  GroceryDataUsecase({
     required this.groceryDataRepository,
   });
 

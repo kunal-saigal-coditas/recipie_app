@@ -24,9 +24,6 @@ final class RecipeFetchingSuccessState extends RecipePageState {
       recipeList: recipeList ?? this.recipeList,
     );
   }
-
-  // @override
-  // List<Object> get props => [favoriteRecipies, recipeList];
 }
 
 final class RecipeFetchingErrorState extends RecipePageState {

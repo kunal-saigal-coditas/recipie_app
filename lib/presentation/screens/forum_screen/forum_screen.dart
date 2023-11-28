@@ -2,10 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+
 import 'package:recipe_app/core/constants/string_constants.dart';
+
 import 'package:recipe_app/presentation/common/appbar_title_row_widget.dart';
 import 'package:recipe_app/presentation/screens/forum_screen/bloc/forum_page_bloc.dart';
-
 import 'package:recipe_app/presentation/screens/forum_screen/widgets/forum_page_tab_bar_widget.dart';
 
 @RoutePage()

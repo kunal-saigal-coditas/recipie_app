@@ -23,7 +23,7 @@ class SearchBarWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(200),
             borderSide: BorderSide.none,
           ),
-          hintText: StringConstants.ksearchBarHinttext,
+          hintText: StringConstants.ksearchAnythingText,
           hintStyle: TextStyleConstants.s14w400c637663,
           prefixIcon: Container(
             padding: const EdgeInsets.symmetric(

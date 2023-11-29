@@ -164,11 +164,11 @@ class RecipeDetailPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            StringConstants.kuserName,
+                            StringConstants.kAndrewJunText,
                             style: TextStyleConstants.s16w600c001E00,
                           ),
                           Text(
-                            StringConstants.kuserEmail,
+                            StringConstants.kandrewjunEmailText,
                             style: TextStyleConstants.s14w500c637663,
                           ),
                         ],
@@ -223,7 +223,7 @@ class RecipeDetailPage extends StatelessWidget {
                         child: RecipePropertiesCardWidget(
                           propertyValue: StringConstants.k245Text,
                           leftAlign: true,
-                          propertyName: StringConstants.kcalorietext,
+                          propertyName: StringConstants.kcalorieText,
                           propertyIcon: AssetConstantStrings.kcaloriesIcon,
                         ),
                       ),

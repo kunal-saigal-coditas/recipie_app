@@ -24,14 +24,14 @@ class LocalDataSource {
     }
     String saveList = jsonEncode(favoritesList);
     await sharedPreferenceInstance.setString(
-      StringConstants.ksharedPreferencekey,
+      StringConstants.ksharedPreferenceKeyText,
       saveList,
     );
   }
 
   List<int> getFavoritesDataList() {
     final String savedFavoritesList = sharedPreferenceInstance
-            .getString(StringConstants.ksharedPreferencekey) ??
+            .getString(StringConstants.ksharedPreferenceKeyText) ??
         "";
     if (savedFavoritesList != "") {
       var decodedFavoriteList = jsonDecode(savedFavoritesList);

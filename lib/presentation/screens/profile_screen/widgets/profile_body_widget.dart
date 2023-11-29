@@ -46,7 +46,7 @@ class ProfileScreenBodyWidget extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        StringConstants.kuserName,
+                        StringConstants.kAndrewJunText,
                         softWrap: true,
                         style: TextStyleConstants.s24w700c001E00Cab,
                         maxLines: 2,
@@ -57,7 +57,7 @@ class ProfileScreenBodyWidget extends StatelessWidget {
                       ),
                       const Flexible(
                         child: Text(
-                          StringConstants.kuserEmail,
+                          StringConstants.kandrewjunEmailText,
                           style: TextStyleConstants.s12w500c637663,
                           softWrap: true,
                           maxLines: 2,

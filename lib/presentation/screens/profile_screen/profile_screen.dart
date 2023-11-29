@@ -27,7 +27,7 @@ class ProfilePage extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                StringConstants.kprofilePageTitle,
+                StringConstants.kprofilePageTitleText,
                 style: TextStyleConstants.s24w700c001E00Cab,
               ),
               const Spacer(),

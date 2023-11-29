@@ -46,12 +46,12 @@ class ForumDataSource {
 
   ForumChallengesDataModel forumChallengesData1 = ForumChallengesDataModel(
     imageUrl: AssetConstantStrings.kchallengesPics[0],
-    challengeName: StringConstants.kchallengesName,
+    challengeName: StringConstants.kchallengesNameText,
     challengeSubtext: StringConstants.kchallengesSummary,
   );
   ForumChallengesDataModel forumChallengesData2 = ForumChallengesDataModel(
     imageUrl: AssetConstantStrings.kchallengesPics[1],
-    challengeName: StringConstants.kchallengesName,
+    challengeName: StringConstants.kchallengesNameText,
     challengeSubtext: StringConstants.kchallengesSummary,
   );
   List<ForumChallengesDataModel> getChallengesList() {

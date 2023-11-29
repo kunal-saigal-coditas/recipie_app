@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
@@ -9,9 +10,10 @@ import 'package:recipe_app/core/routes/routes.dart';
 
 import 'package:recipe_app/data/data_source/local_data_sources/local_data_source.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Injector.injectorFunction();
+  await Firebase.initializeApp();
   (GetIt.I<LocalDataSource>()).init();
   runApp(
     const MyApp(),

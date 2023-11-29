@@ -23,6 +23,7 @@ import 'package:recipe_app/domain/use_case/recipe_usecase.dart';
 
 import 'package:recipe_app/presentation/screens/forum_screen/bloc/forum_page_bloc.dart';
 import 'package:recipe_app/presentation/screens/grocery_screen/bloc/grocery_page_bloc.dart';
+import 'package:recipe_app/presentation/screens/login_screen/cubit/auth_cubit.dart';
 import 'package:recipe_app/presentation/screens/preferences_screen/bloc/preferences_bloc.dart';
 import 'package:recipe_app/presentation/screens/profile_screen/bloc/profile_bloc.dart';
 import 'package:recipe_app/presentation/screens/recipes_screen/bloc/recipe_page_bloc.dart';
@@ -90,6 +91,9 @@ class Injector {
         () => ForumDataUsecase(
           forumDataRepository: GetIt.I<ForumDataRepository>(),
         ),
+      )
+      ..registerFactory<AuthCubit>(
+        () => AuthCubit(),
       )
       ..registerFactory<RecipePageBloc>(
         () => RecipePageBloc(

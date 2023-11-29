@@ -25,7 +25,7 @@ class RecipePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: AppBarTitleRowWidget(
-            pageTitle: StringConstants.krecipePageAppBarText,
+            pageTitle: StringConstants.kexploreRecipiesText,
             appBarButtonOnTap: () {},
           ),
         ),

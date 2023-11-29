@@ -43,6 +43,22 @@ class AssetConstantStrings {
 
   static const kaddIcon = "assets/svg/add_icon.svg";
 
+  static const kuserIcon = "assets/svg/user_icon.svg";
+
+  static const kemailIcon = "assets/svg/email_icon.svg";
+
+  static const kpasswordIcon = "assets/svg/password_icon.svg";
+
+  static const kgoogleIcon = "assets/svg/google_icon.svg";
+
+  static const kfacebookIcon = "assets/svg/facebook_icon.svg";
+
+  static const kappleIcon = "assets/svg/apple_icon.svg";
+
+  static const ktwitterIcon = "assets/svg/twitter_icon.svg";
+
+  static const kvisibilityIcon = "assets/svg/visibility_icon.svg";
+
   static const kProfilePics = [
     "assets/svg/profile_pic.svg",
     "assets/svg/profile_pic2.svg",

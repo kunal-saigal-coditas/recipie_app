@@ -44,7 +44,7 @@ class ExplorePage extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  StringConstants.kcategoriestext,
+                  StringConstants.kcategoriesText,
                   style: GoogleFonts.cabin(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,

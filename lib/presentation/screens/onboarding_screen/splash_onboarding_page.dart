@@ -63,7 +63,7 @@ class SplashOnboardingPage extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      StringConstants.konboardingMaintext,
+                      StringConstants.krecipePassportText,
                       style: GoogleFonts.cabin(
                         fontSize: 40,
                         color: ColorConstants.cFFFFFF,
@@ -87,7 +87,7 @@ class SplashOnboardingPage extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: RoundedButton(
-                        title: StringConstants.kgettingStartedButton,
+                        title: StringConstants.kgettingStartedText,
                         colour: ColorConstants.c86BF3E,
                         onPressed: () {
                           AutoRouter.of(context).replace(

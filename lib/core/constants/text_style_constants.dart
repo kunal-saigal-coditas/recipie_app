@@ -4,9 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/core/constants/color_constants.dart';
 
 class TextStyleConstants {
+  static TextStyle s32w700c001E00Cab = GoogleFonts.cabin(
+    fontSize: 32,
+    fontWeight: FontWeight.w700,
+    color: ColorConstants.c001E00,
+  );
+
   static TextStyle s24w700c001E00Cab = GoogleFonts.cabin(
     fontSize: 24,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
     color: ColorConstants.c001E00,
   );
 
@@ -76,10 +82,28 @@ class TextStyleConstants {
     color: ColorConstants.c001E00,
   );
 
+  static const TextStyle s15w600c6AA920 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+    color: ColorConstants.c6AA920,
+  );
+
   static const TextStyle s15w500c354D35 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w500,
     color: ColorConstants.c354D35,
+  );
+
+  static const TextStyle s15w500c052C05 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: ColorConstants.c052C05,
+  );
+
+  static const TextStyle s15w500c637663 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: ColorConstants.c637663,
   );
 
   static const TextStyle s14w500c001E00 = TextStyle(
@@ -110,6 +134,12 @@ class TextStyleConstants {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: ColorConstants.cF85657,
+  );
+
+  static const TextStyle s14w500c6AA920 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: ColorConstants.c6AA920,
   );
 
   static const TextStyle s14w600c001E00 = TextStyle(

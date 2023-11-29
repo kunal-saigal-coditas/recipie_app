@@ -78,7 +78,7 @@ class PreferencePage extends StatelessWidget {
                         ? SizedBox(
                             width: MediaQuery.of(context).size.width,
                             child: RoundedButton(
-                              title: StringConstants.knextButtonText,
+                              title: StringConstants.knextStepText,
                               colour: ColorConstants.c86BF3E,
                               onPressed: () {
                                 BlocProvider.of<PreferencesBloc>(context).add(
@@ -93,7 +93,7 @@ class PreferencePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 RoundedButton(
-                                  title: StringConstants.kpreviousButtonText,
+                                  title: StringConstants.kpreviousText,
                                   titleColour: ColorConstants.c001E00,
                                   onPressed: () {
                                     if (state.pageIndex > 0) {
@@ -106,7 +106,7 @@ class PreferencePage extends StatelessWidget {
                                   colour: ColorConstants.cFFFFFF,
                                 ),
                                 RoundedButton(
-                                  title: StringConstants.knextButtonText,
+                                  title: StringConstants.knextStepText,
                                   onPressed: () {
                                     if (state.pageIndex < 4) {
                                       BlocProvider.of<PreferencesBloc>(context)

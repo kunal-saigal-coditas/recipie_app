@@ -43,6 +43,10 @@ flutter:
   assets:
     - assets/images/
     - assets/mock_data.json
+    - assets/grocery_data.json
+    - assets/preferences_data.json
+
+    - assets/explore_data.json
     - assets/svg/
   #   - images/a_dot_ham.jpeg
 

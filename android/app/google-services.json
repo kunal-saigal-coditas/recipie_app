@@ -12,7 +12,12 @@
           "package_name": "com.example.recipe_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "421284699855-h6c5t2fqa4bhv5ros8dvq7njbejasepp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAF_lNlfz5GZM-2gR_xDpbsqdHjeh205XI"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421284699855-h6c5t2fqa4bhv5ros8dvq7njbejasepp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "421284699855-qdne8kottc2et2a4jdv95d3dcovj5tjg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.recipeApp"
+              }
+            }
+          ]
         }
       }
     }

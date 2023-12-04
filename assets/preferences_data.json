@@ -1,0 +1,69 @@
+[
+    {
+        "question":"Whats your Preffered Language for the App ?","description":"Select the language that you'd prefer to use while exploring Recipe Passport.",
+        "answeItemList":["English", "Spanish", "French"]
+    },
+    {
+        "question":"Do you have any allergies or dislikes ?","description":"This will help us curate more recipe experiences for you.",
+        "answeItemList":[
+            "🦐  Shrimp",
+            "🥕  Carrot",
+            "🍄  Mushroom",
+            "🧅  Onion",
+            "🫑  Bell Pepper",
+            "🍌  Banana",
+            "🍋  Lemon",
+            "🍍  Pineapple",
+            "🥑  Avocado",
+            "🍗  Chicken",
+            "🥩  Beef",
+            "🥛  Almond Milk",
+            "🥛  Greek Yoghurt",
+            "🥔  Potatoes",
+            "🥚  Egg",
+            "🍅  Tomatoes",
+            "🍶  Mayonnaise",
+            "🫒  Olives",
+            "🦐  Rice",
+            "🌿  Basil",
+            "🫙 Soy Sauce",
+            "🧂  Salt"
+        ]
+    },
+    {
+        "question":"Do you have any dietary restrictions ?","description":"This will help us curate more recipe experiences for you.",
+        "answeItemList":[
+            "None",
+            "Vegan",
+            "Lactose Intolerant",
+            "Soy Allergy",
+            "Pescatarian",
+            "Gluten-Free",
+            "Shellfish Allergy",
+            "Vegetarian",
+            "Kosher",
+            "Halal",
+            "Nut Allergy",
+            "Diabetic Diet"
+        ]
+    },
+    {
+        "question":"Types of cuisines  you most interested in ?","description":"This will help us curate more recipe experiences for you.",
+        "answeItemList":[
+            "European",
+            "African",
+            "Asian",
+            "Middle-Eastern",
+            "Latin-American",
+            "Indian"
+        ]
+    },
+    {
+        "question":"Lastly, how skilled are you in the kitchen ?","description":"This will help us curate more recipe experiences for you.",
+            "answeItemList":[
+            "Beginner",
+            "Intermediate",
+            "Advanced"
+        ]
+    }
+]

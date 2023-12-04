@@ -50,10 +50,10 @@ class RemoteDataSource {
       }
       return Right(recipeList);
       // }
-    } catch (e) {
+    } catch (error) {
       return Left(
         Failure(
-          errorMessage: e.toString(),
+          errorMessage: error.toString(),
         ),
       );
     }

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:recipe_app/core/services/database.dart';
 
 part 'auth_state.dart';
 
@@ -18,6 +19,8 @@ class AuthCubit extends Cubit<AuthState> {
         email: email,
         password: password,
       );
+
+      await DatabaseServices(uid: userCredential.user!.uid).setExplore();
       emit(
         AuthSuccessState(
           userCred: userCredential,
@@ -39,6 +42,7 @@ class AuthCubit extends Cubit<AuthState> {
         email: email,
         password: password,
       );
+
       emit(
         AuthSuccessState(
           userCred: userCredential,

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +23,6 @@ class ChallengesSectionCardWidget extends StatelessWidget {
     return Card(
       elevation: 1,
       child: Stack(
-        // alignment: Alignment.centerLeft,
         children: [
           Column(
             children: [
@@ -34,8 +34,8 @@ class ChallengesSectionCardWidget extends StatelessWidget {
                     topLeft: Radius.circular(15.r),
                     topRight: Radius.circular(15.r),
                   ),
-                  child: Image.asset(
-                    forumChallengesDataEntity.imageUrl,
+                  child: CachedNetworkImage(
+                    imageUrl: forumChallengesDataEntity.imageUrl,
                     fit: BoxFit.cover,
                   ),
                 ),

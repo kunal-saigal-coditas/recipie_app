@@ -42,21 +42,23 @@ class PreferencesBodyWidget extends StatelessWidget {
             maxHeight: (MediaQuery.of(context).size.height * 0.48),
           ),
           child: SingleChildScrollView(
-              child: Wrap(
-            direction: Axis.horizontal,
-            spacing: 8,
-            runSpacing: 8,
-            alignment: WrapAlignment.start,
-            children: [
-              ...List.generate(
-                preferencesDataEntity.answerItemList.length,
-                (index) => IndividualOptionWidget(
-                  answerItemEntity: preferencesDataEntity.answerItemList[index],
-                  answerItemList: answerItemList,
+            child: Wrap(
+              direction: Axis.horizontal,
+              spacing: 8,
+              runSpacing: 8,
+              alignment: WrapAlignment.start,
+              children: [
+                ...List.generate(
+                  preferencesDataEntity.answerItemList.length,
+                  (index) => IndividualOptionWidget(
+                    answerItemEntity:
+                        preferencesDataEntity.answerItemList[index],
+                    answerItemList: answerItemList,
+                  ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            ),
+          ),
         ),
       ],
     );

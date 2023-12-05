@@ -21,35 +21,46 @@ class PreferencesBloc extends Bloc<PreferencesEvent, PreferencesState> {
     on<OnPreviousEvent>(onPrevious);
     on<OnSelectEvent>(onSelect);
   }
-  FutureOr<void> onNext(OnNextEvent event, Emitter<PreferencesState> emit) {
+  FutureOr<void> onNext(
+      OnNextEvent event, Emitter<PreferencesState> emit) async {
     int index = (state as PreferencesLoadedState).pageIndex + 1;
+
+    List<PreferencesDataEntity> preferencesDataList =
+        await preferencesDataUsecase.getPreferencesDataList();
     emit(
       (state as PreferencesLoadedState).copyWith(
         pageIndex: index,
-        answerItemList: preferencesDataUsecase.getAnswerList()[index],
+        answerItemList: preferencesDataList[index].answerItemList,
       ),
     );
   }
 
   FutureOr<void> onPrevious(
-      OnPreviousEvent event, Emitter<PreferencesState> emit) {
+      OnPreviousEvent event, Emitter<PreferencesState> emit) async {
     int index = (state as PreferencesLoadedState).pageIndex - 1;
+
+    List<PreferencesDataEntity> preferencesDataList =
+        await preferencesDataUsecase.getPreferencesDataList();
     emit(
       (state as PreferencesLoadedState).copyWith(
         pageIndex: index,
-        answerItemList: preferencesDataUsecase.getAnswerList()[index],
+        answerItemList: preferencesDataList[index].answerItemList,
       ),
     );
   }
 
   FutureOr<void> preferencesInitial(
-      PreferencesInitialEvent event, Emitter<PreferencesState> emit) {
+      PreferencesInitialEvent event, Emitter<PreferencesState> emit) async {
     int index = 0;
+
+    List<PreferencesDataEntity> preferencesDataList =
+        await preferencesDataUsecase.getPreferencesDataList();
+
     emit(
       PreferencesLoadedState(
-        preferencesDataList: preferencesDataUsecase.getPreferencesDataList(),
+        preferencesDataList: preferencesDataList,
         pageIndex: index,
-        answerItemList: preferencesDataUsecase.getAnswerList()[index],
+        answerItemList: preferencesDataList[index].answerItemList,
       ),
     );
   }

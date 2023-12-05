@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:recipe_app/data/data_model/preferences_data_model.dart';
 
 class PreferencesDataEntity extends Equatable {
   final String question;
@@ -9,6 +10,14 @@ class PreferencesDataEntity extends Equatable {
     required this.question,
     required this.description,
   });
+
+  PreferencesDataModel toModel() {
+    return PreferencesDataModel(
+      answerItemList: answerItemList,
+      question: question,
+      description: description,
+    );
+  }
 
   @override
   List<Object?> get props => [
@@ -28,6 +37,14 @@ class AnswerItemEntity {
     required this.id,
     required this.isSelected,
   });
+
+  AnswerItemModel toModel() {
+    return AnswerItemModel(
+      text: text,
+      id: id,
+      isSelected: isSelected,
+    );
+  }
 
   AnswerItemEntity copyWith({
     String? text,

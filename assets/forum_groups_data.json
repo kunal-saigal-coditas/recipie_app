@@ -1,0 +1,38 @@
+[
+    {
+        "groupName":"Asian Food Lovers",
+        "groupFollowerCount":"22.1k",
+        "groupPic":"https://i.ndtvimg.com/i/2016-06/korean-food_625x350_61467094819.jpg",
+        "isJoined":true
+    },
+    {
+        "groupName":"We Love Food",
+        "groupFollowerCount":"30.5k",
+        "groupPic":"https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/food-photography/CODERED_B1_food-photography_p4b_690x455.jpg.img.jpg",
+        "isJoined":false
+    },
+    {
+        "groupName":"Healthy Foodies",
+        "groupFollowerCount":"12.1k",
+        "groupPic":"https://i.ndtvimg.com/i/2016-06/korean-food_625x350_61467094819.jpg",
+        "isJoined":true
+    },
+    {
+        "groupName":"Travel For Food",
+        "groupFollowerCount":"45.1k",
+        "groupPic":"https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/food-photography/CODERED_B1_food-photography_p4b_690x455.jpg.img.jpg",
+        "isJoined":false
+    },
+    {
+        "groupName":"Daily Food Post",
+        "groupFollowerCount":"85.8k",
+        "groupPic":"https://i.ndtvimg.com/i/2016-06/korean-food_625x350_61467094819.jpg",
+        "isJoined":false
+    },
+    {
+        "groupName":"Viewers Of Recipes",
+        "groupFollowerCount":"10.2k",
+        "groupPic":"https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/food-photography/CODERED_B1_food-photography_p4b_690x455.jpg.img.jpg",
+        "isJoined":true
+    }
+]

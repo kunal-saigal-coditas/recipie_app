@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,7 +41,7 @@ class GroceryCard extends StatelessWidget {
               topLeft: Radius.circular(12.r),
               bottomLeft: Radius.circular(12.r),
             ),
-            child: DecoratedBox(
+            child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   end: Alignment.bottomCenter,
@@ -58,8 +59,10 @@ class GroceryCard extends StatelessWidget {
                 ),
                 backgroundBlendMode: BlendMode.darken,
               ),
-              child: Image.asset(
-                groceryDataEntity.groceryImageUrl,
+              height: 80,
+              width: 90,
+              child: CachedNetworkImage(
+                imageUrl: groceryDataEntity.groceryImageUrl,
                 fit: BoxFit.cover,
               ),
             ),

@@ -1,5 +1,5 @@
-import 'package:recipe_app/data/data_model/grocery_data_model.dart';
+import 'package:recipe_app/domain/entity/grocery_data_entity/grocery_data_entity.dart';
 
 abstract class GroceryDataRepository {
-  List<GroceryDataModel> groceryItemList();
+  Future<List<GroceryDataEntity>> groceryItemList();
 }

@@ -12,17 +12,17 @@ class ForumDataRepositoryImpl implements ForumDataRepository {
   const ForumDataRepositoryImpl({required this.forumDataSource});
 
   @override
-  List<ForumChallengesDataModel> getChallengesList() {
+  Future<List<ForumChallengesDataModel>> getChallengesList() {
     return forumDataSource.getChallengesList();
   }
 
   @override
-  List<ForumFeaturedTopicsDataModel> getFeaturedTopicList() {
+  Future<List<ForumFeaturedTopicsDataModel>> getFeaturedTopicList() {
     return forumDataSource.getFeaturedTopicList();
   }
 
   @override
-  List<ForumGroupsDataModel> getGroupsList() {
+  Future<List<ForumGroupsDataModel>> getGroupsList() {
     return forumDataSource.getGroupsList();
   }
 }

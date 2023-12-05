@@ -7,4 +7,22 @@ class GroceryDataModel extends GroceryDataEntity {
     required super.groceryImageUrl,
     super.isDone = false,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'groceryName': groceryName,
+      'grocerySubtext': grocerySubtext,
+      'groceryImageUrl': groceryImageUrl,
+      'isDone': isDone,
+    };
+  }
+
+  factory GroceryDataModel.fromJson(Map<String, dynamic> json) {
+    return GroceryDataModel(
+      groceryName: json['groceryName'],
+      grocerySubtext: json['grocerySubtext'],
+      groceryImageUrl: json['groceryImageUrl'],
+      isDone: json['isDone'] ?? false,
+    );
+  }
 }

@@ -1,25 +1,31 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 
+import 'package:recipe_app/data/data_source/local_data_sources/explore_data_source.dart';
 import 'package:recipe_app/data/data_source/local_data_sources/forum_data_source.dart';
 import 'package:recipe_app/data/data_source/local_data_sources/grocery_data_source.dart';
 import 'package:recipe_app/data/data_source/local_data_sources/local_data_source.dart';
 import 'package:recipe_app/data/data_source/local_data_sources/preferences_data_source.dart';
 import 'package:recipe_app/data/data_source/remote_data_source/remote_data_source.dart';
+import 'package:recipe_app/data/repository/explore_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/forum_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/grocery_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/local_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/preferences_data_repo_impl.dart';
 import 'package:recipe_app/data/repository/remote_data_repo_impl.dart';
+import 'package:recipe_app/domain/repository/explore_data_repo.dart';
 import 'package:recipe_app/domain/repository/forum_data_repo.dart';
 import 'package:recipe_app/domain/repository/grocery_data_repo.dart';
 import 'package:recipe_app/domain/repository/local_data_repo.dart';
 import 'package:recipe_app/domain/repository/remote_data_repo.dart';
 import 'package:recipe_app/domain/repository/preferences_data_repo.dart';
+import 'package:recipe_app/domain/use_case/explore_data_usecase.dart';
 
 import 'package:recipe_app/domain/use_case/forum_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/grocery_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/preferences_data_usecase.dart';
 import 'package:recipe_app/domain/use_case/recipe_usecase.dart';
+import 'package:recipe_app/presentation/screens/explore_screen/bloc/explore_page_bloc.dart';
 
 import 'package:recipe_app/presentation/screens/forum_screen/bloc/forum_page_bloc.dart';
 import 'package:recipe_app/presentation/screens/grocery_screen/bloc/grocery_page_bloc.dart';
@@ -46,6 +52,9 @@ class Injector {
       ..registerLazySingleton<ForumDataSource>(
         () => ForumDataSource(),
       )
+      ..registerLazySingleton<ExploreDataSource>(
+        () => ExploreDataSource(),
+      )
       ..registerLazySingleton<RemoteDataRepository>(
         () => RemoteDataRepositoryImpl(
           remoteDataSource: GetIt.I<RemoteDataSource>(),
@@ -71,6 +80,11 @@ class Injector {
           forumDataSource: GetIt.I<ForumDataSource>(),
         ),
       )
+      ..registerLazySingleton<ExploreDataRepository>(
+        () => ExploreDataRepositoryImpl(
+          exploreDataSource: GetIt.I<ExploreDataSource>(),
+        ),
+      )
       ..registerLazySingleton<RecipeUsecase>(
         () => RecipeUsecase(
           remoteDataRepository: GetIt.I<RemoteDataRepository>(),
@@ -90,6 +104,11 @@ class Injector {
       ..registerLazySingleton<ForumDataUsecase>(
         () => ForumDataUsecase(
           forumDataRepository: GetIt.I<ForumDataRepository>(),
+        ),
+      )
+      ..registerLazySingleton<ExploreDataUsecase>(
+        () => ExploreDataUsecase(
+          exploreDataRepository: GetIt.I<ExploreDataRepository>(),
         ),
       )
       ..registerFactory<AuthCubit>(
@@ -120,6 +139,14 @@ class Injector {
         () => PreferencesBloc(
           preferencesDataUsecase: GetIt.I<PreferencesDataUsecase>(),
         ),
+      )
+      ..registerFactory<ExplorePageBloc>(
+        () => ExplorePageBloc(
+          exploreDataUsecase: GetIt.I<ExploreDataUsecase>(),
+        ),
+      )
+      ..registerLazySingleton(
+        () => FirebaseFirestore.instance,
       );
   }
 }

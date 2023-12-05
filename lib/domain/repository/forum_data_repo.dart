@@ -1,11 +1,11 @@
-import 'package:recipe_app/data/data_model/forum_page_data_models/forum__featured_topic_data_model.dart';
-import 'package:recipe_app/data/data_model/forum_page_data_models/forum_challenges_data_model.dart';
-import 'package:recipe_app/data/data_model/forum_page_data_models/forum_groups_data_model.dart';
+import 'package:recipe_app/domain/entity/forum_data_entity/forum_challenges_data_entity.dart';
+import 'package:recipe_app/domain/entity/forum_data_entity/forum_featured_topic_data_entity.dart';
+import 'package:recipe_app/domain/entity/forum_data_entity/forum_group_data_entity.dart';
 
 abstract class ForumDataRepository {
-  List<ForumChallengesDataModel> getChallengesList();
+  Future<List<ForumChallengesDataEntity>> getChallengesList();
 
-  List<ForumGroupsDataModel> getGroupsList();
+  Future<List<ForumGroupsDataEntity>> getGroupsList();
 
-  List<ForumFeaturedTopicsDataModel> getFeaturedTopicList();
+  Future<List<ForumFeaturedTopicsDataEntity>> getFeaturedTopicList();
 }

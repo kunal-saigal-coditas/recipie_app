@@ -45,7 +45,9 @@ flutter:
     - assets/mock_data.json
     - assets/grocery_data.json
     - assets/preferences_data.json
-
+    - assets/forum_groups_data.json
+    - assets/forum_challenges_data.json
+    - assets/forum_featured_topics_data.json
     - assets/explore_data.json
     - assets/svg/
   #   - images/a_dot_ham.jpeg

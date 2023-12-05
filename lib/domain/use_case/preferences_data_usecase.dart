@@ -8,11 +8,11 @@ class PreferencesDataUsecase {
     required this.preferencesDataRepository,
   });
 
-  List<PreferencesDataEntity> getPreferencesDataList() {
+  Future<List<PreferencesDataEntity>> getPreferencesDataList() {
     return preferencesDataRepository.getPreferencesDataList();
   }
 
-  List<List<AnswerItemEntity>> getAnswerList() {
-    return preferencesDataRepository.getAnswerList();
-  }
+  // Future<List<List<AnswerItemEntity>>> getAnswerList() {
+  //   return preferencesDataRepository.getAnswerList();
+  // }
 }

@@ -55,8 +55,9 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
       AddToFavoritesEvent event, Emitter<RecipePageState> emit) {
     int index = (event.recipeEntity.id - 1);
 
-    List<RecipeEntity> recipeListCopy =
-        List.from((state as RecipeFetchingSuccessState).recipeList);
+    List<RecipeEntity> recipeListCopy = List.from(
+      (state as RecipeFetchingSuccessState).recipeList,
+    );
     RecipeEntity postToUpdate = recipeListCopy[index];
     postToUpdate = postToUpdate.copyWith(
       isFavorite: !postToUpdate.isFavorite,

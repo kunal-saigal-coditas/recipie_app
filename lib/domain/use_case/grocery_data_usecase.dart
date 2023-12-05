@@ -1,4 +1,4 @@
-import 'package:recipe_app/data/data_model/grocery_data_model.dart';
+import 'package:recipe_app/domain/entity/grocery_data_entity/grocery_data_entity.dart';
 import 'package:recipe_app/domain/repository/grocery_data_repo.dart';
 
 class GroceryDataUsecase {
@@ -8,7 +8,7 @@ class GroceryDataUsecase {
     required this.groceryDataRepository,
   });
 
-  List<GroceryDataModel> groceryItemList() {
+  Future<List<GroceryDataEntity>> groceryItemList() {
     return groceryDataRepository.groceryItemList();
   }
 }

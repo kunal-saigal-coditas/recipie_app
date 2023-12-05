@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -57,8 +58,19 @@ class GroupsSectionWidget extends StatelessWidget {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    groupsDataList[index].groupPic,
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: ColorConstants.cF5F6F5.withOpacity(0.8),
+                        width: 3.73,
+                      ),
+                    ),
+                    child: CircleAvatar(
+                      backgroundImage: CachedNetworkImageProvider(
+                        groupsDataList[index].groupPic,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 8.w,

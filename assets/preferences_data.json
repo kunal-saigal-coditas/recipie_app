@@ -1,10 +1,12 @@
 [
     {
-        "question":"Whats your Preffered Language for the App ?","description":"Select the language that you'd prefer to use while exploring Recipe Passport.",
+        "question":"Whats your Preffered Language for the App ?",
+        "description":"Select the language that you'd prefer to use while exploring Recipe Passport.",
         "answeItemList":["English", "Spanish", "French"]
     },
     {
-        "question":"Do you have any allergies or dislikes ?","description":"This will help us curate more recipe experiences for you.",
+        "question":"Do you have any allergies or dislikes ?",
+        "description":"This will help us curate more recipe experiences for you.",
         "answeItemList":[
             "🦐  Shrimp",
             "🥕  Carrot",
@@ -31,7 +33,8 @@
         ]
     },
     {
-        "question":"Do you have any dietary restrictions ?","description":"This will help us curate more recipe experiences for you.",
+        "question":"Do you have any dietary restrictions ?",
+        "description":"This will help us curate more recipe experiences for you.",
         "answeItemList":[
             "None",
             "Vegan",
@@ -48,7 +51,8 @@
         ]
     },
     {
-        "question":"Types of cuisines  you most interested in ?","description":"This will help us curate more recipe experiences for you.",
+        "question":"Types of cuisines  you most interested in ?",
+        "description":"This will help us curate more recipe experiences for you.",
         "answeItemList":[
             "European",
             "African",
@@ -59,7 +63,8 @@
         ]
     },
     {
-        "question":"Lastly, how skilled are you in the kitchen ?","description":"This will help us curate more recipe experiences for you.",
+        "question":"Lastly, how skilled are you in the kitchen ?",
+        "description":"This will help us curate more recipe experiences for you.",
             "answeItemList":[
             "Beginner",
             "Intermediate",

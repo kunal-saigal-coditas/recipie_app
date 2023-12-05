@@ -17,10 +17,12 @@ class GroceryPageBloc extends Bloc<GroceryPageEvent, GroceryPageState> {
   }
 
   FutureOr<void> groceryPageInitialEvent(
-      GroceryPageInitialEvent event, Emitter<GroceryPageState> emit) {
+      GroceryPageInitialEvent event, Emitter<GroceryPageState> emit) async {
+    List<GroceryDataEntity> groceryPageList =
+        await groceryDataUsecase.groceryItemList();
     emit(
       GroceryPageSuccessState(
-        groceryItemList: groceryDataUsecase.groceryItemList(),
+        groceryItemList: groceryPageList,
       ),
     );
   }

@@ -10,7 +10,7 @@ class GroceryDataRepositoryImpl extends GroceryDataRepository {
   });
 
   @override
-  List<GroceryDataModel> groceryItemList() {
+  Future<List<GroceryDataModel>> groceryItemList() {
     return groceryDataSource.groceryItemList();
   }
 }

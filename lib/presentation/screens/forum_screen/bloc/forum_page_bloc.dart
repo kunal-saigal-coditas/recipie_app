@@ -21,12 +21,19 @@ class ForumPageBloc extends Bloc<ForumPageEvent, ForumPageState> {
   }
 
   FutureOr<void> forumPageDataFetch(
-      ForumPageDataFetchingEvent event, Emitter<ForumPageState> emit) {
+      ForumPageDataFetchingEvent event, Emitter<ForumPageState> emit) async {
+    List<ForumFeaturedTopicsDataEntity> featuredTopicList =
+        await forumDataUsecase.getFeaturedTopicList();
+    List<ForumChallengesDataEntity> challengesDataList =
+        await forumDataUsecase.getChallengesList();
+    List<ForumGroupsDataEntity> groupsDataList =
+        await forumDataUsecase.getGroupsList();
+
     emit(
       ForumPageSuccessState(
-        featuredTopicList: forumDataUsecase.getFeaturedTopicList(),
-        challengesDataList: forumDataUsecase.getChallengesList(),
-        groupsDataList: forumDataUsecase.getGroupsList(),
+        featuredTopicList: featuredTopicList,
+        challengesDataList: challengesDataList,
+        groupsDataList: groupsDataList,
       ),
     );
   }

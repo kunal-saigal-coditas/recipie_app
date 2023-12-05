@@ -21,10 +21,11 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: SplashOnboardingRoute.page,
+          // initial: true,
         ),
         AutoRoute(
           page: LoginRoute.page,
-          initial: true,
+          // initial: true,
         ),
         AutoRoute(
           page: PreferenceRoute.page,
@@ -36,7 +37,7 @@ class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: BottomNavRoute.page,
-          // initial: true,
+          initial: true,
           children: [
             AutoRoute(
               page: RecipeRoute.page,

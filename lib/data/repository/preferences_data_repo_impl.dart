@@ -10,12 +10,12 @@ class PreferencesDataRepositoryImpl implements PreferencesDataRepository {
   });
 
   @override
-  List<PreferencesDataEntity> getPreferencesDataList() {
+  Future<List<PreferencesDataEntity>> getPreferencesDataList() {
     return preferencesDataSource.getPreferencesDataList();
   }
 
-  @override
-  List<List<AnswerItemEntity>> getAnswerList() {
-    return preferencesDataSource.getAnswerList();
-  }
+  // @override
+  // Future<List<List<AnswerItemEntity>>> getAnswerList() {
+  //   return preferencesDataSource.getAnswerList();
+  // }
 }

@@ -1,0 +1,27 @@
+[
+    {
+        "userName":"Bellington",
+        "userEmail":"@bellingcook",
+        "summary":"Rise and shine, pancake lovers! 🌞🥞 Today, I'm sharing a recipe that'll turn your breakfast into a scrumptious delight! Behold, the Fluffy Pancakes that are sure to make your taste buds dance with joy! 💃🕺",
+        "profileImage":"https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/food-photography/CODERED_B1_food-photography_p1a_690x455.jpg.img.jpg",
+        "likesCount":180,
+        "repliesCount":100,
+        "viewsCount":350
+    }, {
+        "userName":"Jason Lee",
+        "userEmail":"@jasonlee",
+        "summary":"Just had the most AMAZING burger at BurgerLoves. Juicy perfection in every bite. 🤤🎉 If you're a burger lover, this place is a MUST. 🏃‍♂️💨 #BurgerHeaven #FoodieFinds",
+        "profileImage":"https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/food-photography/CODERED_B1_food-photography_p1b_690x455.jpg.img.jpg",
+        "likesCount":220,
+        "repliesCount":120,
+        "viewsCount":310
+    }, {
+        "userName":"Amanda",
+        "userEmail":"@amandacooks",
+        "summary":"Yangnyeom is crispy fried chicken coated in sweet and spicy sauce. It's accompanied by pickled radishes, sliced scallions, and a side of rice. Cold beer or soft drinks are popular pairings. Enjoy!",
+        "profileImage":"https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/food-photography/CODERED_B1_food-photography_p4b_690x455.jpg.img.jpg",
+        "likesCount":280,
+        "repliesCount":124,
+        "viewsCount":350
+    }
+]

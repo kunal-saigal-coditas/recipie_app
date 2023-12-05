@@ -95,9 +95,16 @@ class RecipeDetailPage extends StatelessWidget {
                       ),
                       Expanded(
                         child: Align(
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(
-                            AssetConstantStrings.kplayIcon,
+                          alignment: Alignment.topCenter,
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              SvgPicture.asset(
+                                AssetConstantStrings.kplayIcon,
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -116,25 +123,31 @@ class RecipeDetailPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        recipeEntity.title,
-                        maxLines: 1,
-                        softWrap: true,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyleConstants.s24w700c001E00Cab,
-                      ),
-                      const Spacer(),
-                      CircleAvatar(
-                        backgroundColor:
-                            ColorConstants.cF5F6F5.withOpacity(0.8),
-                        child: SvgPicture.asset(
-                          AssetConstantStrings.kshareIcon,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          flex: 5,
+                          child: Text(
+                            recipeEntity.title,
+                            maxLines: 1,
+                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyleConstants.s24w700c001E00Cab,
+                          ),
                         ),
-                      ),
-                    ],
+                        const Spacer(),
+                        CircleAvatar(
+                          backgroundColor:
+                              ColorConstants.cF5F6F5.withOpacity(0.8),
+                          child: SvgPicture.asset(
+                            AssetConstantStrings.kshareIcon,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(
                     height: 14,

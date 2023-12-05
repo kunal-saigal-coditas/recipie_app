@@ -91,7 +91,7 @@ class SplashOnboardingPage extends StatelessWidget {
                         colour: ColorConstants.c86BF3E,
                         onPressed: () {
                           AutoRouter.of(context).replace(
-                            const PreferenceRoute(),
+                            const LoginRoute(),
                           );
                         },
                       ),

@@ -4,12 +4,12 @@
 <rect x="0.5" y="1" width="24" height="24" rx="12" stroke="white"/>
 </g>
 <defs>
-<filter id="filter0_b_121_9704" x="-12" y="-11.5" width="49" height="49" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<!-- <filter id="filter0_b_121_9704" x="-12" y="-11.5" width="49" height="49" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feGaussianBlur in="BackgroundImageFix" stdDeviation="6"/>
 <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_121_9704"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_121_9704" result="shape"/>
-</filter>
+</filter> -->
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_121_9704" transform="translate(0 -0.249712) scale(0.0011534)"/>
 </pattern>

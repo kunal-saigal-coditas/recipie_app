@@ -1,5 +1,3 @@
-import 'package:dartz/dartz.dart';
-
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
 
 class RecipeModel extends RecipeEntity {
@@ -30,7 +28,8 @@ class RecipeModel extends RecipeEntity {
       directions: (json["directions"]).cast<String>(),
       extendedIngredients: (json["extendedIngredients"] as List<dynamic>)
           .map(
-            (e) => ExtendedIngredientModel.fromJson(e),
+            (ingredientsEntity) =>
+                ExtendedIngredientModel.fromJson(ingredientsEntity),
           )
           .toList(),
       isFavorite: false,
@@ -50,10 +49,26 @@ class RecipeModel extends RecipeEntity {
       "directions": directions,
       "extendedIngredients": extendedIngredients
           .map(
-            (e) => e.toModel().toJson(),
+            (extendexIngredient) => extendexIngredient.toModel().toJson(),
           )
           .toList(),
     };
+  }
+
+  RecipeEntity toEntity() {
+    return RecipeEntity(
+      id: id,
+      title: title,
+      summary: summary,
+      image: image,
+      readyInMinutes: readyInMinutes,
+      sourceUrl: sourceUrl,
+      instructions: instructions,
+      country: country,
+      directions: directions,
+      extendedIngredients: extendedIngredients.toList(),
+      isFavorite: isFavorite,
+    );
   }
 }
 
@@ -81,5 +96,14 @@ class ExtendedIngredientModel extends ExtendedIngredientEntity {
       'image': image,
       'name': name,
     };
+  }
+
+  ExtendedIngredientEntity toEntity() {
+    return ExtendedIngredientEntity(
+      amount: amount,
+      id: id,
+      image: image,
+      name: name,
+    );
   }
 }

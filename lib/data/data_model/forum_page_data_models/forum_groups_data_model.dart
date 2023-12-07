@@ -7,4 +7,23 @@ class ForumGroupsDataModel extends ForumGroupsDataEntity {
     required super.groupPic,
     required super.isJoined,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'groupName': groupName,
+      'groupFollowerCount': groupFollowerCount,
+      'groupPic': groupPic,
+      'isJoined': isJoined,
+    };
+  }
+
+  // Create an object from a Map
+  factory ForumGroupsDataModel.fromJson(Map<String, dynamic> json) {
+    return ForumGroupsDataModel(
+      groupName: json['groupName'] ?? '',
+      groupFollowerCount: json['groupFollowerCount'] ?? '',
+      groupPic: json['groupPic'] ?? '',
+      isJoined: json['isJoined'] ?? false,
+    );
+  }
 }

@@ -13,15 +13,7 @@ class ForumDataSource {
 
     return snapshot.docs.map((doc) {
       final data = doc.data();
-      return ForumFeaturedTopicsDataModel(
-        userName: data['userName'],
-        userEmail: data['userEmail'],
-        summary: data['summary'],
-        profileImage: data['profileImage'],
-        likesCount: data['likesCount'],
-        repliesCount: data['repliesCount'],
-        viewsCount: data['viewsCount'],
-      );
+      return ForumFeaturedTopicsDataModel.fromJson(data);
     }).toList();
   }
 
@@ -31,11 +23,7 @@ class ForumDataSource {
 
     return snapshot.docs.map((doc) {
       final data = doc.data();
-      return ForumChallengesDataModel(
-        imageUrl: data['imageUrl'],
-        challengeName: data['challengesName'],
-        challengeSubtext: data['challengesSubtext'],
-      );
+      return ForumChallengesDataModel.fromJson(data);
     }).toList();
   }
 
@@ -45,12 +33,7 @@ class ForumDataSource {
 
     return snapshot.docs.map((doc) {
       final data = doc.data();
-      return ForumGroupsDataModel(
-        groupName: data['groupName'],
-        groupPic: data['groupPic'],
-        groupFollowerCount: data['groupFollowerCount'],
-        isJoined: data['isJoined'],
-      );
+      return ForumGroupsDataModel.fromJson(data);
     }).toList();
   }
 }

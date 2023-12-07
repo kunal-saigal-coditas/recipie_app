@@ -20,8 +20,10 @@ class AuthCubit extends Cubit<AuthState> {
         password: password,
       );
 
+      // await DatabaseServices(uid: userCredential.user!.uid).setGroceryData();
+
       // await DatabaseServices(uid: userCredential.user!.uid)
-      //     .setForumGroupsData();
+      //     .setForumChallengesData();
       emit(
         AuthSuccessState(
           userCred: userCredential,

@@ -10,4 +10,27 @@ class ForumFeaturedTopicsDataModel extends ForumFeaturedTopicsDataEntity {
     required super.repliesCount,
     required super.viewsCount,
   });
+  Map<String, dynamic> toJson() {
+    return {
+      'userName': userName,
+      'userEmail': userEmail,
+      'summary': summary,
+      'profileImage': profileImage,
+      'likesCount': likesCount,
+      'repliesCount': repliesCount,
+      'viewsCount': viewsCount,
+    };
+  }
+
+  factory ForumFeaturedTopicsDataModel.fromJson(Map<String, dynamic> json) {
+    return ForumFeaturedTopicsDataModel(
+      userName: json['userName'] ?? '',
+      userEmail: json['userEmail'] ?? '',
+      summary: json['summary'] ?? '',
+      profileImage: json['profileImage'] ?? '',
+      likesCount: json['likesCount'] ?? 0,
+      repliesCount: json['repliesCount'] ?? 0,
+      viewsCount: json['viewsCount'] ?? 0,
+    );
+  }
 }

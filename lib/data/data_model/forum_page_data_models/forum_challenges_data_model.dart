@@ -8,4 +8,24 @@ class ForumChallengesDataModel extends ForumChallengesDataEntity {
     super.date = 18,
     super.month = "Oct",
   });
+
+  factory ForumChallengesDataModel.fromJson(Map<String, dynamic> json) {
+    return ForumChallengesDataModel(
+      imageUrl: json['imageUrl'] ?? '',
+      challengeName: json['challengeName'] ?? '',
+      challengeSubtext: json['challengeSubtext'] ?? '',
+      date: json['date'] ?? 15,
+      month: json['month'] ?? 'Oct',
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'imageUrl': imageUrl,
+      'challengeName': challengeName,
+      'challengeSubtext': challengeSubtext,
+      'date': date,
+      'month': month,
+    };
+  }
 }

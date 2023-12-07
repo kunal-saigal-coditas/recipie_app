@@ -11,12 +11,7 @@ class GroceryDataSource {
 
     return snapshot.docs.map((doc) {
       final data = doc.data();
-      return GroceryDataModel(
-        groceryImageUrl: data['groceryImageUrl'],
-        groceryName: data['grocerName'],
-        grocerySubtext: data['grocerSubtext'],
-        isDone: false,
-      );
+      return GroceryDataModel.fromJson(data);
     }).toList();
   }
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
+// import 'package:equatable/equatable.dart';
 
 import 'package:recipe_app/core/failure/failure.dart';
 
@@ -24,7 +24,7 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
   FutureOr<void> recipeFetching(
       RecipePageInitialEvent event, Emitter<RecipePageState> emit) async {
     Either<Failure, List<RecipeEntity>> response =
-        await recipeDataUsecase.getDatafromDio();
+        await recipeDataUsecase.getRecipeData();
     List<int> favoritesList = recipeDataUsecase.getFavoritesDataList();
 
     response.fold((left) {
@@ -35,6 +35,7 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
       );
     }, (right) {
       List<RecipeEntity> recipeList = right;
+
       for (int i = 0; i < recipeList.length; i++) {
         if (favoritesList.contains(recipeList[i].id)) {
           recipeList[i] = recipeList[i].copyWith(
@@ -53,10 +54,11 @@ class RecipePageBloc extends Bloc<RecipePageEvent, RecipePageState> {
 
   FutureOr<void> addToFavorites(
       AddToFavoritesEvent event, Emitter<RecipePageState> emit) {
-    int index = (event.recipeEntity.id - 1);
+    List<RecipeEntity> recipeListCopy =
+        (state as RecipeFetchingSuccessState).recipeList;
 
-    List<RecipeEntity> recipeListCopy = List.from(
-      (state as RecipeFetchingSuccessState).recipeList,
+    int index = recipeListCopy.indexWhere(
+      (recipe) => recipe.id == event.recipeEntity.id,
     );
     RecipeEntity postToUpdate = recipeListCopy[index];
     postToUpdate = postToUpdate.copyWith(

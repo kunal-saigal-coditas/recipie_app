@@ -22,7 +22,7 @@ class RecipeUsecase {
     return localDataRepository.getFavoritesDataList();
   }
 
-  Future<Either<Failure, List<RecipeEntity>>> getDatafromDio() {
-    return remoteDataRepository.getDatafromDio();
+  Future<Either<Failure, List<RecipeEntity>>> getRecipeData() {
+    return remoteDataRepository.getRecipeData();
   }
 }

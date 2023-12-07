@@ -1,10 +1,10 @@
 part of 'recipe_page_bloc.dart';
 
-sealed class RecipePageEvent extends Equatable {
+sealed class RecipePageEvent {
   const RecipePageEvent();
 
-  @override
-  List<Object> get props => [];
+  // @override
+  // List<Object> get props => [];
 }
 
 final class RecipePageInitialEvent extends RecipePageEvent {}

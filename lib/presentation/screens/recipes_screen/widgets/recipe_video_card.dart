@@ -29,6 +29,7 @@ class RecipeVideoCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         image: DecorationImage(
+          opacity: 5,
           image: CachedNetworkImageProvider(
             recipeEntity.image,
           ),
@@ -36,10 +37,11 @@ class RecipeVideoCard extends StatelessWidget {
         ),
       ),
       child: Stack(
+        fit: StackFit.expand,
         children: [
           DecoratedBox(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(6),
               gradient: LinearGradient(
                 end: Alignment.bottomCenter,
                 begin: Alignment.topCenter,
@@ -50,17 +52,17 @@ class RecipeVideoCard extends StatelessWidget {
                   ColorConstants.c131313.withOpacity(0.85),
                 ],
                 stops: const [
-                  0.0002,
-                  0.5165,
-                  0.9353,
-                  0.9353,
+                  0,
+                  0.5,
+                  1,
+                  1,
                 ],
               ),
               backgroundBlendMode: BlendMode.darken,
             ),
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
             ),
           ),
           Padding(

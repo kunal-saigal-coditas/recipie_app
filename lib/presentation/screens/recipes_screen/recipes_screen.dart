@@ -58,7 +58,7 @@ class RecipePage extends StatelessWidget {
                         ),
                         RecipeCategorySectionHeaderRowWidget(
                           categoryName: StringConstants.krecentRecipeText,
-                          recipeList: state.recipeList..shuffle(),
+                          recipeList: state.recipeList,
                           ontap: () {},
                         ),
                         const SizedBox(
@@ -70,7 +70,7 @@ class RecipePage extends StatelessWidget {
                         ),
                         RecipeCategorySectionHeaderRowWidget(
                           categoryName: StringConstants.krecommendedText,
-                          recipeList: List.from(state.recipeList)..shuffle(),
+                          recipeList: state.recipeList,
                           ontap: () {},
                         ),
                       ],

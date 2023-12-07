@@ -35,7 +35,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     List<int> favoriteIdList = recipeDataUsecase.getFavoritesDataList();
     List<RecipeEntity> recipeList = [];
     Either<Failure, List<RecipeEntity>> response =
-        await recipeDataUsecase.getDatafromDio();
+        await recipeDataUsecase.getRecipeData();
 
     response.fold((left) {
       recipeList = [];

@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:recipe_app/data/data_model/preferences_data_model.dart';
-import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
+// import 'package:recipe_app/domain/entity/preferences_data_entity/preferences_data_entity.dart';
 
 class PreferencesDataSource {
   final FirebaseFirestore _firestore = GetIt.I<FirebaseFirestore>();
-  Future<List<PreferencesDataEntity>> getPreferencesDataList() async {
+  Future<List<PreferencesDataModel>> getPreferencesDataList() async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
         .collection('preferencesCollection')
         .orderBy('index')

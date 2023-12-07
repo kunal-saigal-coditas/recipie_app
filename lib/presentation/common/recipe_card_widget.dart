@@ -52,7 +52,7 @@ class RecipeCardWidget extends StatelessWidget {
           children: [
             DecoratedBox(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
+                borderRadius: BorderRadius.circular(10),
                 gradient: LinearGradient(
                   end: Alignment.bottomCenter,
                   begin: Alignment.topCenter,

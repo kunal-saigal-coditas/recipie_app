@@ -1,5 +1,5 @@
 import 'package:recipe_app/data/data_model/grocery_data_model.dart';
-import 'package:recipe_app/data/data_source/local_data_sources/grocery_data_source.dart';
+import 'package:recipe_app/data/data_source/remote_data_sources/grocery_data_source.dart';
 import 'package:recipe_app/domain/repository/grocery_data_repo.dart';
 
 class GroceryDataRepositoryImpl extends GroceryDataRepository {

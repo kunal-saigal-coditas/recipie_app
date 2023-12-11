@@ -10,82 +10,6 @@ class StringConstants {
 
   static const krecipePassportText = "Recipe Passport";
 
-  static const konboardingQuestion1 =
-      "Whats your Preffered Language for the App?";
-
-  static const konboardingQuestion1Subtext =
-      "Select the language that you'd prefer to use while exploring Recipe Passport.";
-
-  static const koptionsForQuestion1 = ["English", "Spanish", "French"];
-
-  static const konboardingQuestion2 = "Do you have any allergies or dislikes?";
-
-  static const koptionsForQuestion2 = [
-    "🦐  Shrimp",
-    "🥕  Carrot",
-    "🍄  Mushroom",
-    "🧅  Onion",
-    "🫑  Bell Pepper",
-    "🍌  Banana",
-    "🍋  Lemon",
-    "🍍  Pineapple",
-    "🥑  Avocado",
-    "🍗  Chicken",
-    "🥩  Beef",
-    "🥛  Almond Milk",
-    "🥛  Greek Yoghurt",
-    "🥔  Potatoes",
-    "🥚  Egg",
-    "🍅  Tomatoes",
-    "🍶  Mayonnaise",
-    "🫒  Olives",
-    "🦐  Rice",
-    "🌿  Basil",
-    "🫙 Soy Sauce",
-    "🧂  Salt",
-  ];
-
-  static const konboardingCommonSubtext =
-      "This will help us curate more recipe experiences for you.";
-
-  static const konboardingQuestion3 = "Do you have any dietary restrictions?";
-
-  static const koptionsForQuestion3 = [
-    "None",
-    "Vegan",
-    "Lactose Intolerant",
-    "Soy Allergy",
-    "Pescatarian",
-    "Gluten-Free",
-    "Shellfish Allergy",
-    "Vegetarian",
-    "Kosher",
-    "Halal",
-    "Nut Allergy",
-    "Diabetic Diet",
-  ];
-
-  static const konboardingQuestion4 =
-      "Types of cuisines  you most interested in ?";
-
-  static const koptionsForQuestion4 = [
-    "European",
-    "African",
-    "Asian",
-    "Middle-Eastern",
-    "Latin-American",
-    "Indian",
-  ];
-
-  static const konboardingQuestion5 =
-      "Lastly, how skilled are you in the kitchen ?";
-
-  static const koptionsForQuestion5 = [
-    "Beginner",
-    "Intermediate",
-    "Advanced",
-  ];
-
   static const kmyRecipeText = "My Recipies";
 
   static const krecentRecipeText = "Recent Recipes";
@@ -155,85 +79,11 @@ class StringConstants {
 
   static const kgroupsText = "Groups";
 
-  static const kcategoryNames = [
-    "Korean",
-    "Australian",
-    "American",
-    "Mexican",
-    "French",
-    "Brazillian",
-    "Nigerian",
-    "Italian",
-    "Chinese",
-    "Indian",
-    "Greek",
-    "Thai",
-  ];
-
-  static const kgroceryPageMainTextList = [
-    "Yangnyeom Chicken",
-    "Sandwich with boiled egg",
-    "Spicy Chicken Burger",
-    "Fruit Nut Salad",
-    "Fruit Blueberry Toast",
-    "Hot Sauce Stake",
-  ];
-
-  static const kgroceryPageSubtextList = [
-    "5/12 ingredients ",
-    "10/10 ingredients ",
-    "8/18 ingredients ",
-    "13/13 ingredients ",
-    "12/12 ingredients ",
-    "15/15 ingredients",
-  ];
-
-  static const kfeaturedTopicsUserName = [
-    "Bellington",
-    "Jason Lee",
-    "Amanda",
-  ];
-
-  static const kfeaturedTopicsEmail = [
-    "@bellingcook",
-    "@jasonlee",
-    "@amandacokjgydrkljhop;ihugyftghjkllmok",
-  ];
-
-  static const kfeaturedTopicsSummary = [
-    "Rise and shine, pancake lovers! 🌞🥞 Today, I'm sharing a recipe that'll turn your breakfast into a scrumptious delight! Behold, the Fluffy Pancakes that are sure to make your taste buds dance with joy! 💃🕺",
-    "Just had the most AMAZING burger at BurgerLoves. Juicy perfection in every bite. 🤤🎉 If you're a burger lover, this place is a MUST. 🏃‍♂️💨 #BurgerHeaven #FoodieFinds",
-    "Yangnyeom is crispy fried chicken coated in sweet and spicy sauce. It's accompanied by pickled radishes, sliced scallions, and a side of rice. Cold beer or soft drinks are popular pairings. Enjoy!",
-  ];
-
-  static const kchallengesNameText = "Ingredient Restriction Challenge";
-
-  static const kchallengesSummary =
-      "Choose a specific ingredient (e.g., avocado, lemon, chickpeas) and challenge yourself to create multiple dishes using only that ingredient.";
-
   static const kupcomingChallengeText = "Upcoming Challenges";
 
   static const kjoinNowText = "Join Now";
 
   static const kallGroupsText = "All Groups";
-
-  static const kgroupsNames = [
-    "Asian Food Lovers ",
-    "We Love Food",
-    "Healthy Foodies",
-    "Travel For Food",
-    "Daily Food Post",
-    "Viewers Of Recipes",
-  ];
-
-  static const kgroupMembersCounts = [
-    "22.1k",
-    "30.5k",
-    "12.1k",
-    "45.1k",
-    "85.8k",
-    "10.2k",
-  ];
 
   static const kjoinText = "Join";
 
@@ -286,4 +136,6 @@ class StringConstants {
       "Please Enter Your Password Correctly";
 
   static const kfeildCannotBeEmptyText = "This Feild Cannot be Empty";
+
+  static const kheroTag = "recipeTransition";
 }

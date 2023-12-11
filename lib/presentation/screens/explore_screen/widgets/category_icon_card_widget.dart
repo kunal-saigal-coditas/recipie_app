@@ -23,6 +23,7 @@ class CategoryItemCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.r),
         image: DecorationImage(
           image: CachedNetworkImageProvider(categoryImage),
+          opacity: 0.9,
           fit: BoxFit.cover,
         ),
       ),

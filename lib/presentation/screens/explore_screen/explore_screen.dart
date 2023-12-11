@@ -73,7 +73,7 @@ class ExplorePage extends StatelessWidget {
                             mainAxisSpacing: 13,
                             childAspectRatio: 2 / 1,
                           ),
-                          itemCount: StringConstants.kcategoryNames.length,
+                          itemCount: state.exploreDataList.length,
                           itemBuilder: (context, index) => CategoryItemCard(
                             categoryName:
                                 state.exploreDataList[index].categoryName,

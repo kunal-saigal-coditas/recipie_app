@@ -30,7 +30,7 @@ class RecipeDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             RecipeDetailTopContainerWidget(
-              recipeImage: recipeEntity.image,
+              recipeEntity: recipeEntity,
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(
@@ -79,7 +79,6 @@ class RecipeDetailPage extends StatelessWidget {
                     height: 19,
                   ),
                   Row(
-                    // mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const CircleAvatar(

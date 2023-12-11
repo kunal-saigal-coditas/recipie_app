@@ -50,7 +50,7 @@ class RecipePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         RecipeVideoCard(
-                          recipeEntity: state.recipeList[3],
+                          recipeEntity: state.recipeList[8],
                           onPressed: () {},
                         ),
                         const SizedBox(
@@ -67,11 +67,6 @@ class RecipePage extends StatelessWidget {
                         const DiscoverMoreCardWidget(),
                         const SizedBox(
                           height: 14,
-                        ),
-                        RecipeCategorySectionHeaderRowWidget(
-                          categoryName: StringConstants.krecommendedText,
-                          recipeList: state.recipeList,
-                          ontap: () {},
                         ),
                       ],
                     ),

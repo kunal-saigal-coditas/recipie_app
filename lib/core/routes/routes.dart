@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import 'package:recipe_app/domain/entity/recipe_entity/recipe_entity.dart';
+
 import 'package:recipe_app/presentation/screens/bottom_nav_screen.dart';
 import 'package:recipe_app/presentation/screens/explore_screen/explore_screen.dart';
 import 'package:recipe_app/presentation/screens/forum_screen/forum_screen.dart';
